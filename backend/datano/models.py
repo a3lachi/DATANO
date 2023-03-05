@@ -11,6 +11,7 @@ class Instruction(models.Model) :
         typeInstru = models.TextField(default='Instru')
         urgency = models.TextField(default='now') 
         api_key = models.TextField(default=' ')
+
         
 
 
@@ -18,7 +19,6 @@ class Instruction(models.Model) :
                 return self.istru 
 
 
-Instruction.raw('DELETE FROM datano_instruction')
 
 
 

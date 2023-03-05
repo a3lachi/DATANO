@@ -19,7 +19,9 @@ class Migration(migrations.Migration):
                 ('completedAt', models.TextField()),
                 ('status', models.TextField()),
                 ('instru', models.TextField()),
+                ('urgency', models.TextField()),
                 ('typeInstru', models.TextField()),
+                ('api_key', models.TextField()),
             ],
         ),
     ]
