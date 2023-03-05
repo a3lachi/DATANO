@@ -71,7 +71,7 @@ class Left extends Component{
 
     }
 
-    selectOnlyThis(zid){
+    selectOnlyThis(event){
       var myCheckbox = document.getElementsByName("myCheckbox");
       console.log('Dkhelti khawi ',myCheckbox)
       Array.prototype.forEach.call(myCheckbox,function(el){
@@ -79,7 +79,7 @@ class Left extends Component{
         console.log('You clicked a collection.',el.name);
         
       });
-      zid.checked = true;
+      event.target.checked = true;
       
       
     }
@@ -88,9 +88,7 @@ class Left extends Component{
       this.refreshList();
     }
 
-    fireBut(){
-      console.log('Button');
-    }
+
 
     refreshList = () => {
       axios
@@ -99,6 +97,9 @@ class Left extends Component{
         .catch((err) => console.log(err));
     };
 
+    fireBut(){
+      console.log('brekti')
+    }
     
     render(){
       const data = this.state.collection 
@@ -127,6 +128,8 @@ class Left extends Component{
       console.log('First element :',firstRow)
       return(
 
+        
+
 
         <div class="col-lg-2 border">
 
@@ -134,13 +137,13 @@ class Left extends Component{
           <div class="col border">
             <div class="row border">
                 Objects :
-                <button onClick={this.fireBut()}>SHOOT</button>
+                <button onClick={this.fireBut}>SHOOT</button>
             </div>
 
             <div class="row border">
               <div class="col border">
-                  { firstCollecArray.map((item) => { return <div class="row"><input type="checkbox" name="myCheckbox" id="1" onClick={this.selectOnlyThis(this)} /><label>{item}</label></div>; }) }
-                  { restCollec.map((item,index) => { return <div class="row"><input type="checkbox" id={index+2} name="myCheckbox" onClick={this.selectOnlyThis(this)} /><label>{item}</label></div>; }) }
+                  { firstCollecArray.map((item) => { return <div class="row"><input type="checkbox" name="myCheckbox" id="1" onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
+                  { restCollec.map((item,index) => { return <div class="row"><input type="checkbox" id={index+2} name="myCheckbox" onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
               </div>
             </div>
           </div>
