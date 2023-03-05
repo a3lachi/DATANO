@@ -69,9 +69,9 @@ class Left extends Component{
 
 
   render() {
-    const { data } = this.props;
+    this.refreshList();
 
-    if (!data) {
+    if (!this.data) {
       return <div>Loading...</div>;
     }
     
