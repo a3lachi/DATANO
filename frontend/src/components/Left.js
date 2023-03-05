@@ -154,7 +154,7 @@ class Left extends Component{
                 </div>
                 <div class="row border">
                   <div class="col border">
-                    {viewCollec.map((item,index) => { return <div class="row"><button name="buttonImg" id={toString(item.taskId)} onclick={this.chooseInstruction}>{item.createdAt}</button></div>; }) }
+                    {viewCollec.map((item,index) => { return <div class="row"><button name="buttonImg" id={item.id} onclick={this.chooseInstruction}>{item.createdAt}</button></div>; }) }
                   </div>
                 </div>
             </div>
