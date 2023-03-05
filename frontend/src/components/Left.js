@@ -131,7 +131,7 @@ class Left extends Component{
 
       
 
-      console.log('viewCollec ',currentInstru)
+      console.log('viewCollec ',currentInstru[0])
 
 
       return(
@@ -178,7 +178,7 @@ class Left extends Component{
           
           <div class="col-lg-7 border">
               <div class="row border">
-                Central picture {currentInstru[0].instru}
+                Central picture {currentInstru.instru}
               </div>
               <div class="row border">
                 Message
