@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import $ from 'jquery'
+
+
+
+
 
 
 class Groups extends Component{
@@ -68,8 +71,25 @@ class Left extends Component{
 
     }
 
+    selectOnlyThis(zid){
+      var myCheckbox = document.getElementsByName("myCheckbox");
+      console.log('Dkhelti khawi ',myCheckbox)
+      Array.prototype.forEach.call(myCheckbox,function(el){
+        el.checked = false;
+        console.log('You clicked a collection.',el.name);
+        
+      });
+      zid.checked = true;
+      
+      
+    }
+
     componentDidMount() {
       this.refreshList();
+    }
+
+    fireBut(){
+      console.log('Button');
     }
 
     refreshList = () => {
@@ -79,9 +99,6 @@ class Left extends Component{
         .catch((err) => console.log(err));
     };
 
-    firstCollection(){
-      return <div class="row"><input type="checkbox" checked/><label>{this.state.collection.collection}</label></div> 
-    }
     
     render(){
       const data = this.state.collection 
@@ -110,18 +127,20 @@ class Left extends Component{
       console.log('First element :',firstRow)
       return(
 
+
         <div class="col-lg-2 border">
 
 
           <div class="col border">
             <div class="row border">
                 Objects :
+                <button onClick={this.fireBut()}>SHOOT</button>
             </div>
 
             <div class="row border">
               <div class="col border">
-                  { firstCollecArray.map((item) => { return <div class="row"><input type="checkbox" checked='true'/><label>{item}</label></div>; }) }
-                  { restCollec.map((item) => { return <div class="row"><input type="checkbox"/><label>{item}</label></div>; }) }
+                  { firstCollecArray.map((item) => { return <div class="row"><input type="checkbox" name="myCheckbox" id="1" onClick={this.selectOnlyThis(this)} /><label>{item}</label></div>; }) }
+                  { restCollec.map((item,index) => { return <div class="row"><input type="checkbox" id={index+2} name="myCheckbox" onClick={this.selectOnlyThis(this)} /><label>{item}</label></div>; }) }
               </div>
             </div>
           </div>
