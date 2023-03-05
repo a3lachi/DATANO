@@ -21,6 +21,7 @@ class Migration(migrations.Migration):
                 ('instru', models.TextField()),
                 ('urgency', models.TextField()),
                 ('typeInstru', models.TextField()),
+                ('src', models.TextField()),
                 ('api_key', models.TextField()),
             ],
         ),

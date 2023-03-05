@@ -11,6 +11,7 @@ class Instruction(models.Model) :
         typeInstru = models.TextField(default='Instru')
         urgency = models.TextField(default='now') 
         api_key = models.TextField(default=' ')
+        src = models.TextField(default='')
 
         
 
