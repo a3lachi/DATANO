@@ -59,11 +59,11 @@ class Left extends Component{
         el.checked = false;  
       });
       event.target.checked = true;
-      this.setState({instru : event.target.id})
+      this.setState({view : event.target.id})
     }
 
     chooseInstruction(event){
-      this.setState({view : event.target.id})
+      this.setState({instru : event.target.id})
 
     }
 
