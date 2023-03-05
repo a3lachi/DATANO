@@ -54,17 +54,31 @@ class UpNext extends Component{
 class Left extends Component{
   constructor(props) {
     super(props);
+    this.state = {
+      data: null,
+    };
     console.log('Left constructor')
   }
 
-  async componentDidMount() {
-    console.log("Ha data li wsslat left ",this.props.leftData);
-  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.data !== this.props.data) {
+        this.setState({ data: this.props.data });
+      }
+    }
+
 
 
   render() {
+    const { data } = this.props;
+
+    if (!data) {
+      return <div>Loading...</div>;
+    }
+    
     return(
+
       <div class="col-lg-2 border">
+
 
         <Groups data={this.props.leftData}></Groups>
 

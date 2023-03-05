@@ -15,46 +15,27 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      collection: [],
-      ja:'jib'
+      collection: []
     }
     console.log('App constructor')
   }
 
-  componentDidMount() {
-    axios.get('https://jsonplaceholder.typicode.com/users')
+  componentDidMount(){
+    this.refreshList();
+  }
+
+  refreshList = () => {
+    axios.get("/api/Instructions")
       .then(response => {
-        this.setState({ data: response.data });
+        this.setState({ collection: response.data });
       })
       .catch(error => {
         console.log(error);
       });
   }
 
-  // // async refreshList() {
-  // //   try {
-  // //     console.log("APP RCOMPO DID MOUNT")
-  // //     const res = await axios.get("/api/Instructions");
-  // //     this.setState({ collection: res.data });
-  // //   } catch (err) {
-  // //     console.log(err);
-  // //   }
-  // // }
-  // refreshList = () => {
-  //   axios
-  //     .get("/api/Instructions")
-  //     .then((res) => this.setState({ collection: res.data }))
-  //     .catch((err) => console.log('err'));
-  // }
-
-
-  // tell(){
-  //   console.log('Tell data f App ',this.state.collection)
-  // }
-
   render() {
-    console.log('Bda yrendrei');
-    {this.refreshList()}
+    console.log('Bda yrendrei',this.state.collection);
     return (
       
       <main class="container-fluid">
@@ -63,8 +44,7 @@ class App extends Component {
         <Nav></Nav>
         
         <div class="row border">
-          {this.tell()}
-          <Left leftData={this.state.ja}></Left>
+          <Left leftData={this.state.ka} func={this.refreshList}></Left>
 
           <Center arawkan={this.state.collection}></Center>
           
