@@ -90,7 +90,7 @@ class Left extends Component{
     refreshList = () => {
       axios
         .get("/api/Instructions/")
-        .then((res) => this.setState({ collection: res.data , col: res.data[0].collection}))
+        .then((res) => this.setState({ collection: res.data }))
         .catch((err) => console.log(err));
     };
 
@@ -104,7 +104,7 @@ class Left extends Component{
       const data = this.state.collection 
 
       const firstRow = data[0]
-
+      console.log('KHSSO YKON IMG  ',firstRow)
       let restCollec = []
       let firstCollecArray = []
      
