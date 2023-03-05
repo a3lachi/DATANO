@@ -99,7 +99,7 @@ class Left extends Component{
 
             <div class="row border">
               <div class="col border">
-                  { collec.map((item) => { return <div class="row"><input type="checkbox" checked> <label>{item}</label></div>; }) }
+                  { collec.map((item) => { return <div class="row"><input type="checkbox"/><label>{item}</label></div>; }) }
               </div>
             </div>
           </div>
