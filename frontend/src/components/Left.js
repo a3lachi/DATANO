@@ -148,7 +148,7 @@ class Left extends Component{
             <div class="col border">
               <div class="row border">
                   Objects :
-                  <button onClick={this.fireBut}>SHOOT</button>
+                  
               </div>
 
               <div class="row border">
