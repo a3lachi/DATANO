@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from "react";
-import axios from "axios";
+
 
 import Nav from './components/Nav'
 import Left from './components/Left'

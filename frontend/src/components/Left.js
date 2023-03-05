@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import axios from "axios";
 
 
 class Groups extends Component{
@@ -61,6 +61,9 @@ class UpNext extends Component{
 class Left extends Component{
     constructor(props){
       super(props);
+      this.state = {
+        collection: []
+      }
 
     }
 
@@ -71,17 +74,35 @@ class Left extends Component{
     refreshList = () => {
       axios
         .get("/api/Instructions/")
-        .then((res) => this.setState({ todoList: res.data }))
+        .then((res) => this.setState({ collection: res.data }))
         .catch((err) => console.log(err));
     };
     
     render(){
+      const data = this.state.collection 
+      let collec = [] 
+      data.forEach((element) => {
+        if (!collec.includes(element.collection)) {
+          collec.push(element.collection) ;
+        };
+      });
+      console.log('Data li wslat l left :',collec)
       return(
 
         <div class="col-lg-2 border">
 
 
-          <Groups></Groups>
+          <div class="col border">
+            <div class="row border">
+                Objects :
+            </div>
+
+            <div class="row border">
+              <div class="col border">
+                  { collec.map((item) => { return <div class="row"><input type="checkbox" checked> <label>{item}</label></div>; }) }
+              </div>
+            </div>
+          </div>
 
           <div class="col" style={{height : '40px'}}></div>
 
