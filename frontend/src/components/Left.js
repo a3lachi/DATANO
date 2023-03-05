@@ -39,10 +39,16 @@ class Left extends Component{
     constructor(props){
       super(props);
       this.state = {
-        collection: []
+        collection: [],
+        view:1
       }
-
+      this.selectOnlyThis = this.selectOnlyThis.bind(this)
     }
+
+    handleCollecClick(){
+      this.setState({view : 2})
+    }
+   
 
     selectOnlyThis(event){
       var myCheckbox = document.getElementsByName("myCheckbox");
@@ -50,8 +56,7 @@ class Left extends Component{
         el.checked = false;    
       });
       event.target.checked = true;
-      
-      
+      this.setState({view : event.target.id})
     }
 
     componentDidMount() {
@@ -68,6 +73,10 @@ class Left extends Component{
 
     fireBut(){
       console.log('brekti')
+    }
+
+    viewCollection(viewCollec){
+      viewCollec.map((item,index) => { return <div class="row">{item}</div>; })
     }
     
     render(){
@@ -111,7 +120,7 @@ class Left extends Component{
 
             <div class="row border">
               <div class="col border">
-                  { firstCollecArray.map((item) => { return <div class="row"><input type="checkbox" name="myCheckbox" id="1" onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
+                  { firstCollecArray.map((item) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={1} onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
                   { restCollec.map((item,index) => { return <div class="row"><input type="checkbox" id={index+2} name="myCheckbox" onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
               </div>
             </div>
@@ -125,7 +134,7 @@ class Left extends Component{
               </div>
               <div class="row border">
                 <div class="col border">
-                  { viewCollec.map((item,index) => { return <div class="row">{item}</div>; }) }
+                  {this.viewCollection}
                 </div>
               </div>
           </div>
