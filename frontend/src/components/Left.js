@@ -237,7 +237,7 @@ class Left extends Component{
               </div>
               <div class="row border">
 
-              <div id="lol"  style={{position: 'relative'}} ><img src={currentInstru.src} /></div>
+              <div class="col border" id="lol"  style={{position: 'relative'}} ><img id="mainimage" src={currentInstru.src} /></div>
                 
               </div>
               <div class="row border" style={{height:'30px'}}>

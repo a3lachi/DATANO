@@ -4,6 +4,10 @@
   max-width: 100%;
 }
 
+#mainimage {
+  max-width:100% ;
+}
+
 .rounded{
   width: 30px;
   height: 30px;
