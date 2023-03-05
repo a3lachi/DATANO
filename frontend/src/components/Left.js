@@ -44,9 +44,11 @@ class Left extends Component{
       super(props);
       this.state = {
         collection: [],
-        view: ''
+        view: '',
+        instru:''
       }
       this.selectOnlyThis = this.selectOnlyThis.bind(this)
+      this.chooseInstruction = this.chooseInstruction.bind(this)
     }
 
     
@@ -57,9 +59,13 @@ class Left extends Component{
         el.checked = false;  
       });
       event.target.checked = true;
-      this.setState({view : event.target.id})
+      this.setState({instru : event.target.id})
     }
 
+    chooseInstruction(event){
+      this.setState({view : event.target.id})
+
+    }
 
 
     componentDidMount() {
