@@ -55,6 +55,24 @@ class Left extends Component{
       console.log('HAD ZBI ',view)
     }
 
+    renderContent(content){
+
+      // let data = this.state.collection 
+      // let viewCollec = [] ;
+
+      // for(let i=0;i<data.length;i++)
+      // {
+      //   if (data[i].collection==content.collection) {
+      //     viewCollec.push(data[i].createdAt) ;
+      //   }
+      // }
+
+      // return (
+      //     <div class="col border">
+      //       {viewCollec.map((item,index) => { return <div class="row"><button name="buttonImg" onclick={this.chooseInstruction}>{item}</button></div>; }) }
+      //     </div>
+      // )
+    }
 
     selectOnlyThis(event){
       var myCheckbox = document.getElementsByName("myCheckbox");
@@ -64,6 +82,7 @@ class Left extends Component{
       event.target.checked = true;
       this.setState({view : event.target.id})
       this.renderCollection(event.target.id)
+      this.renderContent(event.target.id);
       
 
     }
@@ -74,6 +93,7 @@ class Left extends Component{
         el.checked = false;  
       });
       event.target.checked = true;
+      this.setState({view : event.target.id})
       this.renderCollection(event.target.id)
 
     }
@@ -89,7 +109,7 @@ class Left extends Component{
     refreshList = () => {
       axios
         .get("/api/Instructions/")
-        .then((res) => this.setState({ collection: res.data , firstCollec:res.data[0] }))
+        .then((res) => this.setState({ collection: res.data }))
         .catch((err) => console.log(err));
     };
 
@@ -102,17 +122,18 @@ class Left extends Component{
 
       const data = this.state.collection 
 
-      const farsRow = data[0]
 
       const firstRow = data[0]
-      console.log('First collec  ',this.state.firstCollec)
+      var farsRow = this.state.view
+
+
       let restCollec = []
       let firstCollecArray = []
      
       
 
-      for(let i=0;i<data.length;i++){
-        if (!restCollec.includes(data[i].collection) && data[i].collection!=this.state.firstCollec.collection) {
+      for(let i=1;i<data.length;i++){
+        if (!restCollec.includes(data[i].collection) && data[i].collection!==firstRow.collection) {
           restCollec.push(data[i].collection) ;
         }
         else if(firstCollecArray.length<1){
@@ -120,20 +141,23 @@ class Left extends Component{
         } 
       }
 
-      if (this.state.view.length>1) {
-          farsRow.collection = this.state.view ;
-          console.log('la rah dkhel')
-      }
 
-      let viewCollec = []
+      let viewCollec = [] ;
 
       for(let i=0;i<data.length;i++)
       {
-        if (data[i].collection==farsRow.collection) {
+        if (data[i].collection==this.state.view) {
           viewCollec.push(data[i].createdAt) ;
         }
       }
-      console.log('firstrow ',farsRow)
+
+
+
+
+      
+
+      console.log('viewCollec ',viewCollec)
+
 
       return(
         <main class="container-fluid">
