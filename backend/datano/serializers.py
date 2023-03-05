@@ -11,7 +11,7 @@ class InstructionsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Instruction 
         fields = ('id','taskId','collection', 'createdAt', 'status', 'instru','typeInstru','urgency','api_key')
-        read_only_fields = ["collection"]
+
 
 
 
