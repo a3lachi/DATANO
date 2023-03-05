@@ -176,7 +176,14 @@ class Left extends Component{
           </div>
           
           
-          <Center></Center>
+          <div class="col-lg-7 border">
+              <div class="row border">
+                Central picture {currentInstru[0].instru}
+              </div>
+              <div class="row border">
+                Message
+              </div>
+          </div>
             
           <Right></Right>
           </div>
