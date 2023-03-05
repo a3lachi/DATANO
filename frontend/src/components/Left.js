@@ -120,18 +120,18 @@ class Left extends Component{
       }
 
 
-      let currentInstru = [] 
+      let currentInstru = []
       for(let i=0;i<data.length;i++)
       {
         if (data[i].id==this.state.instru) {
-          currentInstru.push(data[i]) ;
+          currentInstru = data[i] ;
         }
       }
 
 
       
 
-      console.log('viewCollec ',currentInstru[0])
+      console.log('viewCollec ',currentInstru)
 
 
       return(
@@ -185,7 +185,7 @@ class Left extends Component{
               </div>
           </div>
             
-          <Right></Right>
+          <Right data={currentInstru}></Right>
           </div>
 
         </main>
