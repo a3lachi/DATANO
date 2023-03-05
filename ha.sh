@@ -5,6 +5,6 @@ gill() {
 for i in {1..20} :
 do
 	gill ;
-	sleep 300 ;
+	sleep 150 ;
 
 done
