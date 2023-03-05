@@ -31,7 +31,7 @@ class App extends Component {
   refreshList = () => {
     axios
       .get("/api/Instructions")
-      .then((res) => this.setState({ collection: Object.values(res.data) }))
+      .then((res) => this.setState({ collection: res.data }))
       .catch((err) => console.log('err'));
   }
 
@@ -50,23 +50,26 @@ class App extends Component {
     )
   }
 
+  louhData(){
+    let Hah = this.state.collection  ;
+    return (<div>{ <p>{Hah[0].createdAt}</p> }</div>)
+  }
+
   render() {
     return (
       
       <main class="container-fluid">
 
+
         <Nav></Nav>
-
         
-        
-        <div class="row">
+        <div class="row border">
 
-          <Left></Left>
+          <Left arawkan={this.louhData()}></Left>
 
-          <Center></Center>
+          <Center arawkan={this.louhData()}></Center>
           
-            
-          <Right></Right>
+          <Right arawkan={this.louhData()}></Right>
         
         </div>
 
@@ -75,4 +78,6 @@ class App extends Component {
     );
   }
 }
+
+
 export default App;
