@@ -5,12 +5,12 @@ import React, { Component } from "react";
 class Info extends Component{
 
 	render(){
-		const datax = this.props.data ;
+		const datax = this.props.data.data ;
 		console.log("Ha lprops ",datax)
 		return(
 			<div class="col border">
-				<div class="row border">
-	            	Info 
+				<div class="row">
+	            	Info : 
 	        	</div>
 	            <div class="row border">
 	            	<div class="col border">
@@ -18,16 +18,16 @@ class Info extends Component{
 		            		Instruction : {datax.instru}
 		            	</div>
 		            	<div class="row border">
-		            		Task ID :
+		            		Task ID : {datax.taskId}
 		            	</div>
 		            	<div class="row border">
-		            		Created At :
+		            		Created At : {datax.createdAt}
 		            	</div>
 		            	<div class="row border">
-		            		Urgency :
+		            		Urgency : {datax.urgency}
 		            	</div>
 		            	<div class="row border">
-		            		Original Image :
+		            		Original Image : 
 		            	</div>
 		            </div>
 	        	</div>
