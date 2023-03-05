@@ -35,33 +35,6 @@ class Groups extends Component{
 
 
 
-
-
-class UpNext extends Component{
-  constructor(props){
-    super(props);
-
-  }
-
-
-  render(){
-    return(
-      <div class="col border">
-          <div class="row border">
-            Up Next 
-          </div>
-          <div class="row border">
-            Imagesssze 
-          </div>
-      </div>
-    )
-  }
-}
-
-
-
-
-
 class Left extends Component{
     constructor(props){
       super(props);
@@ -73,11 +46,8 @@ class Left extends Component{
 
     selectOnlyThis(event){
       var myCheckbox = document.getElementsByName("myCheckbox");
-      console.log('Dkhelti khawi ',myCheckbox)
       Array.prototype.forEach.call(myCheckbox,function(el){
-        el.checked = false;
-        console.log('You clicked a collection.',el.name);
-        
+        el.checked = false;    
       });
       event.target.checked = true;
       
@@ -87,7 +57,6 @@ class Left extends Component{
     componentDidMount() {
       this.refreshList();
     }
-
 
 
     refreshList = () => {
@@ -110,7 +79,6 @@ class Left extends Component{
 
       let firstCollecArray = []
       
-      
 
       for(let i=1;i<data.length;i++){
         if (!restCollec.includes(data[i].collection) && data[i].collection!=firstRow.collection) {
@@ -121,15 +89,16 @@ class Left extends Component{
         } 
       }
 
+      let viewCollec = []
 
+      for(let i=0;i<data.length;i++)
+      {
+        if (!viewCollec.includes(data[i].collection) && data[i].collection==firstRow.collection) {
+          viewCollec.push(data[i].createdAt) ;
+        }
+      }
 
-       
-      
-      console.log('First element :',firstRow)
       return(
-
-        
-
 
         <div class="col-lg-2 border">
 
@@ -150,7 +119,16 @@ class Left extends Component{
 
           <div class="col" style={{height : '40px'}}></div>
 
-          <UpNext></UpNext>
+          <div class="col border">
+              <div class="row border">
+                Up Next 
+              </div>
+              <div class="row border">
+                <div class="col border">
+                  { viewCollec.map((item,index) => { return <div class="row">{item}</div>; }) }
+                </div>
+              </div>
+          </div>
           
           
         </div>
