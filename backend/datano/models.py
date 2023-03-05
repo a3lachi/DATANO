@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Instruction(models.Model) :
-        taskId = models.TextField(unique=True)
+        taskId = models.TextField()
         collection = models.TextField(default=1)
         createdAt = models.TextField(default=' ')
         completedAt = models.TextField(default=' ')
@@ -18,6 +18,7 @@ class Instruction(models.Model) :
                 return self.istru 
 
 
+Instruction.raw('DELETE FROM datano_instruction')
 
 
 
