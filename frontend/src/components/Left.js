@@ -120,11 +120,18 @@ class Left extends Component{
       }
 
 
+      let currentInstru = [] 
+      for(let i=0;i<data.length;i++)
+      {
+        if (data[i].id==this.state.instru) {
+          currentInstru.push(data[i]) ;
+        }
+      }
 
 
       
 
-      console.log('viewCollec ',viewCollec)
+      console.log('viewCollec ',currentInstru)
 
 
       return(
@@ -160,7 +167,7 @@ class Left extends Component{
                 </div>
                 <div class="row border">
                   <div class="col border">
-                    {viewCollec.map((item,index) => { return <div class="row"><button name="buttonImg" id={item.id} onclick={this.chooseInstruction}>{item.createdAt}</button></div>; }) }
+                    {viewCollec.map((item,index) => { return <div class="row"><button name="buttonImg" id={item.id} onClick={this.chooseInstruction}>{item.createdAt}</button></div>; }) }
                   </div>
                 </div>
             </div>
