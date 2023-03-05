@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-
+import Nav from './Nav'
+import Right from './Right'
+import Center from './Center'
 
 
 
@@ -35,39 +37,60 @@ class Groups extends Component{
 
 
 
+
+
 class Left extends Component{
     constructor(props){
       super(props);
       this.state = {
         collection: [],
-        view:1
+        view: ''
       }
       this.selectOnlyThis = this.selectOnlyThis.bind(this)
+      this.selectFirst = this.selectFirst.bind(this)
     }
 
-    handleCollecClick(){
-      this.setState({view : 2})
+
+    renderCollection(view){
+      console.log('HAD ZBI ',view)
     }
-   
+
 
     selectOnlyThis(event){
       var myCheckbox = document.getElementsByName("myCheckbox");
       Array.prototype.forEach.call(myCheckbox,function(el){
-        el.checked = false;    
+        el.checked = false;  
       });
       event.target.checked = true;
       this.setState({view : event.target.id})
+      this.renderCollection(event.target.id)
+      
+
     }
+
+    selectFirst(event){
+      var myCheckbox = document.getElementsByName("myCheckbox");
+      Array.prototype.forEach.call(myCheckbox,function(el){
+        el.checked = false;  
+      });
+      event.target.checked = true;
+      this.setState({view : ''})
+      this.renderCollection(event.target.id)
+
+    }
+
+
 
     componentDidMount() {
       this.refreshList();
+
     }
 
 
     refreshList = () => {
       axios
         .get("/api/Instructions/")
-        .then((res) => this.setState({ collection: res.data }))
+        .then((res) => this.setState({ collection: res.data , col: res.data[0].collection}))
         .catch((err) => console.log(err));
     };
 
@@ -75,18 +98,16 @@ class Left extends Component{
       console.log('brekti')
     }
 
-    viewCollection(viewCollec){
-      viewCollec.map((item,index) => { return <div class="row">{item}</div>; })
-    }
-    
+
     render(){
+
       const data = this.state.collection 
 
       const firstRow = data[0]
 
       let restCollec = []
-
       let firstCollecArray = []
+     
       
 
       for(let i=1;i<data.length;i++){
@@ -98,49 +119,69 @@ class Left extends Component{
         } 
       }
 
+      if (this.state.view.length>1) {
+          firstRow.collection = this.state.view ;
+          console.log('la rah dkhel')
+      }
+
       let viewCollec = []
 
       for(let i=0;i<data.length;i++)
       {
-        if (!viewCollec.includes(data[i].collection) && data[i].collection==firstRow.collection) {
+        if (data[i].collection==firstRow.collection) {
           viewCollec.push(data[i].createdAt) ;
         }
       }
+      console.log('firstrow ',firstRow)
 
       return(
+        <main class="container-fluid">
 
-        <div class="col-lg-2 border">
+
+          <Nav></Nav>
+          
+          <div class="row border">
+
+          <div class="col-lg-2 border">
 
 
-          <div class="col border">
-            <div class="row border">
-                Objects :
-                <button onClick={this.fireBut}>SHOOT</button>
-            </div>
-
-            <div class="row border">
-              <div class="col border">
-                  { firstCollecArray.map((item) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={1} onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
-                  { restCollec.map((item,index) => { return <div class="row"><input type="checkbox" id={index+2} name="myCheckbox" onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
-              </div>
-            </div>
-          </div>
-
-          <div class="col" style={{height : '40px'}}></div>
-
-          <div class="col border">
+            <div class="col border">
               <div class="row border">
-                Up Next 
+                  Objects :
+                  <button onClick={this.fireBut}>SHOOT</button>
               </div>
+
               <div class="row border">
                 <div class="col border">
-                  {this.viewCollection}
+                    { firstCollecArray.map((item,index) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={item} onClick={this.selectFirst} /><label>{item}</label></div>; }) }
+                    { restCollec.map((item,index) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={item} onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
                 </div>
               </div>
+            </div>
+
+            <div class="col" style={{height : '40px'}}></div>
+
+            <div class="col border">
+                <div class="row border">
+                  Up Next 
+                </div>
+                <div class="row border">
+                  <div class="col border">
+                    {viewCollec.map((item,index) => { return <div class="row"><button name="buttonImg" onclick={this.chooseInstruction}>{item}</button></div>; }) }
+                  </div>
+                </div>
+            </div>
+            
+            
           </div>
           
           
-        </div>
+          <Center></Center>
+            
+          <Right></Right>
+          </div>
+
+        </main>
 
     )
   }
