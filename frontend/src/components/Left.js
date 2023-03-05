@@ -181,6 +181,59 @@ class Left extends Component{
         }
       }
 
+      const lol = document.getElementById('lol');
+      const image = document.getElementById('image');
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+
+      let isDragging = false;
+      let startX;
+      let startY;
+      let endX;
+      let endY;
+
+      // Add event listeners to the image element to handle the mouse events
+      image.addEventListener('mousedown', handleMouseDown);
+      image.addEventListener('mousemove', handleMouseMove);
+      image.addEventListener('mouseup', handleMouseUp);
+
+      function handleMouseDown(event) {
+        isDragging = true;
+        startX = event.offsetX;
+        startY = event.offsetY;
+      }
+
+      function handleMouseMove(event) {
+        if (!isDragging) return;
+
+        endX = event.offsetX;
+        endY = event.offsetY;
+
+        // Clear the canvas and draw the selected area
+        canvas.width = lol.offsetWidth;
+        canvas.height = lol.offsetHeight;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+        ctx.fillRect(startX, startY, endX - startX, endY - startY);
+      }
+
+      function handleMouseUp(event) {
+        isDragging = false;
+
+        // Calculate the selected area and crop the image
+        const x = Math.min(startX, endX);
+        const y = Math.min(startY, endY);
+        const width = Math.abs(startX - endX);
+        const height = Math.abs(startY - endY);
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        canvas.width = width;
+        canvas.height = height;
+        ctx.drawImage(image, x, y, width, height, 0, 0, width, height);
+
+        // Replace the image with the cropped image
+        image.src = canvas.toDataURL();
+      }
 
       
 
@@ -188,6 +241,7 @@ class Left extends Component{
 
 
       return(
+
         <main class="container-fluid">
 
 
@@ -236,12 +290,9 @@ class Left extends Component{
                 Central picture {currentInstru.instru}
               </div>
               <div class="row border">
-              
-                  <div class="cursor rounded" />
-                  <div class="cursor pointed" />
+
                 <div id="lol"  style={{position: 'relative'}} ><img id="image" src={currentInstru.src} style={{width:'100%' }} /></div>
                 <canvas id="canvas" ></canvas>
-                {this.cursor}
               </div>
               <div class="row border" style={{height:'30px'}}>
                 
