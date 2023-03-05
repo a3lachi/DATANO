@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Instruction(models.Model) :
-        taskId = models.TextField(primary_key=True)
+        taskId = models.TextField(unique=True)
         collection = models.TextField(default=1)
         createdAt = models.TextField(default=' ')
         completedAt = models.TextField(default=' ')
