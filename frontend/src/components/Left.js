@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import $ from 'jquery'
 
 
 class Groups extends Component{
@@ -77,21 +78,36 @@ class Left extends Component{
         .then((res) => this.setState({ collection: res.data }))
         .catch((err) => console.log(err));
     };
+
+    firstCollection(){
+      return <div class="row"><input type="checkbox" checked/><label>{this.state.collection.collection}</label></div> 
+    }
     
     render(){
       const data = this.state.collection 
 
-      let firstCollec = data[0]
+      const firstRow = data[0]
 
-      let collec = new Array(firstCollec) 
+      let restCollec = []
+
+      let firstCollecArray = []
+      
+      
 
       for(let i=1;i<data.length;i++){
-        if (!collec.includes(data[i].collection)) {
-          collec.push(data[i].collection) ;
-        };
+        if (!restCollec.includes(data[i].collection) && data[i].collection!=firstRow.collection) {
+          restCollec.push(data[i].collection) ;
+        }
+        else if(firstCollecArray.length<1){
+          firstCollecArray.push(data[i].collection)
+        } 
       }
+
+
+
+       
       
-      console.log('Data li wslat l left :',firstCollec.collection)
+      console.log('First element :',firstRow)
       return(
 
         <div class="col-lg-2 border">
@@ -104,7 +120,8 @@ class Left extends Component{
 
             <div class="row border">
               <div class="col border">
-                  { collec.map((item) => { return <div class="row"><input type="checkbox"/><label>{item}</label></div>; }) }
+                  { firstCollecArray.map((item) => { return <div class="row"><input type="checkbox" checked='true'/><label>{item}</label></div>; }) }
+                  { restCollec.map((item) => { return <div class="row"><input type="checkbox"/><label>{item}</label></div>; }) }
               </div>
             </div>
           </div>
