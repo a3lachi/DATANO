@@ -15,10 +15,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      collection: [
-        {name: 'Billy', role: 'admin'},
-        {name: 'Sally', role: 'contributor'}
-      ],
+      collection: [],
       ja:'jib'
     }
   }
@@ -26,6 +23,7 @@ class App extends Component {
 
   componentDidMount(){
     this.refreshList();
+    console.log(this.state.collection)
   }
 
   refreshList = () => {
@@ -33,26 +31,6 @@ class App extends Component {
       .get("/api/Instructions")
       .then((res) => this.setState({ collection: res.data }))
       .catch((err) => console.log('err'));
-  }
-
-  showData(){  
-
-    let Hah = this.state.collection  ;
-    return (
-        <div>Mal
-          { Hah.map(instru => (
-                <div>
-                    <p>{instru.createdAt}</p>
-                    <p>{instru.status}</p>
-                </div>
-          ))}
-        </div>
-    )
-  }
-
-  louhData(){
-    let Hah = this.state.collection  ;
-    return (<div>{ <p>{Hah[0].createdAt}</p> }</div>)
   }
 
   render() {
@@ -65,11 +43,11 @@ class App extends Component {
         
         <div class="row border">
 
-          <Left arawkan={this.louhData()}></Left>
+          <Left arawkan={this.state.collection}></Left>
 
-          <Center arawkan={this.louhData()}></Center>
+          <Center arawkan={this.state.collection}></Center>
           
-          <Right arawkan={this.louhData()}></Right>
+          <Right arawkan={this.state.collection}></Right>
         
         </div>
 
