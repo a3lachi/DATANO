@@ -74,7 +74,6 @@ class Left extends Component{
         el.checked = false;  
       });
       event.target.checked = true;
-      this.setState({view : ''})
       this.renderCollection(event.target.id)
 
     }
@@ -90,7 +89,7 @@ class Left extends Component{
     refreshList = () => {
       axios
         .get("/api/Instructions/")
-        .then((res) => this.setState({ collection: res.data }))
+        .then((res) => this.setState({ collection: res.data , firstCollec:res.data[0] }))
         .catch((err) => console.log(err));
     };
 
@@ -106,14 +105,14 @@ class Left extends Component{
       const farsRow = data[0]
 
       const firstRow = data[0]
-      console.log('KHSSO YKON IMG  ',firstRow)
+      console.log('First collec  ',this.state.firstCollec)
       let restCollec = []
       let firstCollecArray = []
      
       
 
-      for(let i=1;i<data.length;i++){
-        if (!restCollec.includes(data[i].collection) && data[i].collection!=firstRow.collection) {
+      for(let i=0;i<data.length;i++){
+        if (!restCollec.includes(data[i].collection) && data[i].collection!=this.state.firstCollec.collection) {
           restCollec.push(data[i].collection) ;
         }
         else if(firstCollecArray.length<1){
