@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Instruction(models.Model) :
+        taskId = models.TextField(primary_key=True)
         collection = models.TextField(default=1)
         createdAt = models.TextField(default=' ')
         completedAt = models.TextField(default=' ')
@@ -10,7 +11,7 @@ class Instruction(models.Model) :
         typeInstru = models.TextField(default='Instru')
         urgency = models.TextField(default='now') 
         api_key = models.TextField(default=' ')
-        taskId = models.TextField(default=Math.floor((Math.random()*100000)).toString())
+        
 
 
         def _str_(self):
