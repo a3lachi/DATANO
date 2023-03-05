@@ -5,7 +5,7 @@ from django.contrib import admin
 from .models import Instruction 
 
 class Datano(admin.ModelAdmin):
-    list_display = ('createdAt', 'completedAt', 'instru' , 'api_key' , 'urgency')
+    list_display = ('collection', 'createdAt', 'status', 'instru','typeInstru','urgency')
 
 # Register your models here.
 
