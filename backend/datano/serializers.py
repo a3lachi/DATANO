@@ -10,7 +10,7 @@ from .models import Instruction
 class InstructionsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Instruction 
-        fields = ('collection', 'createdAt', 'status', 'instru','typeInstru','urgency')
+        fields = ('id','taskId','collection', 'createdAt', 'status', 'instru','typeInstru','urgency','api_key')
         read_only_fields = ["collection"]
 
 
