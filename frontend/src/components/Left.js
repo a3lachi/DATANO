@@ -221,7 +221,7 @@ class Left extends Component{
                 <div class="row border">
                   
                   <div class="col border">
-                    {viewCollec.map((item,index) => { return <div id="lol" style={{position: 'relative'}} class="row"><img  id="image" src={item.src} style={{width:'100%'}} /><button name="buttonImg" id={item.id} onClick={this.chooseInstruction}>{item.taskId}</button></div>; }) }
+                    {viewCollec.map((item,index) => { return <div class="row"><img src={item.src} style={{width:'100%'}} /><button name="buttonImg" id={item.id} onClick={this.chooseInstruction}>{item.taskId}</button></div>; }) }
                   </div>
                   
                 </div>
@@ -236,10 +236,12 @@ class Left extends Component{
                 Central picture {currentInstru.instru}
               </div>
               <div class="row border">
-              {this.cursor}
+              
                   <div class="cursor rounded" />
                   <div class="cursor pointed" />
-                <div id="lol" ><img src={currentInstru.src} style={{width:'100%' }} /></div>
+                <div id="lol"  style={{position: 'relative'}} ><img id="image" src={currentInstru.src} style={{width:'100%' }} /></div>
+                <canvas id="canvas" ></canvas>
+                {this.cursor}
               </div>
               <div class="row border" style={{height:'30px'}}>
                 
