@@ -17,25 +17,11 @@ class App extends Component {
     this.state = {
       collection: []
     }
-    console.log('App constructor')
   }
 
-  componentDidMount(){
-    this.refreshList();
-  }
-
-  refreshList = () => {
-    axios.get("/api/Instructions")
-      .then(response => {
-        this.setState({ collection: response.data });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
+  
 
   render() {
-    console.log('Bda yrendrei',this.state.collection);
     return (
       
       <main class="container-fluid">
@@ -44,7 +30,7 @@ class App extends Component {
         <Nav></Nav>
         
         <div class="row border">
-          <Left leftData={this.state.ka} func={this.refreshList}></Left>
+          <Left leftData={this.state.ka} ></Left>
 
           <Center arawkan={this.state.collection}></Center>
           

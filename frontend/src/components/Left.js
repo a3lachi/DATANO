@@ -25,9 +25,13 @@ class Groups extends Component{
             List of Objects
         </div>
       </div>
-    )
+      )
   }
 }
+
+
+
+
 
 class UpNext extends Component{
   constructor(props){
@@ -51,43 +55,40 @@ class UpNext extends Component{
 }
 
 
+
+
+
 class Left extends Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: null,
+    constructor(props){
+      super(props);
+
+    }
+
+    componentDidMount() {
+      this.refreshList();
+    }
+
+    refreshList = () => {
+      axios
+        .get("/api/Instructions/")
+        .then((res) => this.setState({ todoList: res.data }))
+        .catch((err) => console.log(err));
     };
-    console.log('Left constructor')
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.data !== this.props.data) {
-        this.setState({ data: this.props.data });
-      }
-    }
-
-
-
-  render() {
-    this.refreshList();
-
-    if (!this.data) {
-      return <div>Loading...</div>;
-    }
     
-    return(
+    render(){
+      return(
 
-      <div class="col-lg-2 border">
+        <div class="col-lg-2 border">
 
 
-        <Groups data={this.props.leftData}></Groups>
+          <Groups></Groups>
 
-        <div class="col" style={{height : '40px'}}></div>
+          <div class="col" style={{height : '40px'}}></div>
 
-        <UpNext data={this.props.arawkan}></UpNext>
-        
-        
-      </div>
+          <UpNext></UpNext>
+          
+          
+        </div>
 
     )
   }
@@ -98,3 +99,4 @@ class Left extends Component{
 
 
 export default Left ;
+
