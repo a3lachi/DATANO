@@ -80,6 +80,9 @@ class Left extends Component{
     
     render(){
       const data = this.state.collection 
+
+      const firstCollec = data[0]
+      
       let collec = [] 
       data.forEach((element) => {
         if (!collec.includes(element.collection)) {
