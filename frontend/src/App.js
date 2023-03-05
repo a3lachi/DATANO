@@ -2,6 +2,11 @@ import './App.css';
 import React, { Component } from "react";
 import axios from "axios";
 
+import Nav from './components/Nav'
+import Left from './components/Left'
+import Right from './components/Right'
+import Center from './components/Center'
+
 
 
 class App extends Component {
@@ -50,44 +55,19 @@ class App extends Component {
       
       <main class="container-fluid">
 
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a href="" class="navbar-brand" >DATANO API - Image Annotation</a>
-          </div>
-        </div>
-        </nav>
+        <Nav></Nav>
+
+        
         
         <div class="row">
-          <div class="col-lg-2 border">
-            <div class="row border">
-              Objects 
-            </div>
-            <div class="row border">
-              Up Next 
-            </div>
-            
-          </div>
-          <div class="col-lg-7 border">
-            <div class="row border">
-              Central picture 
-            </div>
-            <div class="row border">
-              {this.showData()}
-            </div>
-          </div>
-          <div class="col-lg-3 border">
-            <div class="row border">
-              Info 
-            </div>
-            <div class="row border">
-              Annotations 
-            </div>
-            
-          </div>
-        </div>
 
-        <div class="row">
+          <Left></Left>
+
+          <Center></Center>
+          
+            
+          <Right></Right>
+        
         </div>
 
 
