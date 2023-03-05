@@ -81,15 +81,17 @@ class Left extends Component{
     render(){
       const data = this.state.collection 
 
-      const firstCollec = data[0]
-      
-      let collec = [] 
-      data.forEach((element) => {
-        if (!collec.includes(element.collection)) {
-          collec.push(element.collection) ;
+      let firstCollec = data[0]
+
+      let collec = new Array(firstCollec) 
+
+      for(let i=1;i<data.length;i++){
+        if (!collec.includes(data[i].collection)) {
+          collec.push(data[i].collection) ;
         };
-      });
-      console.log('Data li wslat l left :',collec)
+      }
+      
+      console.log('Data li wslat l left :',firstCollec.collection)
       return(
 
         <div class="col-lg-2 border">
