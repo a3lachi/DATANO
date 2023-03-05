@@ -103,6 +103,8 @@ class Left extends Component{
 
       const data = this.state.collection 
 
+      const farsRow = data[0]
+
       const firstRow = data[0]
       console.log('KHSSO YKON IMG  ',firstRow)
       let restCollec = []
@@ -120,7 +122,7 @@ class Left extends Component{
       }
 
       if (this.state.view.length>1) {
-          firstRow.collection = this.state.view ;
+          farsRow.collection = this.state.view ;
           console.log('la rah dkhel')
       }
 
@@ -128,11 +130,11 @@ class Left extends Component{
 
       for(let i=0;i<data.length;i++)
       {
-        if (data[i].collection==firstRow.collection) {
+        if (data[i].collection==farsRow.collection) {
           viewCollec.push(data[i].createdAt) ;
         }
       }
-      console.log('firstrow ',firstRow)
+      console.log('firstrow ',farsRow)
 
       return(
         <main class="container-fluid">
