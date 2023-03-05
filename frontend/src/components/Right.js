@@ -10,7 +10,7 @@ class Info extends Component{
 		return(
 			<div class="col border">
 				<div class="row">
-	            	Info : 
+	            	Info 
 	        	</div>
 	            <div class="row border">
 	            	<div class="col border">
