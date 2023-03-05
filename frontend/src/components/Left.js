@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-
 import Nav from './Nav'
 import Right from './Right'
 import Center from './Center'
-
+import './Left.css'
 
 
 
@@ -51,7 +50,61 @@ class Left extends Component{
       this.chooseInstruction = this.chooseInstruction.bind(this)
     }
 
-    
+    cursor(){
+      const lol = document.getElementById('lol');
+      const image = document.getElementById('image');
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+
+      let isDragging = false;
+      let startX;
+      let startY;
+      let endX;
+      let endY;
+
+      // Add event listeners to the image element to handle the mouse events
+      image.addEventListener('mousedown', handleMouseDown);
+      image.addEventListener('mousemove', handleMouseMove);
+      image.addEventListener('mouseup', handleMouseUp);
+
+      function handleMouseDown(event) {
+        isDragging = true;
+        startX = event.offsetX;
+        startY = event.offsetY;
+      }
+
+      function handleMouseMove(event) {
+        if (!isDragging) return;
+
+        endX = event.offsetX;
+        endY = event.offsetY;
+
+        // Clear the canvas and draw the selected area
+        canvas.width = lol.offsetWidth;
+        canvas.height = lol.offsetHeight;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+        ctx.fillRect(startX, startY, endX - startX, endY - startY);
+      }
+
+      function handleMouseUp(event) {
+        isDragging = false;
+
+        // Calculate the selected area and crop the image
+        const x = Math.min(startX, endX);
+        const y = Math.min(startY, endY);
+        const width = Math.abs(startX - endX);
+        const height = Math.abs(startY - endY);
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        canvas.width = width;
+        canvas.height = height;
+        ctx.drawImage(image, x, y, width, height, 0, 0, width, height);
+
+        // Replace the image with the cropped image
+        image.src = canvas.toDataURL();
+      }
+    }
 
     selectOnlyThis(event){
       var myCheckbox = document.getElementsByName("myCheckbox");
@@ -166,9 +219,11 @@ class Left extends Component{
                   Up Next 
                 </div>
                 <div class="row border">
+                  
                   <div class="col border">
-                    {viewCollec.map((item,index) => { return <div class="row"><button name="buttonImg" id={item.id} onClick={this.chooseInstruction}><img src={item.src}>{item.createdAt}</button></div>; }) }
+                    {viewCollec.map((item,index) => { return <div id="lol" style={{position: 'relative'}} class="row"><img  id="image" src={item.src} style={{width:'100%'}} /><button name="buttonImg" id={item.id} onClick={this.chooseInstruction}>{item.taskId}</button></div>; }) }
                   </div>
+                  
                 </div>
             </div>
             
@@ -179,6 +234,15 @@ class Left extends Component{
           <div class="col-lg-7 border">
               <div class="row border">
                 Central picture {currentInstru.instru}
+              </div>
+              <div class="row border">
+              {this.cursor}
+                  <div class="cursor rounded" />
+                  <div class="cursor pointed" />
+                <div id="lol" ><img src={currentInstru.src} style={{width:'100%' }} /></div>
+              </div>
+              <div class="row border" style={{height:'30px'}}>
+                
               </div>
               <div class="row border">
                 Message
