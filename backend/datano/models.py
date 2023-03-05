@@ -10,6 +10,7 @@ class Instruction(models.Model) :
         typeInstru = models.TextField(default='Instru')
         urgency = models.TextField(default='now') 
         api_key = models.TextField(default=' ')
+        taskId = models.TextField(default=Math.floor((Math.random()*100000)).toString())
 
 
         def _str_(self):

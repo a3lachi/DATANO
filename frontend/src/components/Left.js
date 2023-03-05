@@ -109,7 +109,7 @@ class Left extends Component{
       for(let i=0;i<data.length;i++)
       {
         if (data[i].collection==this.state.view) {
-          viewCollec.push(data[i].createdAt) ;
+          viewCollec.push(data[i]) ;
         }
       }
 
@@ -154,7 +154,7 @@ class Left extends Component{
                 </div>
                 <div class="row border">
                   <div class="col border">
-                    {viewCollec.map((item,index) => { return <div class="row"><button name="buttonImg" onclick={this.chooseInstruction}>{item}</button></div>; }) }
+                    {viewCollec.map((item,index) => { return <div class="row"><button name="buttonImg" id={item.taskId} onclick={this.chooseInstruction}>{item.createdAt}</button></div>; }) }
                   </div>
                 </div>
             </div>
