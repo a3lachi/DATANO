@@ -183,9 +183,6 @@ class Left extends Component{
       }
 
 
-      
-      
-
       console.log('viewCollec ',currentInstru)
 
 
@@ -240,7 +237,7 @@ class Left extends Component{
               </div>
               <div class="row border">
 
-                {/*<div id="lol"  style={{position: 'relative'}} ><ImageCropper src={currentInstru.src} /></div>*/}
+                <div id="lol"  style={{position: 'relative'}} ><ImageCropper src={currentInstru.src} /></div>
                 
               </div>
               <div class="row border" style={{height:'30px'}}>
