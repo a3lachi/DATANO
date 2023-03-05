@@ -5,6 +5,8 @@ import React, { Component } from "react";
 class Info extends Component{
 
 	render(){
+		const datax = this.props.data ;
+		console.log("Ha lprops ",datax)
 		return(
 			<div class="col border">
 				<div class="row border">
@@ -13,7 +15,7 @@ class Info extends Component{
 	            <div class="row border">
 	            	<div class="col border">
 		            	<div class="row border">
-		            		Instruction : {this.data.instru}
+		            		Instruction : {datax.instru}
 		            	</div>
 		            	<div class="row border">
 		            		Task ID :
