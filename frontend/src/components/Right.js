@@ -13,7 +13,7 @@ class Info extends Component{
 	            <div class="row border">
 	            	<div class="col border">
 		            	<div class="row border">
-		            		Instruction :
+		            		Instruction : {this.data.instru}
 		            	</div>
 		            	<div class="row border">
 		            		Task ID :
