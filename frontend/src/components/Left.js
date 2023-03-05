@@ -52,14 +52,13 @@ class UpNext extends Component{
 
 
 class Left extends Component{
-  constructor(props){
+  constructor(props) {
     super(props);
-
+    console.log('Left constructor')
   }
 
-  componentDidMount(){
-    console.log('dkhel left');
-    console.log(this.props.arawkan);
+  async componentDidMount() {
+    console.log("Ha data li wsslat left ",this.props.leftData);
   }
 
 
@@ -67,11 +66,11 @@ class Left extends Component{
     return(
       <div class="col-lg-2 border">
 
-        <Groups arawkan={this.props}></Groups>
+        <Groups data={this.props.leftData}></Groups>
 
         <div class="col" style={{height : '40px'}}></div>
 
-        <UpNext arawkan={this.props}></UpNext>
+        <UpNext data={this.props.arawkan}></UpNext>
         
         
       </div>
