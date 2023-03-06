@@ -115,7 +115,7 @@ class Left extends Component{
 
     render(){
 
-    	var [firstCollecArray, restCollec, viewCollec, currentInstru] = this.getCollectionData(this.state)
+    	var dataCollection = this.getCollectionData(this.state)
 
       return(
 
@@ -126,7 +126,8 @@ class Left extends Component{
           
           <div class="row border">
 
-	          <div class="col-lg-2 border">
+          		<Left data={dataCollection}></Left>
+	          {/*<div class="col-lg-2 border">
 
 
 	          	<Left data="" ></Left>
@@ -162,7 +163,7 @@ class Left extends Component{
 	            </div>
 	            
 	            
-	          </div>
+	          </div>*/}
           
           
           <div class="col-lg-7 border">

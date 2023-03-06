@@ -8,24 +8,22 @@ class Left extends Component {
     constructor(props){
       super(props);
       this.state = {
-        collection: [],
-        view: '',
-        instru:''
+        firstCollecArray: props[0],
+        restCollec: props[1],
+        viewCollec:props[2],
+        currentInstru:props[3]
       }
-      this.selectOnlyThis = this.selectOnlyThis.bind(this)
-      this.chooseInstruction = this.chooseInstruction.bind(this)
+
     }
-
-
-
-
-
 
 
     render(){
 
+
+      var [firstCollecArray, restCollec, viewCollec, currentInstru] = this.
+
       return(
-        
+
               <div class="col-lg-2 border">
 
 
@@ -40,8 +38,8 @@ class Left extends Component {
 
                   <div class="row border">
                     <div class="col border">
-                        { firstCollecArray.map((item,index) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={item} onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
-                        { restCollec.map((item,index) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={item} onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
+                        { this.firstCollecArray.map((item,index) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={item} onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
+                        { this.estCollec.map((item,index) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={item} onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
                     </div>
                   </div>
                 </div>
@@ -55,7 +53,7 @@ class Left extends Component {
                     <div class="row border">
                       
                       <div class="col border">
-                        {viewCollec.map((item,index) => { return <div class="row"><img src={item.src} style={{width:'100%'}} /><button name="buttonImg" id={item.id} onClick={this.chooseInstruction}>{item.taskId}</button></div>; }) }
+                        {this.viewCollec.map((item,index) => { return <div class="row"><img src={item.src} style={{width:'100%'}} /><button name="buttonImg" id={item.id} onClick={this.chooseInstruction}>{item.taskId}</button></div>; }) }
                       </div>
                       
                     </div>
