@@ -153,12 +153,12 @@ class App extends Component{
 	qsstiKanva(event){
 		var nva = document.querySelector('canvas')
 		if(nva) {
-		var ba = nva.getContext('2d')
+			var ba = nva.getContext('2d')
 			ba.fillRect(300,100,100,100)
 
 			ba.beginPath(); 
-			ba.moveTo(10, 50); 
-			ba.lineTo(150, 100);
+			ba.moveTo(this.state.clientX ,this.state.clientY); 
+			ba.lineTo(event.clientX, event.clientY);
 			ba.stroke()
 
 			this.setState({ qanva: [event.clientX , event.clientY] })
