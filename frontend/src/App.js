@@ -78,48 +78,81 @@ class Left extends Component{
         .catch((err) => console.log(err));
     };
 
+    function getCollectionData(state) {
+	  const data = state.collection;
+	  const firstRow = data[0];
+	  const farsRow = state.view;
+	  const restCollec = [];
+	  const firstCollecArray = [];
+
+	  for (let i = 1; i < data.length; i++) {
+	    if (!restCollec.includes(data[i].collection) && data[i].collection !== firstRow.collection) {
+	      restCollec.push(data[i].collection);
+	    } else if (firstCollecArray.length < 1) {
+	      firstCollecArray.push(data[i].collection);
+	    }
+	  }
+
+	  const viewCollec = [];
+	  for (let i = 0; i < data.length; i++) {
+	    if (data[i].collection === state.view) {
+	      viewCollec.push(data[i]);
+	    }
+	  }
+
+	  let currentInstru = [];
+	  for (let i = 0; i < data.length; i++) {
+	    if (data[i].id === state.instru) {
+	      currentInstru = data[i];
+	    }
+	  }
+
+	  return [firstCollecArray, restCollec, viewCollec, currentInstru];
+	}
+
 
     render(){
+    	dataCollection = getCollectionData(state)
 
-      const data = this.state.collection 
-
-
-      const firstRow = data[0]
-      var farsRow = this.state.view
+      // const data = this.state.collection 
 
 
-      let restCollec = []
-      let firstCollecArray = []
+      // const firstRow = data[0]
+      // var farsRow = this.state.view
+
+
+      // let restCollec = []
+      // let firstCollecArray = []
      
       
 
-      for(let i=1;i<data.length;i++){
-        if (!restCollec.includes(data[i].collection) && data[i].collection!==firstRow.collection) {
-          restCollec.push(data[i].collection) ;
-        }
-        else if(firstCollecArray.length<1){
-          firstCollecArray.push(data[i].collection)
-        } 
-      }
+      // for(let i=1;i<data.length;i++){
+      //   if (!restCollec.includes(data[i].collection) && data[i].collection!==firstRow.collection) {
+      //     restCollec.push(data[i].collection) ;
+      //   }
+      //   else if(firstCollecArray.length<1){
+      //     firstCollecArray.push(data[i].collection)
+      //   } 
+      // }
 
 
-      let viewCollec = [] ;
+      // let viewCollec = [] ;
 
-      for(let i=0;i<data.length;i++)
-      {
-        if (data[i].collection==this.state.view) {
-          viewCollec.push(data[i]) ;
-        }
-      }
+      // for(let i=0;i<data.length;i++)
+      // {
+      //   if (data[i].collection==this.state.view) {
+      //     viewCollec.push(data[i]) ;
+      //   }
+      // }
 
 
-      let currentInstru = []
-      for(let i=0;i<data.length;i++)
-      {
-        if (data[i].id==this.state.instru) {
-          currentInstru = data[i] ;
-        }
-      }
+      // let currentInstru = []
+      // for(let i=0;i<data.length;i++)
+      // {
+      //   if (data[i].id==this.state.instru) {
+      //     currentInstru = data[i] ;
+      //   }
+      // }
 
 
       return(
