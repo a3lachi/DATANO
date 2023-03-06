@@ -18,6 +18,11 @@ class App extends Component{
       this.selectOnlyThis = this.selectOnlyThis.bind(this)
       this.chooseInstruction = this.chooseInstruction.bind(this)
       this.cropCenter = this.cropCenter.bind(this)
+      this.dragView = this.dragView.bind(this)
+    }
+
+    dragView(event){
+    	
     }
 
     cropCenter(event){
@@ -117,7 +122,7 @@ class App extends Component{
                       
                       <div class="col border">
                       	<div class="row" style={{height:'20px'}}></div>
-                        {viewCollec.map((item,index) => { return <div class="row"><div class="col"><img src={item.src} id={item.id} style={{width:'100%'}} onClick={this.chooseInstruction} /><div style={{height:'20px'}}></div></div></div>; }) }
+                        {viewCollec.map((item,index) => { return <div class="row"><div class="col"><img src={item.src} id={item.id} style={{width:'100%'}} onClick={this.chooseInstruction} onDrag={this.dragView} /><div style={{height:'20px'}}></div></div></div>; }) }
                       </div>
                       
                     </div>
