@@ -9,36 +9,6 @@ import './components/Left.css'
 
 
 
-class Groups extends Component{
-
-  constructor(props){
-    super(props);
-
-  }
-
-  classGroups(props){
-    console.log(props.createdAt)
-    return(null)
-  }
-
-  render(){
-    return(
-      <div class="col border">
-        <div class="row border">
-            Objects :
-        </div>
-        {this.classGroups(this.props)}
-        <div class="row border">
-            List of Objects
-        </div>
-      </div>
-      )
-  }
-}
-
-
-
-
 
 class App extends Component{
     constructor(props){
@@ -152,12 +122,13 @@ class App extends Component{
                 
               </div>
 
-
-
-
-
       )
 	}
+
+
+
+
+
 
 
     render(){
@@ -176,7 +147,7 @@ class App extends Component{
           <div class="row border">
 
 
-          		{this.Left(dataCollection)}
+          		{this.Left([firstCollecArray, restCollec, viewCollec, currentInstru] )}
 	        
           
           
@@ -197,7 +168,7 @@ class App extends Component{
 	              </div>
 	          </div>
 
-	          
+
 	            
 	          <Right data={currentInstru}></Right>
 
