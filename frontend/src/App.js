@@ -56,6 +56,7 @@ class App extends Component{
     	flushSync(() => {
 	      this.setState({instru : event.target.id})
 	    })
+	    this.friKanva()
       
     }
 
