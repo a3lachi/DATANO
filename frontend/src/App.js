@@ -104,8 +104,6 @@ class App extends Component{
 
 	  let currentInstru = [];
 	  for (let i = 0; i < data.length; i++) {
-	  	console.log('Data id ',this.state.instru)
-	  	console.log('Currenti id ',data[i].id)
 	    if (Object.is(data[i].id , Number(this.state.instru))) {
 	      currentInstru = data[i];
 	    }
@@ -119,7 +117,7 @@ class App extends Component{
     render(){
 
     	var [firstCollecArray, restCollec, viewCollec, currentInstru] = this.getCollectionData(this.state)
-
+    	var dataCollection = this.getCollectionData(this.state)
 
       return(
 
@@ -129,7 +127,6 @@ class App extends Component{
           <Nav></Nav>
           
           <div class="row border">
-
 
 
 	          <div class="col-lg-2 border">
