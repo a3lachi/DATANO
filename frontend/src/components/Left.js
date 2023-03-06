@@ -8,19 +8,16 @@ class Left extends Component {
     constructor(props){
       super(props);
       this.state = {
-        firstCollecArray: props[0],
-        restCollec: props[1],
-        viewCollec:props[2],
-        currentInstru:props[3]
+        firstCollecArray: props.data[0],
+        restCollec: props.data[1],
+        viewCollec:props.data[2],
+        currentInstru:props.data[3]
       }
 
     }
 
 
     render(){
-
-
-      var [firstCollecArray, restCollec, viewCollec, currentInstru] = this.
 
       return(
 

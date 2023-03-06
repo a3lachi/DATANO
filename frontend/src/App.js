@@ -115,6 +115,7 @@ class Left extends Component{
 
     render(){
 
+    	var [firstCollecArray, restCollec, viewCollec, currentInstru]= this.getCollectionData(this.state)
     	var dataCollection = this.getCollectionData(this.state)
 
       return(
