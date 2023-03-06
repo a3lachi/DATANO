@@ -3,22 +3,19 @@ import React, { Component } from "react";
 
 
 
-function Left(propsa) {
+function Left(props) {
 
-    const data = propsa.data 
+    const data = props.data 
     var firstCollecArray: data[0]
     var restCollec: data[1]
     var viewCollec: data[2]
     var currentInstru: data[3]
 
-    console.log("Data passed left  ", propsa)
+    console.log("Data passed left  ", props)
 
     return(
 
             <div class="col-lg-2 border">
-
-
-              <Left data="" ></Left>
 
 
               <div class="col border">
