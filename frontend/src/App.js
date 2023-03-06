@@ -178,7 +178,7 @@ class App extends Component{
 
 	}
 	qsstiKanvaMove(event){
-		console.log('TMOVI -- ' , event.clientX , event.clientY)
+		// console.log('TMOVI -- ' , event.clientX , event.clientY)
 
 	}
 
