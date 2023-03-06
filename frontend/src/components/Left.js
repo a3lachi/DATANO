@@ -3,15 +3,15 @@ import React, { Component } from "react";
 
 
 
-function Left(props) {
+function Left(propsa) {
 
-    const data = props.data 
+    const data = propsa.data 
     var firstCollecArray: data[0]
     var restCollec: data[1]
     var viewCollec: data[2]
     var currentInstru: data[3]
 
-    console.log("Data passed left  ", props)
+    console.log("Data passed left  ", propsa)
 
     return(
 
