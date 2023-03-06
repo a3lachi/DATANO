@@ -16,8 +16,17 @@ class Left extends Component {
 
     }
 
+    componentDidMount() {
+      this.refreshList();
+    }
+
+    refreshList(){
+      this.setState({ firstCollecArray: props.data[0] })
+    }
+
 
     render(){
+      console.log("Firstcollec  ",this.state.firstCollecArray)
 
       return(
 

@@ -3,6 +3,7 @@ import axios from "axios";
 import Nav from './components/Nav'
 import Right from './components/Right'
 import Center from './components/Center'
+import Left from './components/Left'
 import ImageCropper from './components/ImageCropper'
 import './components/Left.css'
 
