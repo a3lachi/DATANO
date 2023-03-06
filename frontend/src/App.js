@@ -200,14 +200,10 @@ class App extends Component{
 
 	friKanva(){
 		var nva = document.querySelector('canvas')
-		var img = document.querySelector('#lol')
+		var img = document.querySelector('#central')
 
 		if(nva && img) {
-			nva.imageSmoothingEnabled       = false;
-			nva.webkitImageSmoothingEnabled = false;
-			nva.mozImageSmoothingEnabled    = false;
-			nva.msImageSmoothingEnabled     = false;
-			nva.oImageSmoothingEnabled      = false;
+
 			nva.width  = nva.offsetWidth;
 			nva.height  = img.offsetHeight;
 			console.log('FriKanva '	,nva.height)
