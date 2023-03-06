@@ -23,7 +23,7 @@ class App extends Component{
       this.chooseInstruction = this.chooseInstruction.bind(this)
       this.cropCenter = this.cropCenter.bind(this)
       this.dragView = this.dragView.bind(this)
-      this.qsstiKanva = this.qsstiKanva.bind(this)
+      this.qsstiKanvaDown = this.qsstiKanvaDown.bind(this)
     }
 
     dragView(event){
@@ -150,7 +150,7 @@ class App extends Component{
       )
 	}
 
-	qsstiKanva(event){
+	qsstiKanvaDown(event){
 		var nva = document.querySelector('canvas')
 		if(nva) {
 			
@@ -176,7 +176,7 @@ class App extends Component{
 					<div id="central" className="row border">
 						
 		              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
-		                <canvas style={{width: '100%' , height: '100%'}} onClick={this.qsstiKanva}></canvas>
+		                <canvas style={{width: '100%' , height: '100%'}} onMouseDown={this.qsstiKanvaDown}> </canvas>
 		            </div>
 		        
 			)
