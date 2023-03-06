@@ -128,17 +128,17 @@ class App extends Component{
 
 
 
-	Center(Instru) {
+	Center(currInstru) {
 
 		return (
 
 			<div class="col-lg-7 border">
 	              <div class="row border">
-	                Central picture { Instru.instru}
+	                Central picture { currInstru.instru}
 	              </div>
 	              <div class="row border">
 
-	              <div class="col border" id="lol"  style={{position: 'relative'}} ><img id="mainimage" src={ Instru.src} /></div>
+	              <div class="col border" id="lol"  style={{position: 'relative'}} ><img id="mainimage" src={ currInstru.src} /></div>
 	                
 	              </div>
 	              <div class="row border" style={{height:'30px'}}>
@@ -172,11 +172,6 @@ class App extends Component{
 
           		{this.Center(currentInstru)}
 	        
-          
-          
-	          
-
-
 	            
 	          <Right data={currentInstru}></Right>
 
