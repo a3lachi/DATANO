@@ -79,7 +79,7 @@ class Left extends Component{
     };
 
     getCollectionData(state) {
-	  const data = state.collection;
+	  const data = this.state.collection;
 	  const firstRow = data[0];
 	  const farsRow = state.view;
 	  const restCollec = [];
@@ -102,6 +102,7 @@ class Left extends Component{
 
 	  let currentInstru = [];
 	  for (let i = 0; i < data.length; i++) {
+	  	console.log('Data id ',data[i])
 	    if (data[i].id === this.state.instru) {
 	      currentInstru = data[i];
 	    }
