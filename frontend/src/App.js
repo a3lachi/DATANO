@@ -143,20 +143,28 @@ class App extends Component{
 		return (
 
 			<div class="col-lg-7 border">
+
 	              <div class="row border">
 	                Central picture { currInstru.instru}
 	              </div>
+
+
 	              <div class="row border">
 
-	              <div class="col border" id="lol"  style={{position: 'relative'}} ><img id="mainimage" src={currInstru.src} onClick={this.cropCenter}/></div>
+	              	<div class="col border" id="lol"  style={{position: 'relative'}} ><img id="mainimage" src={currInstru.src} onClick={this.cropCenter}/></div>
 	                
 	              </div>
-	              <div class="row border" style={{height:'30px'}}>
-	                
-	              </div>
+
+
+	              <div class="row border" style={{height:'30px'}}></div>
+
+
 	              <div class="row border">
 	                Message
 	              </div>
+
+
+
 	         </div>
 		)
 	}
