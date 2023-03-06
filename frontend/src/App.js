@@ -153,13 +153,13 @@ class App extends Component{
 		var url = '{{width: 200}}'
 		if(currInstru.src){
 			return(
-				<canvas id="kanva" style={{background: 'url('+ currInstru.src.toString() + ')' , backgroundSize:'100% 100%'}} >
+				
 					<div className="row border">
-
-		              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
+						<canvas></canvas>
+		              	<div id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
 		                
 		            </div>
-		        </canvas>
+		        
 			)
 		}
 		else {
@@ -178,6 +178,7 @@ class App extends Component{
 			var lol = document.querySelector('#mainimage')
 			if (lol) {
 				nva.width = lol.width
+				nva.height = lol.height
 				console.log(nva.width)
 			}
 		}
@@ -207,7 +208,7 @@ class App extends Component{
 	              </div>
 
 
-	              {/*{this.friKanva()}*/}
+	              {this.friKanva()}
 	         </div>
 
 		)
