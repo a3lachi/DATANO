@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import './components/Left.css'
+import Styles from './components/Styles'
 import './App.css'
 import { canvas } from "canvas";
 
@@ -152,7 +153,7 @@ class App extends Component{
 		var url = '{{width: 200}}'
 		if(currInstru.src){
 			return(
-				<canvas id="kanva" style={{background: 'url('+ currInstru.src.toString() + ')', background-size: '100% 100%' }} >
+				<canvas id="kanva" style={{background: 'url('+ currInstru.src.toString() + ')'}} >
 					<div className="row border">
 
 		              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
