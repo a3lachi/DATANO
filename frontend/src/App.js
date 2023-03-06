@@ -157,7 +157,10 @@ class App extends Component{
 
 	friKanva(){
 		var nva = document.querySelector('canvas')
-		nva.width = 200 ; 
+		if(nva) {
+			nva.width = 200 ;
+			console.log(nva)
+		}
 	}
 
 
@@ -174,7 +177,7 @@ class App extends Component{
 
 	              <div className="row border" id='mal3oba' style={{height: '50px'}} >
 	              	{this.Kanva()}
-	              	{this.friKanava}
+	              	{this.friKanva()}
 	              </div>
 	              
 
