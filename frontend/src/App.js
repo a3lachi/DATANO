@@ -159,7 +159,7 @@ class App extends Component{
 		var nva = document.querySelector('canvas')
 		if(nva) {
 			nva.width = 400 ;
-			var lol = document.querySelector('#lol')
+			var lol = document.querySelector('#mainimage')
 			if (lol) {
 				nva.width = lol.width
 				console.log(nva)
