@@ -143,9 +143,8 @@ class App extends Component{
 		var canvas = new fabric.Canvas('kan');
 		fabric.Image.fromURL('https://www.travelandleisure.com/thmb/xhs5KqfgyqZwdEAqaWu_d7R2gR4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/blue0517-4dfc85cb0200460ab717b101ac07888f.jpg', function(img) {
 		  img.scale(0.5).set({
-		    left: 150,
-		    top: 150,
-		    angle: -15
+		    left: 0,
+		    top:0
 		  });
 		  canvas.add(img).setActiveObject(img);
 		});
@@ -154,8 +153,8 @@ class App extends Component{
 
 		canvas.on({
 			  'touch:drag': function() {
-			    var text = document.createTextNode(' Dragging ');
-			    info.insertBefore(text, info.firstChild);
+			    console.log('BRKTI F TSWIRA')
+    			console.log('X ',event.clientY,' -- Y ',event.clientY)
 			  }
 		})
 	}
