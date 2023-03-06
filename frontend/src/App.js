@@ -181,7 +181,7 @@ class App extends Component{
 
 	              <div className="row border" id='mal3oba' style={{height: '50px'}} >
 	              	{this.Kanva()}
-	              	{this.friKanva()}
+	              	
 	              </div>
 	              
 
@@ -201,8 +201,9 @@ class App extends Component{
 	              </div>
 
 
-
+	              {this.friKanva()}
 	         </div>
+	         
 		)
 	}
 
