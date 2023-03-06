@@ -192,7 +192,8 @@ class App extends Component{
 			<div className="col-lg-7 border">
 
 	              <div className="row border">
-	                Central picture { currInstru.instru}
+	                
+	              <div className="col border" style={{height:'45px'}}> Central picture { currInstru.instru} </div>
 	              </div>
 
 
