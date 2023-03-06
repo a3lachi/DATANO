@@ -156,6 +156,8 @@ class App extends Component{
 
 
 	friKanva(){
+
+		var test = new Image()
 		var nva = document.querySelector('canvas')
 		if(nva) {
 			nva.width = 400 ;
@@ -186,11 +188,7 @@ class App extends Component{
 	              
 
 
-	              <div className="row border">
-
-	              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
-	                
-	              </div>
+	              
 
 
 	              <div className="row border" style={{height:'30px'}}></div>
