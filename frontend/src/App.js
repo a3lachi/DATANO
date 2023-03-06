@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import ImageCropper from './components/ImageCropper'
 import './components/Left.css'
 import './App.css'
 import { canvas } from "canvas";
@@ -64,7 +63,6 @@ class App extends Component{
     getCollectionData(state) {
 	  const data = this.state.collection;
 	  const firstRow = data[0];
-	  const farsRow = state.view;
 	  const restCollec = [];
 	  const firstCollecArray = [];
 
@@ -98,7 +96,7 @@ class App extends Component{
 				<nav className="navbar navbar-inverse navbar-fixed-top">
 			        <div className="container-fluid">
 			          <div className="navbar-header">
-			            <a  className="navbar-brand" >DATANO API - Image Annotation</a>
+			            <a  href="navDatano" className="navbar-brand" >DATANO API - Image Annotation</a>
 			          </div>
 			        </div>
 		        </nav>
@@ -107,7 +105,7 @@ class App extends Component{
 	  
 	Left(data)
 	{
-		var [firstCollecArray, restCollec, viewCollec , dumbVar ] = data ;
+		var [firstCollecArray, restCollec, viewCollec  ] =[ data[0] , data[1] , data[2] ] ;
 		return(
 
               <div className="col-lg-2 border">
