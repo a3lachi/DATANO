@@ -78,7 +78,7 @@ class Left extends Component{
         .catch((err) => console.log(err));
     };
 
-    function getCollectionData(state) {
+    getCollectionData(state) {
 	  const data = state.collection;
 	  const firstRow = data[0];
 	  const farsRow = state.view;
@@ -112,8 +112,13 @@ class Left extends Component{
 
 
     render(){
-    	dataCollection = getCollectionData(state)
+    	
+    	let dataCollection = this.getCollectionData(this.state)
 
+    	let firstCollecArray = dataCollection[0]
+    	let restCollec = dataCollection[1]
+    	let viewCollec = dataCollection[2]
+    	let currentInstru = dataCollection[3]
       // const data = this.state.collection 
 
 
