@@ -110,8 +110,8 @@ class App extends Component{
 
                   <div class="row border">
                     <div class="col border">
-                        { firstCollecArray.map((item,index) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={item} onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
-                        { restCollec.map((item,index) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={item} onClick={this.selectOnlyThis}  /><label>{item}</label></div>; }) }
+                        { firstCollecArray.map((item,index) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
+                        { restCollec.map((item,index) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis}  /><label>{item}</label></div>; }) }
                     </div>
                   </div>
                 </div>
@@ -126,7 +126,7 @@ class App extends Component{
                       
                       <div class="col border">
                       	<div class="row" style={{height:'20px'}}></div>
-                        {viewCollec.map((item,index) => { return <div class="row"><div class="col"><img src={item.src} id={item.id} style={{width:'100%'}} onClick={this.chooseInstruction} onDrag={this.dragView} /><div style={{height:'20px'}}></div></div></div>; }) }
+                        {viewCollec.map((item,index) => { return <div class="row"><div class="col"><img src={item.src.toString()} id={item.id.toString()} style={{width:'100%'}} onClick={this.chooseInstruction} onDrag={this.dragView} /><div style={{height:'20px'}}></div></div></div>; }) }
                       </div>
                       
                     </div>
