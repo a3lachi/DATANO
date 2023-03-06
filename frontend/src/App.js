@@ -12,7 +12,7 @@ import { canvas } from "canvas";
 
 class App extends Component{
 
-	instru = ''
+	instruId = ''
 
     constructor(props){
       super(props);
@@ -53,7 +53,7 @@ class App extends Component{
     }
 
     chooseInstruction(event){
-    	this.instru = event.target.id
+    	this.instruId = event.target.id
     	this.render()
       // this.setState({instru : event.target.id})
     }
@@ -95,7 +95,7 @@ class App extends Component{
 
 	  let currentInstru = [];
 	  for (let i = 0; i < data.length; i++) {
-	    if (Object.is(data[i].id , Number(this.instru))) {
+	    if (Object.is(data[i].id , Number(this.instruId))) {
 	      currentInstru = data[i];
 	    }
 	  }
@@ -306,7 +306,7 @@ class App extends Component{
     render(){
 
     	var [firstCollecArray, restCollec, viewCollec, currentInstru] = this.getCollectionData(this.state)
-    	console.log('Cuurent instru ',currentInstru)
+    	console.log('Cuurent instru ',this.instru)
 
       return(
 
