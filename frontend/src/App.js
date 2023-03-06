@@ -102,9 +102,11 @@ class Left extends Component{
 
 	  let currentInstru = [];
 	  for (let i = 0; i < data.length; i++) {
-	  	console.log('Data id ',data[i])
+	  	console.log('Data id ',this.state.instru)
+	  	console.log('Currenti id ',data[i].id)
 	    if (data[i].id === this.state.instru) {
 	      currentInstru = data[i];
+
 	    }
 	  }
 
