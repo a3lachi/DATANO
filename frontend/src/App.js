@@ -115,53 +115,7 @@ class Left extends Component{
 
     render(){
 
-    	var dataCollection = this.getCollectionData(this.state)
-
-    	let firstCollecArray = dataCollection[0]
-    	let restCollec = dataCollection[1]
-    	let viewCollec = dataCollection[2]
-    	let currentInstru = dataCollection[3]
-    	console.log("data dyalna ",dataCollection)
-      // const data = this.state.collection 
-
-
-      // const firstRow = data[0]
-      // var farsRow = this.state.view
-
-
-      // let restCollec = []
-      // let firstCollecArray = []
-     
-      
-
-      // for(let i=1;i<data.length;i++){
-      //   if (!restCollec.includes(data[i].collection) && data[i].collection!==firstRow.collection) {
-      //     restCollec.push(data[i].collection) ;
-      //   }
-      //   else if(firstCollecArray.length<1){
-      //     firstCollecArray.push(data[i].collection)
-      //   } 
-      // }
-
-
-      // let viewCollec = [] ;
-
-      // for(let i=0;i<data.length;i++)
-      // {
-      //   if (data[i].collection==this.state.view) {
-      //     viewCollec.push(data[i]) ;
-      //   }
-      // }
-
-
-      // let currentInstru = []
-      // for(let i=0;i<data.length;i++)
-      // {
-      //   if (data[i].id==this.state.instru) {
-      //     currentInstru = data[i] ;
-      //   }
-      // }
-
+    	var [firstCollecArray, restCollec, viewCollec, currentInstru] = this.getCollectionData(this.state)
 
       return(
 
