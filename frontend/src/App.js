@@ -17,7 +17,7 @@ class App extends Component{
         collection: [],
         view: '',
         instru:'',
-        qanva:[]
+        showCanva:false 
       }
       this.selectOnlyThis = this.selectOnlyThis.bind(this)
       this.chooseInstruction = this.chooseInstruction.bind(this)
