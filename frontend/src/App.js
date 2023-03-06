@@ -158,8 +158,12 @@ class App extends Component{
 	friKanva(){
 		var nva = document.querySelector('canvas')
 		if(nva) {
-			nva.width = 200 ;
-			console.log(nva)
+			nva.width = 400 ;
+			var lol = document.querySelector('#lol')
+			if (lol) {
+				nva.width = lol.width
+				console.log(nva)
+			}
 		}
 	}
 
