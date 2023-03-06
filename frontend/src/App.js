@@ -107,7 +107,7 @@ class App extends Component{
 	  
 	Left(data)
 	{
-		var [firstCollecArray, restCollec, viewCollec] = data[[,3]] ;
+		var [firstCollecArray, restCollec, viewCollec , dumbVar ] = data ;
 		return(
 
               <div className="col-lg-2 border">
