@@ -128,13 +128,33 @@ class App extends Component{
 
 
 
+	Center(Instru) {
 
+		return (
+
+			<div class="col-lg-7 border">
+	              <div class="row border">
+	                Central picture { Instru.instru}
+	              </div>
+	              <div class="row border">
+
+	              <div class="col border" id="lol"  style={{position: 'relative'}} ><img id="mainimage" src={ Instru.src} /></div>
+	                
+	              </div>
+	              <div class="row border" style={{height:'30px'}}>
+	                
+	              </div>
+	              <div class="row border">
+	                Message
+	              </div>
+	         </div>
+		)
+	}
 
 
     render(){
 
     	var [firstCollecArray, restCollec, viewCollec, currentInstru] = this.getCollectionData(this.state)
-    	var dataCollection = [firstCollecArray, restCollec, viewCollec, currentInstru]
 
       return(
 
@@ -148,25 +168,13 @@ class App extends Component{
 
 
           		{this.Left([firstCollecArray, restCollec, viewCollec, currentInstru] )}
+
+
+          		{this.Center(currentInstru)}
 	        
           
           
-	          <div class="col-lg-7 border">
-	              <div class="row border">
-	                Central picture {currentInstru.instru}
-	              </div>
-	              <div class="row border">
-
-	              <div class="col border" id="lol"  style={{position: 'relative'}} ><img id="mainimage" src={currentInstru.src} /></div>
-	                
-	              </div>
-	              <div class="row border" style={{height:'30px'}}>
-	                
-	              </div>
-	              <div class="row border">
-	                Message
-	              </div>
-	          </div>
+	          
 
 
 	            
