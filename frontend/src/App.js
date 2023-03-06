@@ -22,7 +22,7 @@ class App extends Component{
     }
 
     dragView(event){
-    	
+    	console.log('RAK DRAGUI')
     }
 
     cropCenter(event){
@@ -147,7 +147,7 @@ class App extends Component{
 	              </div>
 	              <div class="row border">
 
-	              <div class="col border" id="lol"  style={{position: 'relative'}} ><img id="mainimage" src={currInstru.src} onClick={this.cropCenter}/></div>
+	              <div class="col border" id="lol"  style={{position: 'relative'}} ><img id="mainimage" src={currInstru.src} style={{pointer-events: 'none'}} onClick={this.cropCenter}/></div>
 	                
 	              </div>
 	              <div class="row border" style={{height:'30px'}}>
