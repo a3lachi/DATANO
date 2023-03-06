@@ -115,7 +115,7 @@ class App extends Component{
                     <div class="row border">
                       
                       <div class="col border">
-                        {viewCollec.map((item,index) => { return <div class="row"><img src={item.src} id={item} style={{width:'100%'}} onClick={this.chooseInstruction} /></div>; }) }
+                        {viewCollec.map((item,index) => { return <div class="row"><img src={item.src} id={item.id} style={{width:'100%'}} onClick={this.chooseInstruction} /><div style={{height:'30px'}}></div></div>; }) }
                       </div>
                       
                     </div>
