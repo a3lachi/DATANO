@@ -7,8 +7,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import $ from 'jquery'
 
-import App from './App'
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

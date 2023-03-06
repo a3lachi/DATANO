@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Nav from './Nav'
-import Right from './Right'
-import Center from './Center'
-import ImageCropper from './ImageCropper'
-import './Left.css'
+import Nav from './components/Nav'
+import Right from './components/Right'
+import Center from './components/Center'
+import ImageCropper from './components/ImageCropper'
+import './components/Left.css'
 
 
 
