@@ -154,7 +154,6 @@ class App extends Component{
 		var nva = document.querySelector('canvas')
 		if(nva) {
 			console.log('Qssti kanva ', event.clientX, event.clientY)
-			console.log('STATE KANVA XY ',this.state.qanva)
 			var ba = nva.getContext('2d')
 			ba.fillRect(300,100,100,100)
 
@@ -193,7 +192,7 @@ class App extends Component{
 		if(nva) {
 			nva.width  = nva.offsetWidth;
 			nva.height  = nva.offsetHeight;
-			console.log(nva.width)
+			console.log('FriKanva '	,nva.width)
 		}
 	}
 
