@@ -4,7 +4,6 @@ import Nav from './components/Nav'
 import ImageCropper from './components/ImageCropper'
 import './components/Left.css'
 import './App.css'
-import { fabric } from "fabric";
 import { canvas } from "canvas";
 
 
@@ -139,25 +138,6 @@ class App extends Component{
       )
 	}
 
-	Kanva() {
-		// var canvas = new Canvas('kan');
-		// fabric.Image.fromURL('https://www.travelandleisure.com/thmb/xhs5KqfgyqZwdEAqaWu_d7R2gR4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/blue0517-4dfc85cb0200460ab717b101ac07888f.jpg', function(img) {
-		//   img.scale(0.5).set({
-		//     left: 0,
-		//     top:0
-		//   });
-		//   canvas.add(img).setActiveObject(img);
-		// });
-
-		var info = document.getElementById('kan');
-
-		info.on({
-			  'touch:drag': function() {
-			    console.log('BRKTI F TSWIRA') ;
-			  }
-		})
-	}
-
 
 
 	Center(currInstru) {
@@ -171,8 +151,8 @@ class App extends Component{
 	              </div>
 
 
-	              <div class="row border" id='mal3oba' style={{height: '200px'}} >
-	                <canvas id="kan">Ml3oba hna {this.Kanva()}</canvas>
+	              <div class="row border" id='mal3oba' style={{height: '50px'}} >
+	                Ml3oba hna
 	              </div>
 
 
