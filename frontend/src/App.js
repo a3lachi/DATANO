@@ -154,10 +154,10 @@ class App extends Component{
 		if(currInstru.src){
 			return(
 				
-					<div className="row border">
-						<canvas>
-		              		<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
-		                </canvas>
+					<div id="central" className="row border">
+						<canvas></canvas>
+		              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
+		                
 		            </div>
 		        
 			)
