@@ -151,7 +151,7 @@ class App extends Component{
 
 	              <div class="row border">
 
-	              	<div class="col border" id="lol"  style={{position: 'relative'}} ><img id="mainimage" src={currInstru.src} onClick={this.cropCenter}/></div>
+	              	<div class="col border" id="lol"  style={{position: 'relative'}} onClick={this.cropCenter} ><img id="mainimage" src={currInstru.src} /></div>
 	                
 	              </div>
 
