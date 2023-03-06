@@ -113,8 +113,7 @@ class App extends Component{
 
 	  return [firstCollecArray, restCollec, viewCollec, currentInstru];
 	}
-	Left() {
-		var dataCollection = this.getCollectionData(this.state)
+	Left(dataCollection) {
 	    const data = dataCollection
 	    var firstCollecArray: data[0]
 	    var restCollec: data[1]
@@ -127,8 +126,6 @@ class App extends Component{
 
 	            <div class="col-lg-2 border">
 
-
-	              {this.Left}
 
 	              <div class="col border">
 	                <div class="row border">
@@ -174,7 +171,8 @@ class App extends Component{
     render(){
 
     	var [firstCollecArray, restCollec, viewCollec, currentInstru] = this.getCollectionData(this.state)
-    	var dataCollection = this.getCollectionData(this.state)
+
+    	
       return(
 
         <main class="container-fluid">
@@ -184,10 +182,9 @@ class App extends Component{
           
           <div class="row border">
 
-          	<Left ></Left>
 
 
-	          {/*<div class="col-lg-2 border">
+	          <div class="col-lg-2 border">
 
 
 	            <div class="col border">
@@ -220,7 +217,7 @@ class App extends Component{
 	            </div>
 	            
 	            
-	          </div>*/}
+	          </div>
           
           
           <div class="col-lg-7 border">
