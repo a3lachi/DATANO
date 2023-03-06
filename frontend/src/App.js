@@ -149,8 +149,12 @@ class App extends Component{
 
 
 	Kanva(currInstru){
+		var url = '{{width: 200}}'
+		if(currInstru){
+			url = "{{background: url('" + currInstru.src.toString() + "')}} "
+		}
 		return(
-			<canvas style={"background: url('" + currInstru.src + "')"}>
+			<canvas style={url}>
 				<div className="row border">
 
 	              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
