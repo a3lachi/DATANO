@@ -107,7 +107,7 @@ class App extends Component{
 	  
 	Left(data)
 	{
-		var [firstCollecArray, restCollec, viewCollec, currentInstru] = data ;
+		var [firstCollecArray, restCollec, viewCollec, currentInstru] = data.slice(-1) ;
 		return(
 
               <div className="col-lg-2 border">
@@ -137,7 +137,7 @@ class App extends Component{
                       
                       <div className="col border">
                       	<div className="row" style={{height:'20px'}}></div>
-                        {viewCollec.map((item,index) => { return <div className="row"><div className="col"><img src={item.src.toString()} id={item.id.toString()} style={{width:'100%'}} onClick={this.chooseInstruction} onDrag={this.dragView} /><div style={{height:'20px'}}></div></div></div>; }) }
+                        {viewCollec.map((item,index) => { return <div className="row"><div className="col"><img alt={item.taskId.toString()} src={item.src.toString()} id={item.id.toString()} style={{width:'100%'}} onClick={this.chooseInstruction} onDrag={this.dragView} /><div style={{height:'20px'}}></div></div></div>; }) }
                       </div>
                       
                     </div>
@@ -183,7 +183,7 @@ class App extends Component{
 
 	              <div className="row border">
 
-	              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" src={currInstru.src} onDrag={this.dragView}/></div>
+	              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
 	                
 	              </div>
 
