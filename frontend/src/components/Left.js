@@ -11,7 +11,7 @@ function Left(props) {
     var viewCollec: data[2]
     var currentInstru: data[3]
 
-    console.log("Data passed left  ", data)
+    console.log("Data passed left  ", props)
 
     return(
 
@@ -62,7 +62,7 @@ function Left(props) {
 }
 
 
-
+export default Left ;
 
 
 
