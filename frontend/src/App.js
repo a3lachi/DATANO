@@ -177,7 +177,7 @@ class App extends Component{
 			console.log(nva.width)
 
 			var bda = nva.getContext('2d')
-			bda.fillRect(100,100,100,100)
+			bda.fillRect('100px',100,100,100)
 		}
 	}
 
