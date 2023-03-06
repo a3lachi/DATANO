@@ -102,7 +102,7 @@ class Left extends Component{
 
 	  let currentInstru = [];
 	  for (let i = 0; i < data.length; i++) {
-	    if (data[i].id === state.instru) {
+	    if (data[i].id === this.state.instru) {
 	      currentInstru = data[i];
 	    }
 	  }
@@ -112,13 +112,14 @@ class Left extends Component{
 
 
     render(){
-    	
-    	let dataCollection = this.getCollectionData(this.state)
+
+    	var dataCollection = this.getCollectionData(this.state)
 
     	let firstCollecArray = dataCollection[0]
     	let restCollec = dataCollection[1]
     	let viewCollec = dataCollection[2]
     	let currentInstru = dataCollection[3]
+    	console.log("data dyalna ",dataCollection)
       // const data = this.state.collection 
 
 
