@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Nav from './components/Nav'
 import ImageCropper from './components/ImageCropper'
 import './components/Left.css'
 import './App.css'
@@ -92,6 +91,18 @@ class App extends Component{
 	  }
 
 	  return [firstCollecArray, restCollec, viewCollec, currentInstru];
+	}
+
+	NavBar() {
+		return(
+				<nav className="navbar navbar-inverse navbar-fixed-top">
+			        <div className="container-fluid">
+			          <div className="navbar-header">
+			            <a  className="navbar-brand" >DATANO API - Image Annotation</a>
+			          </div>
+			        </div>
+		        </nav>
+		)
 	}
 	  
 	Left(data)
@@ -255,7 +266,7 @@ class App extends Component{
         <main className="container-fluid">
 
 
-          <Nav></Nav>
+          {this.NavBar()}
 
           
           <div className="row border">
