@@ -128,8 +128,8 @@ class App extends Component{
           
           <div class="row border">
 
-          	  <Left data={dataCollection}></Left>
-	          {/*<div class="col-lg-2 border">
+          	  {/*<Left data={dataCollection}></Left>*/}
+	          <div class="col-lg-2 border">
 
 
 	            <div class="col border">
@@ -162,7 +162,7 @@ class App extends Component{
 	            </div>
 	            
 	            
-	          </div>*/}
+	          </div>
           
           
           <div class="col-lg-7 border">
