@@ -4,9 +4,7 @@ import './components/Left.css'
 import Styles from './components/Styles'
 import './App.css'
 import { canvas } from "canvas";
-
-
-
+import { flushSync } from 'react-dom';
 
 
 
@@ -189,8 +187,6 @@ class App extends Component{
 	}
 
 	Kanva(currInstru){
-		console.log('Currrrr ',currInstru)
-
 		return(
 			
 				<div id="central" className="row border">
