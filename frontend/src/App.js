@@ -159,11 +159,11 @@ class App extends Component{
 			ba.fillRect(300,100,100,100)
 
 			ba.beginPath(); 
-			ba.moveTo(this.state.qanva[0] ,this.state.qanva[1]); 
-			ba.lineTo(event.clientX, event.clientY);
+			ba.moveTo(this.state.qanva[0] , this.state.qanva[1]); 
+			ba.lineTo(Number(event.clientX), Number(event.clientY));
 			ba.stroke()
 
-			//this.setState({ qanva: [event.clientX , event.clientY] })
+			this.setState({ qanva: [event.clientX , event.clientY] })
 		}
 
 	}
