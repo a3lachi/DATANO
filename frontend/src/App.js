@@ -140,7 +140,7 @@ class App extends Component{
 	}
 
 	Kanva() {
-		var canvas = new fabric.Canvas('c');
+		var canvas = new fabric.Canvas('kan');
 		fabric.Image.fromURL('https://www.travelandleisure.com/thmb/xhs5KqfgyqZwdEAqaWu_d7R2gR4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/blue0517-4dfc85cb0200460ab717b101ac07888f.jpg', function(img) {
 		  img.scale(0.5).set({
 		    left: 150,
@@ -174,7 +174,7 @@ class App extends Component{
 
 
 	              <div class="row border" id='mal3oba' style={{height: '200px'}} >
-	                Ml3oba hna {this.Kanva()}
+	                <canvas id="kan">Ml3oba hna {this.Kanva()}</canvas>
 	              </div>
 
 
