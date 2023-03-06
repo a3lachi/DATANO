@@ -147,8 +147,8 @@ class App extends Component{
 
 
 	friKanva(){
-		nva = document.querySelector('canvas')
-		
+		var nva = document.querySelector('canvas')
+		nva.width = '200px' ; 
 	}
 
 
@@ -165,6 +165,7 @@ class App extends Component{
 
 	              <div class="row border" id='mal3oba' style={{height: '50px'}} >
 	              	{this.Kanva()}
+	              	{/*{this.friKanava()}*/}
 	              </div>
 	              
 
