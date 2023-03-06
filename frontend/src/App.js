@@ -189,7 +189,7 @@ class App extends Component{
 				<div id="central" className="row border">
 					
 	              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
-	                <canvas style={{width: '100%' , height: '100%'}} onMouseDown={this.qsstiKanvaDown} onMouseUp={this.qsstiKanvaUp} onMouseMove={this.qsstiKanvaMove}> </canvas>
+	                <canvas style={{width: '100%' , height: '100%'}}  onMouseDown={this.qsstiKanvaDown} onMouseUp={this.qsstiKanvaUp} onMouseMove={this.qsstiKanvaMove}> </canvas>
 	            </div>
 	        
 		)
@@ -200,7 +200,13 @@ class App extends Component{
 
 	friKanva(){
 		var nva = document.querySelector('canvas')
+
 		if(nva) {
+			nva.imageSmoothingEnabled       = false;
+			nva.webkitImageSmoothingEnabled = false;
+			nva.mozImageSmoothingEnabled    = false;
+			nva.msImageSmoothingEnabled     = false;
+			nva.oImageSmoothingEnabled      = false;
 			nva.width  = nva.offsetWidth;
 			nva.height  = nva.offsetHeight;
 			console.log('FriKanva '	,nva.width)
