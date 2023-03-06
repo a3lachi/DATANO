@@ -162,7 +162,7 @@ class App extends Component{
 			
 		var bar =  nva.getContext('2d')
 		bar.fillRect(300,100,100,100)
-		console.log('Qssti kanva ', bar)
+		console.log('Qssti kanva ', nva)
 		// var ba = nva.getContext('2d')
 		// ba.beginPath(); 
 		// ba.moveTo(this.state.qanva[0] , this.state.qanva[1]); 
