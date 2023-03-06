@@ -12,6 +12,7 @@ import { canvas } from "canvas";
 
 class App extends Component{
 
+	instru = ''
 
     constructor(props){
       super(props);
@@ -52,7 +53,8 @@ class App extends Component{
     }
 
     chooseInstruction(event){
-      this.setState({instru : event.target.id})
+    	this.instru = event.target.id
+      // this.setState({instru : event.target.id})
     }
 
 
@@ -92,7 +94,7 @@ class App extends Component{
 
 	  let currentInstru = [];
 	  for (let i = 0; i < data.length; i++) {
-	    if (Object.is(data[i].id , Number(this.state.instru))) {
+	    if (Object.is(data[i].id , Number(this.instru))) {
 	      currentInstru = data[i];
 	    }
 	  }
