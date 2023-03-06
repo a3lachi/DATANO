@@ -5,13 +5,6 @@ import React, { Component } from "react";
 
 class Left extends Component {
 
-    constructor(props){
-      super(props);
-      
-      this.selectOnlyThis = this.selectOnlyThis.bind(this)
-      this.chooseInstruction = this.chooseInstruction.bind(this)
-    }
-
 
     render() {
       console.log("Data passed left  ", this.props)
@@ -35,8 +28,8 @@ class Left extends Component {
 
                   <div class="row border">
                     <div class="col border">
-                        { this.firstCollecArray.map((item,index) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={item} onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
-                        { this.estCollec.map((item,index) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={item} onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
+                        { firstCollecArray.map((item,index) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={item} /><label>{item}</label></div>; }) }
+                        { restCollec.map((item,index) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={item}  /><label>{item}</label></div>; }) }
                     </div>
                   </div>
                 </div>
@@ -50,7 +43,7 @@ class Left extends Component {
                     <div class="row border">
                       
                       <div class="col border">
-                        {this.viewCollec.map((item,index) => { return <div class="row"><img src={item.src} style={{width:'100%'}} /><button name="buttonImg" id={item.id} onClick={this.chooseInstruction}>{item.taskId}</button></div>; }) }
+                        {viewCollec.map((item,index) => { return <div class="row"><img src={item.src} style={{width:'100%'}} /><button name="buttonImg" id={item.id}>{item.taskId}</button></div>; }) }
                       </div>
                       
                     </div>
