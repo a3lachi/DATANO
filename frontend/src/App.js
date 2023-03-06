@@ -155,9 +155,9 @@ class App extends Component{
 			return(
 				
 					<div id="central" className="row border">
-						<canvas style={{width: '100%' , height: '100%'}} ></canvas>
+						
 		              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
-		                
+		                <canvas style={{width: '100%' , height: '100%'}} ></canvas>
 		            </div>
 		        
 			)
@@ -175,6 +175,9 @@ class App extends Component{
 			nva.width  = nva.offsetWidth;
 			nva.height  = nva.offsetHeight;
 			console.log(nva.width)
+
+			var bda = nva.getContext('2d')
+			bda.fillRect(100,100,100,100)
 		}
 	}
 
