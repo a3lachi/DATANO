@@ -161,7 +161,7 @@ class App extends Component{
 		
 			
 		var bar =  nva.getContext('2d')
-		bar.fillRect(300,100,100,100)
+		bar.fillRect(0,0,100,100)
 		console.log('Qssti kanva ', nva)
 		// var ba = nva.getContext('2d')
 		// ba.beginPath(); 
@@ -189,7 +189,7 @@ class App extends Component{
 				<div id="central" className="row border">
 					
 	              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
-	                <canvas style={{width: '100%' , height: '100%'}}  onMouseDown={this.qsstiKanvaDown} onMouseUp={this.qsstiKanvaUp} onMouseMove={this.qsstiKanvaMove}> </canvas>
+	                <canvas style={{width: '100%' , height: '400px'}}  onMouseDown={this.qsstiKanvaDown} onMouseUp={this.qsstiKanvaUp} onMouseMove={this.qsstiKanvaMove}> </canvas>
 	            </div>
 	        
 		)
