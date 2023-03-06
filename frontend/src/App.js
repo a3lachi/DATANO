@@ -55,7 +55,10 @@ class App extends Component{
     chooseInstruction(event){
     	this.instruId = event.target.id
     	// this.render()
-      this.setState({instru : event.target.id})
+    	flushSync(() => {
+	      this.setState({instru : event.target.id})
+	    })
+      
     }
 
 
