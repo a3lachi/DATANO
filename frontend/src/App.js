@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Nav from './components/Nav'
-import Right from './components/Right'
-import Center from './components/Center'
-import Left from './components/Left'
 import ImageCropper from './components/ImageCropper'
 import './components/Left.css'
 
@@ -153,6 +150,55 @@ class App extends Component{
 
 
 
+	Right(currentInstru){
+		return(
+			<div class="col-lg-3 border">
+	            
+	            <div class="col border">
+					<div class="row">
+		            	Info 
+		        	</div>
+		            <div class="row border">
+		            	<div class="col border">
+			            	<div class="row border">
+			            		Instruction : {currentInstru.instru}
+			            	</div>
+			            	<div class="row border">
+			            		Task ID : {currentInstru.taskId}
+			            	</div>
+			            	<div class="row border">
+			            		Created At : {currentInstru.createdAt}
+			            	</div>
+			            	<div class="row border">
+			            		Urgency : {currentInstru.urgency}
+			            	</div>
+			            	<div class="row border">
+			            		Original Image : 
+			            	</div>
+			            </div>
+		        	</div>
+		        	
+		        	
+		        </div>
+
+
+	            <div class="col" style={{height : '20px'}}></div>
+	            
+
+	            <div class="col border">
+					<div class="row border">
+			              Annotations 
+			        </div>
+
+
+			        <div class="row border" style={{height : '200px'}}>
+			               
+			        </div>
+			    </div>
+	        </div>
+		)
+	}
+
 
 
 
@@ -179,7 +225,7 @@ class App extends Component{
           		{this.Center(currentInstru)}
 	        
 	            
-	          <Right data={currentInstru}></Right>
+	         	{this.Right(currentInstru)}
 
 
           </div>
