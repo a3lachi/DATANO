@@ -211,6 +211,9 @@ class App extends Component{
 			nva.height  = nva.offsetHeight;
 			console.log('FriKanva '	,nva.width)
 		}
+		else {
+			console.log('render daba ')
+		}
 	}
 
 
