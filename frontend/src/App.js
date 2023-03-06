@@ -4,6 +4,10 @@ import Nav from './components/Nav'
 import ImageCropper from './components/ImageCropper'
 import './components/Left.css'
 import './App.css'
+import { fabric } from "fabric";
+import { canvas } from "canvas";
+
+
 
 
 
