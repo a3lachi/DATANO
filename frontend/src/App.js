@@ -148,6 +148,19 @@ class App extends Component{
       )
 	}
 
+	qsstiKanva(){
+		var nva = document.querySelector('canvas')
+		if(nva) {
+		var ba = nva.getContext('2d')
+			ba.fillRect(300,100,100,100)
+
+			ba.beginPath(); 
+			ba.moveTo(10, 50); 
+			ba.lineTo(150, 100);
+			ba.stroke()
+		}
+
+	}
 
 	Kanva(currInstru){
 		var url = '{{width: 200}}'
@@ -157,7 +170,7 @@ class App extends Component{
 					<div id="central" className="row border">
 						
 		              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
-		                <canvas style={{width: '100%' , height: '100%'}} ></canvas>
+		                <canvas style={{width: '100%' , height: '100%'}} onClick={this.qsstiKanva}></canvas>
 		            </div>
 		        
 			)
@@ -175,15 +188,6 @@ class App extends Component{
 			nva.width  = nva.offsetWidth;
 			nva.height  = nva.offsetHeight;
 			console.log(nva.width)
-
-			var bda = nva.getContext('2d')
-			var ba = nva.getContext('2d')
-			bda.fillRect(300,100,100,100)
-
-			ba.beginPath(); 
-			ba.moveTo(10, 50); 
-			ba.lineTo(150, 100);
-			ba.stroke()
 		}
 	}
 
