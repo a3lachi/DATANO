@@ -107,7 +107,7 @@ class App extends Component{
 	  
 	Left(data)
 	{
-		var [firstCollecArray, restCollec, viewCollec, currentInstru] = data.slice(-1) ;
+		var [firstCollecArray, restCollec, viewCollec] = data[[,3]] ;
 		return(
 
               <div className="col-lg-2 border">
