@@ -121,8 +121,8 @@ class App extends Component{
 
                   <div className="row border">
                     <div className="col border">
-                        { firstCollecArray.map((item,index) => { return <div className="row"><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
-                        { restCollec.map((item,index) => { return <div className="row"><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis}  /><label>{item}</label></div>; }) }
+                        { firstCollecArray.map((item,index) => { return <div className="row"><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis} /><label>{item.toString()}</label></div>; }) }
+                        { restCollec.map((item,index) => { return <div className="row"><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis}  /><label>{item.toString()}</label></div>; }) }
                     </div>
                   </div>
                 </div>
