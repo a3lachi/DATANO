@@ -54,6 +54,7 @@ class App extends Component{
 
     chooseInstruction(event){
     	this.instru = event.target.id
+    	this.render()
       // this.setState({instru : event.target.id})
     }
 
@@ -305,6 +306,7 @@ class App extends Component{
     render(){
 
     	var [firstCollecArray, restCollec, viewCollec, currentInstru] = this.getCollectionData(this.state)
+    	console.log('Cuurent instru ',currentInstru)
 
       return(
 
