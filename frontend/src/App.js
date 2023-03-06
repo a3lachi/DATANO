@@ -71,23 +71,64 @@ class App extends Component{
       this.refreshList();
     }
 
-    Left(propsa) {
+    
 
-	    const data = propsa
+    refreshList = () => {
+      axios
+        .get("/api/Instructions/")
+        .then((res) => this.setState({ collection: res.data }))
+        .catch((err) => console.log(err));
+    };
+
+    getCollectionData(state) {
+	  const data = this.state.collection;
+	  const firstRow = data[0];
+	  const farsRow = state.view;
+	  const restCollec = [];
+	  const firstCollecArray = [];
+
+	  for (let i = 1; i < data.length; i++) {
+	    if (!restCollec.includes(data[i].collection) && data[i].collection !== firstRow.collection) {
+	      restCollec.push(data[i].collection);
+	    } else if (firstCollecArray.length < 1) {
+	      firstCollecArray.push(data[i].collection);
+	    }
+	  }
+
+	  const viewCollec = [];
+	  for (let i = 0; i < data.length; i++) {
+	    if (data[i].collection === state.view) {
+	      viewCollec.push(data[i]);
+	    }
+	  }
+
+	  let currentInstru = [];
+	  for (let i = 0; i < data.length; i++) {
+	  	console.log('Data id ',this.state.instru)
+	  	console.log('Currenti id ',data[i].id)
+	    if (Object.is(data[i].id , Number(this.state.instru))) {
+	      currentInstru = data[i];
+	    }
+	  }
+
+	  return [firstCollecArray, restCollec, viewCollec, currentInstru];
+	}
+	Left() {
+		var dataCollection = this.getCollectionData(this.state)
+	    const data = dataCollection
 	    var firstCollecArray: data[0]
 	    var restCollec: data[1]
 	    var viewCollec: data[2]
 	    var currentInstru: data[3]
 
-	    console.log("Data passed left  ", propsa)
+	    console.log("Data passed left  ", data)
 
 	    return(
 
 	            <div class="col-lg-2 border">
 
 
-	              <Left data="" ></Left>
-
+	              {this.Left}
 
 	              <div class="col border">
 	                <div class="row border">
@@ -130,48 +171,6 @@ class App extends Component{
 	}
 
 
-    refreshList = () => {
-      axios
-        .get("/api/Instructions/")
-        .then((res) => this.setState({ collection: res.data }))
-        .catch((err) => console.log(err));
-    };
-
-    getCollectionData(state) {
-	  const data = this.state.collection;
-	  const firstRow = data[0];
-	  const farsRow = state.view;
-	  const restCollec = [];
-	  const firstCollecArray = [];
-
-	  for (let i = 1; i < data.length; i++) {
-	    if (!restCollec.includes(data[i].collection) && data[i].collection !== firstRow.collection) {
-	      restCollec.push(data[i].collection);
-	    } else if (firstCollecArray.length < 1) {
-	      firstCollecArray.push(data[i].collection);
-	    }
-	  }
-
-	  const viewCollec = [];
-	  for (let i = 0; i < data.length; i++) {
-	    if (data[i].collection === state.view) {
-	      viewCollec.push(data[i]);
-	    }
-	  }
-
-	  let currentInstru = [];
-	  for (let i = 0; i < data.length; i++) {
-	  	console.log('Data id ',this.state.instru)
-	  	console.log('Currenti id ',data[i].id)
-	    if (Object.is(data[i].id , Number(this.state.instru))) {
-	      currentInstru = data[i];
-	    }
-	  }
-
-	  return [firstCollecArray, restCollec, viewCollec, currentInstru];
-	}
-
-
     render(){
 
     	var [firstCollecArray, restCollec, viewCollec, currentInstru] = this.getCollectionData(this.state)
@@ -185,7 +184,7 @@ class App extends Component{
           
           <div class="row border">
 
-          	<Left data={dataCollection}></Left>
+          	<Left ></Left>
 
 
 	          {/*<div class="col-lg-2 border">
