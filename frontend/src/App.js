@@ -22,6 +22,7 @@ class App extends Component{
 
     cropCenter(event){
     	console.log('BRKTI F TSWIRA')
+    	console.log('X ',event.clientY,' -- Y ',event.clientY)
     }
 
 
