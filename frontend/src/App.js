@@ -141,7 +141,7 @@ class App extends Component{
 
 	Kanva() {
 		var canvas = new fabric.Canvas('c');
-		fabric.Image.fromURL('../assets/pug_small.jpg', function(img) {
+		fabric.Image.fromURL('.https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fblue-background&psig=AOvVaw2iK3x-Dz5wNWK2_n7NKLfT&ust=1678168695127000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNjphNnPxv0CFQAAAAAdAAAAABAJ', function(img) {
 		  img.scale(0.5).set({
 		    left: 150,
 		    top: 150,
@@ -149,6 +149,15 @@ class App extends Component{
 		  });
 		  canvas.add(img).setActiveObject(img);
 		});
+
+		var info = document.getElementById('mal3oba');
+
+		canvas.on({
+			  'touch:drag': function() {
+			    var text = document.createTextNode(' Dragging ');
+			    info.insertBefore(text, info.firstChild);
+			  }
+		})
 	}
 
 
@@ -164,7 +173,7 @@ class App extends Component{
 	              </div>
 
 
-	              <div class="row border" style={{height: '200px'}} >
+	              <div class="row border" id='mal3oba' style={{height: '200px'}} >
 	                Ml"oba hna 
 	              </div>
 
