@@ -174,7 +174,7 @@ class App extends Component{
 
 
 	              <div class="row border" id='mal3oba' style={{height: '200px'}} >
-	                Ml"oba hna 
+	                Ml3oba hna {this.Kanava()}
 	              </div>
 
 
