@@ -146,6 +146,12 @@ class App extends Component{
 	}
 
 
+	friKanva(){
+		nva = document.querySelector('canvas')
+		
+	}
+
+
 	Center(currInstru) {
 
 		return (
