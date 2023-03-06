@@ -40,7 +40,7 @@ class Groups extends Component{
 
 
 
-class Left extends Component{
+class App extends Component{
     constructor(props){
       super(props);
       this.state = {
