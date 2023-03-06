@@ -172,6 +172,8 @@ class App extends Component{
 	friKanva(){
 		var nva = document.querySelector('canvas')
 		if(nva) {
+			nva.width  = nva.offsetWidth;
+			nva.height  = nva.offsetHeight;
 			console.log(nva.width)
 		}
 	}
