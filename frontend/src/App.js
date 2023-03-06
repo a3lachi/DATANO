@@ -139,6 +139,12 @@ class App extends Component{
 	}
 
 
+	Kanva(){
+		return(
+			<canvas>CANVA DYALNA</canvas>
+		)
+	}
+
 
 	Center(currInstru) {
 
@@ -152,9 +158,9 @@ class App extends Component{
 
 
 	              <div class="row border" id='mal3oba' style={{height: '50px'}} >
-	              	<canvas>CANVA DYALNA</canvas>
+	              	{this.Kanva()}
 	              </div>
-	              {this.Kanva()}
+	              
 
 
 	              <div class="row border">
