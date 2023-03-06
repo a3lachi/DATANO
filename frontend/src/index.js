@@ -7,13 +7,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import $ from 'jquery'
 
-import Left from './components/Left'
+import App from './App'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Left />
+    <App />
   </React.StrictMode>
 );
 
