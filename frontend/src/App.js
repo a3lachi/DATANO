@@ -16,12 +16,14 @@ class App extends Component{
       this.state = {
         collection: [],
         view: '',
-        instru:''
+        instru:'',
+        qanva:[]
       }
       this.selectOnlyThis = this.selectOnlyThis.bind(this)
       this.chooseInstruction = this.chooseInstruction.bind(this)
       this.cropCenter = this.cropCenter.bind(this)
       this.dragView = this.dragView.bind(this)
+      this.qsstiKanva = this.qsstiKanva.bind(this)
     }
 
     dragView(event){
@@ -30,7 +32,7 @@ class App extends Component{
 
     cropCenter(event){
     	console.log('BRKTI F TSWIRA')
-    	console.log('X ',event.clientY,' -- Y ',event.clientY)
+    	console.log('X ',event.clientX,' -- Y ',event.clientY)
     }
 
 
@@ -148,7 +150,7 @@ class App extends Component{
       )
 	}
 
-	qsstiKanva(){
+	qsstiKanva(event){
 		var nva = document.querySelector('canvas')
 		if(nva) {
 		var ba = nva.getContext('2d')
@@ -158,6 +160,8 @@ class App extends Component{
 			ba.moveTo(10, 50); 
 			ba.lineTo(150, 100);
 			ba.stroke()
+
+			this.setState({ qanva: [event.clientX , event.clientY] })
 		}
 
 	}
