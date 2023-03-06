@@ -200,16 +200,17 @@ class App extends Component{
 
 	friKanva(){
 		var nva = document.querySelector('canvas')
+		var img = document.querySelector('#lol')
 
-		if(nva) {
+		if(nva && img) {
 			nva.imageSmoothingEnabled       = false;
 			nva.webkitImageSmoothingEnabled = false;
 			nva.mozImageSmoothingEnabled    = false;
 			nva.msImageSmoothingEnabled     = false;
 			nva.oImageSmoothingEnabled      = false;
 			nva.width  = nva.offsetWidth;
-			nva.height  = nva.offsetHeight;
-			console.log('FriKanva '	,nva.width)
+			nva.height  = img.offsetHeight;
+			console.log('FriKanva '	,nva.height)
 		}
 		else {
 			console.log('render daba ')
