@@ -99,34 +99,34 @@ class App extends Component{
 		var [firstCollecArray, restCollec, viewCollec, currentInstru] = data ;
 		return(
 
-              <div class="col-lg-2 border">
+              <div className="col-lg-2 border">
 
 
-                <div class="col border">
-                  <div class="row border">
+                <div className="col border">
+                  <div className="row border">
                       Objects :
                       
                   </div>
 
-                  <div class="row border">
-                    <div class="col border">
-                        { firstCollecArray.map((item,index) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
-                        { restCollec.map((item,index) => { return <div class="row"><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis}  /><label>{item}</label></div>; }) }
+                  <div className="row border">
+                    <div className="col border">
+                        { firstCollecArray.map((item,index) => { return <div className="row"><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis} /><label>{item}</label></div>; }) }
+                        { restCollec.map((item,index) => { return <div className="row"><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis}  /><label>{item}</label></div>; }) }
                     </div>
                   </div>
                 </div>
 
-                <div class="col" style={{height : '40px'}}></div>
+                <div className="col" style={{height : '40px'}}></div>
 
-                <div class="col border">
-                    <div class="row border">
+                <div className="col border">
+                    <div className="row border">
                       Up Next 
                     </div>
-                    <div class="row border">
+                    <div className="row border">
                       
-                      <div class="col border">
-                      	<div class="row" style={{height:'20px'}}></div>
-                        {viewCollec.map((item,index) => { return <div class="row"><div class="col"><img src={item.src.toString()} id={item.id.toString()} style={{width:'100%'}} onClick={this.chooseInstruction} onDrag={this.dragView} /><div style={{height:'20px'}}></div></div></div>; }) }
+                      <div className="col border">
+                      	<div className="row" style={{height:'20px'}}></div>
+                        {viewCollec.map((item,index) => { return <div className="row"><div className="col"><img src={item.src.toString()} id={item.id.toString()} style={{width:'100%'}} onClick={this.chooseInstruction} onDrag={this.dragView} /><div style={{height:'20px'}}></div></div></div>; }) }
                       </div>
                       
                     </div>
@@ -156,31 +156,31 @@ class App extends Component{
 
 		return (
 
-			<div class="col-lg-7 border">
+			<div className="col-lg-7 border">
 
-	              <div class="row border">
+	              <div className="row border">
 	                Central picture { currInstru.instru}
 	              </div>
 
 
-	              <div class="row border" id='mal3oba' style={{height: '50px'}} >
+	              <div className="row border" id='mal3oba' style={{height: '50px'}} >
 	              	{this.Kanva()}
 	              	{/*{this.friKanava()}*/}
 	              </div>
 	              
 
 
-	              <div class="row border">
+	              <div className="row border">
 
-	              	<div class="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" src={currInstru.src} onDrag={this.dragView}/></div>
+	              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" src={currInstru.src} onDrag={this.dragView}/></div>
 	                
 	              </div>
 
 
-	              <div class="row border" style={{height:'30px'}}></div>
+	              <div className="row border" style={{height:'30px'}}></div>
 
 
-	              <div class="row border">
+	              <div className="row border">
 	                Message
 	              </div>
 
@@ -194,27 +194,27 @@ class App extends Component{
 
 	Right(currentInstru){
 		return(
-			<div class="col-lg-3 border">
+			<div className="col-lg-3 border">
 	            
-	            <div class="col border">
-					<div class="row">
+	            <div className="col border">
+					<div className="row">
 		            	Info 
 		        	</div>
-		            <div class="row border">
-		            	<div class="col border">
-			            	<div class="row border">
+		            <div className="row border">
+		            	<div className="col border">
+			            	<div className="row border">
 			            		Instruction : {currentInstru.instru}
 			            	</div>
-			            	<div class="row border">
+			            	<div className="row border">
 			            		Task ID : {currentInstru.taskId}
 			            	</div>
-			            	<div class="row border">
+			            	<div className="row border">
 			            		Created At : {currentInstru.createdAt}
 			            	</div>
-			            	<div class="row border">
+			            	<div className="row border">
 			            		Urgency : {currentInstru.urgency}
 			            	</div>
-			            	<div class="row border">
+			            	<div className="row border">
 			            		Original Image : 
 			            	</div>
 			            </div>
@@ -224,16 +224,16 @@ class App extends Component{
 		        </div>
 
 
-	            <div class="col" style={{height : '20px'}}></div>
+	            <div className="col" style={{height : '20px'}}></div>
 	            
 
-	            <div class="col border">
-					<div class="row border">
+	            <div className="col border">
+					<div className="row border">
 			              Annotations 
 			        </div>
 
 
-			        <div class="row border" style={{height : '200px'}}>
+			        <div className="row border" style={{height : '200px'}}>
 			               
 			        </div>
 			    </div>
@@ -252,13 +252,13 @@ class App extends Component{
 
       return(
 
-        <main class="container-fluid">
+        <main className="container-fluid">
 
 
           <Nav></Nav>
 
           
-          <div class="row border">
+          <div className="row border">
 
 
           		{this.Left([firstCollecArray, restCollec, viewCollec, currentInstru])}
