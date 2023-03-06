@@ -186,6 +186,7 @@ class App extends Component{
 	}
 
 	Kanva(currInstru){
+		console.log('Currrrr ',currInstru)
 
 		return(
 			
