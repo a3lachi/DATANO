@@ -22,7 +22,7 @@ class App extends Component{
         qanva:[]
       }
 
-      
+
       this.selectOnlyThis = this.selectOnlyThis.bind(this)
       this.chooseInstruction = this.chooseInstruction.bind(this)
       this.cropCenter = this.cropCenter.bind(this)
@@ -158,19 +158,19 @@ class App extends Component{
 
 	qsstiKanvaDown(event){
 		var nva = document.querySelector('canvas')
-		if(nva) {
+		
 			
-			var bar = nva.getContext('2d')
-			bar.fillRect(300,100,100,100)
-			console.log('Qssti kanva ', bar)
-			var ba = nva.getContext('2d')
-			ba.beginPath(); 
-			ba.moveTo(this.state.qanva[0] , this.state.qanva[1]); 
-			ba.lineTo(Number(event.clientX), Number(event.clientY));
-			ba.stroke()
+		var bar = nva.getContext('2d')
+		bar.fillRect(300,100,100,100)
+		console.log('Qssti kanva ', bar)
+		// var ba = nva.getContext('2d')
+		// ba.beginPath(); 
+		// ba.moveTo(this.state.qanva[0] , this.state.qanva[1]); 
+		// ba.lineTo(Number(event.clientX), Number(event.clientY));
+		// ba.stroke()
 
 			// this.setState({ qanva: [event.clientX , event.clientY] })
-		}
+		
 
 	}
 	qsstiKanvaUp(event){
@@ -183,21 +183,17 @@ class App extends Component{
 	}
 
 	Kanva(currInstru){
-		var url = '{{width: 200}}'
-		if(currInstru.src){
-			return(
-				
-					<div id="central" className="row border">
-						
-		              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
-		                <canvas style={{width: '100%' , height: '100%'}} onMouseDown={this.qsstiKanvaDown} onMouseUp={this.qsstiKanvaUp} onMouseMove={this.qsstiKanvaMove}> </canvas>
-		            </div>
-		        
-			)
-		}
-		else {
-			return <canvas></canvas>
-		}
+
+		return(
+			
+				<div id="central" className="row border">
+					
+	              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
+	                <canvas style={{width: '100%' , height: '100%'}} onMouseDown={this.qsstiKanvaDown} onMouseUp={this.qsstiKanvaUp} onMouseMove={this.qsstiKanvaMove}> </canvas>
+	            </div>
+	        
+		)
+
 		
 	}
 
