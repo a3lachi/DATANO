@@ -200,13 +200,13 @@ class App extends Component{
 
 	friKanva(){
 		var nva = document.querySelector('canvas')
-		var img = document.querySelector('#central')
+		var img = document.querySelector('#mainimage')
 
 		if(nva && img) {
 
 			nva.width  = nva.offsetWidth;
-			nva.height  = nva.offsetHeight;
-			console.log('Ofsset height  '	,nva.offsetHeight)
+			nva.height  = img.offsetHeight;
+			console.log('Ofsset height  '	,img.height)
 		}
 		else {
 			console.log('render daba ')
