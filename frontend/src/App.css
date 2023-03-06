@@ -16,4 +16,4 @@
 }
 
 #central { position:relative;  }
-/*#central canvas { position:absolute; top:0; left:0; z-index:0 ; width:100% }*/
+#central canvas { position:absolute; top:0; left:0; z-index:0  }
