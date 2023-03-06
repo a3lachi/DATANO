@@ -5,14 +5,21 @@ import React, { Component } from "react";
 
 class Left extends Component {
 
+    constructor(props){
+      super(props);
+      
+      this.selectOnlyThis = this.selectOnlyThis.bind(this)
+      this.chooseInstruction = this.chooseInstruction.bind(this)
+    }
+
 
     render() {
       console.log("Data passed left  ", this.props)
       const data = this.props.data
-      var firstCollecArray: data[0]
-      var restCollec: data[1]
-      var viewCollec: data[2]
-      var currentInstru: data[3]
+      var firstCollecArray =  data[0]
+      var restCollec =  data[1]
+      var viewCollec =  data[2]
+      var currentInstru =  data[3]
 
 
       return(
