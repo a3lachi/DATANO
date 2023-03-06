@@ -148,9 +148,15 @@ class App extends Component{
 	}
 
 
-	Kanva(){
+	Kanva(currInstru){currInstru
 		return(
-			<canvas>CANVA DYALNA</canvas>
+			<canvas style="background: url('"++"')">
+				<div className="row border">
+
+	              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
+	                
+	            </div>
+	        </canvas>
 		)
 	}
 
@@ -181,14 +187,8 @@ class App extends Component{
 	              </div>
 
 
-	              <div className="row border" id='mal3oba' style={{height: '50px'}} >
-	              	{this.Kanva()}
-	              	
-	              </div>
-	              
-
-
-	              
+	              	{this.Kanva(currInstru)}
+	            	              	              
 
 
 	              <div className="row border" style={{height:'30px'}}></div>
