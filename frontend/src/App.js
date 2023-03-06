@@ -71,9 +71,9 @@ class App extends Component{
       this.refreshList();
     }
 
-    Left(props) {
+    Left(propsa) {
 
-	    const data = props
+	    const data = propsa
 	    var firstCollecArray: data[0]
 	    var restCollec: data[1]
 	    var viewCollec: data[2]
@@ -186,8 +186,8 @@ class App extends Component{
           
           <div class="row border">
 
-          		{this.Left(dataCollection)}
-	          {/*<div class="col-lg-2 border">
+
+	          <div class="col-lg-2 border">
 
 
 	          	<Left data="" ></Left>
@@ -223,7 +223,7 @@ class App extends Component{
 	            </div>
 	            
 	            
-	          </div>*/}
+	          </div>
           
           
           <div class="col-lg-7 border">
