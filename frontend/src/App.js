@@ -153,16 +153,17 @@ class App extends Component{
 	qsstiKanva(event){
 		var nva = document.querySelector('canvas')
 		if(nva) {
-			console.log('Qssti kanva ', event.clientX, event.clientY)
+			
 			var bar = nva.getContext('2d')
 			bar.fillRect(300,100,100,100)
-			var ba = nva.getContext('2d')
-			ba.beginPath(); 
-			ba.moveTo(this.state.qanva[0] , this.state.qanva[1]); 
-			ba.lineTo(Number(event.clientX), Number(event.clientY));
-			ba.stroke()
+			console.log('Qssti kanva ', bar)
+			// var ba = nva.getContext('2d')
+			// ba.beginPath(); 
+			// ba.moveTo(this.state.qanva[0] , this.state.qanva[1]); 
+			// ba.lineTo(Number(event.clientX), Number(event.clientY));
+			// ba.stroke()
 
-			this.setState({ qanva: [event.clientX , event.clientY] })
+			// this.setState({ qanva: [event.clientX , event.clientY] })
 		}
 
 	}
