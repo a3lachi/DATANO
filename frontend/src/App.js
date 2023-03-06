@@ -135,6 +135,17 @@ class App extends Component{
       )
 	}
 
+	Kanva() {
+		var canvas = new fabric.Canvas('c');
+		fabric.Image.fromURL('../assets/pug_small.jpg', function(img) {
+		  img.scale(0.5).set({
+		    left: 150,
+		    top: 150,
+		    angle: -15
+		  });
+		  canvas.add(img).setActiveObject(img);
+		});
+	}
 
 
 
@@ -146,6 +157,11 @@ class App extends Component{
 
 	              <div class="row border">
 	                Central picture { currInstru.instru}
+	              </div>
+
+
+	              <div class="row border" style={{height: '200px'}} >
+	                Ml"oba hna 
 	              </div>
 
 
