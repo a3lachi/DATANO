@@ -24,6 +24,8 @@ class App extends Component{
       this.cropCenter = this.cropCenter.bind(this)
       this.dragView = this.dragView.bind(this)
       this.qsstiKanvaDown = this.qsstiKanvaDown.bind(this)
+      this.qsstiKanvaUp = this.qsstiKanvaUp.bind(this)
+      this.qsstiKanvaMove = this.qsstiKanvaMove.bind(this)
     }
 
     dragView(event){
