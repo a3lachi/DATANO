@@ -162,7 +162,7 @@ class App extends Component{
 			var lol = document.querySelector('#mainimage')
 			if (lol) {
 				nva.width = lol.width
-				console.log(nva)
+				console.log(nva.width)
 			}
 		}
 	}
@@ -203,7 +203,7 @@ class App extends Component{
 
 	              {this.friKanva()}
 	         </div>
-	         
+
 		)
 	}
 
