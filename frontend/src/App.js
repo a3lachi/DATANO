@@ -189,7 +189,7 @@ class App extends Component{
 				<div id="central" className="row border">
 					
 	              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
-	                <canvas style={{width: '100%' , height: '400'}} onMouseDown={this.qsstiKanvaDown} onMouseUp={this.qsstiKanvaUp} onMouseMove={this.qsstiKanvaMove}> </canvas>
+	                <canvas style={{width: '100%' , height: '100%'}} onMouseDown={this.qsstiKanvaDown} onMouseUp={this.qsstiKanvaUp} onMouseMove={this.qsstiKanvaMove}> </canvas>
 	            </div>
 	        
 		)
@@ -205,8 +205,8 @@ class App extends Component{
 		if(nva && img) {
 
 			nva.width  = nva.offsetWidth;
-			nva.height  = img.offsetHeight;
-			console.log('FriKanva '	,nva.height)
+			nva.height  = nva.offsetHeight;
+			console.log('Ofsset height  '	,nva.offsetHeight)
 		}
 		else {
 			console.log('render daba ')
