@@ -140,21 +140,20 @@ class App extends Component{
 	}
 
 	Kanva() {
-		var canvas = new Canvas('kan');
-		fabric.Image.fromURL('https://www.travelandleisure.com/thmb/xhs5KqfgyqZwdEAqaWu_d7R2gR4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/blue0517-4dfc85cb0200460ab717b101ac07888f.jpg', function(img) {
-		  img.scale(0.5).set({
-		    left: 0,
-		    top:0
-		  });
-		  canvas.add(img).setActiveObject(img);
-		});
+		// var canvas = new Canvas('kan');
+		// fabric.Image.fromURL('https://www.travelandleisure.com/thmb/xhs5KqfgyqZwdEAqaWu_d7R2gR4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/blue0517-4dfc85cb0200460ab717b101ac07888f.jpg', function(img) {
+		//   img.scale(0.5).set({
+		//     left: 0,
+		//     top:0
+		//   });
+		//   canvas.add(img).setActiveObject(img);
+		// });
 
-		var info = document.getElementById('mal3oba');
+		var info = document.getElementById('kan');
 
-		canvas.on({
+		info.on({
 			  'touch:drag': function() {
 			    console.log('BRKTI F TSWIRA') ;
-    			console.log('X ',clientY,' -- Y ',clientY) ;
 			  }
 		})
 	}
