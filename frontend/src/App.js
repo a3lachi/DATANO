@@ -160,7 +160,7 @@ class App extends Component{
 		var nva = document.querySelector('canvas')
 		
 			
-		var bar = nva.getContext('2d')
+		var bar =  nva.getContext('2d')
 		bar.fillRect(300,100,100,100)
 		console.log('Qssti kanva ', bar)
 		// var ba = nva.getContext('2d')
