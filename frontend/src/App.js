@@ -54,8 +54,8 @@ class App extends Component{
 
     chooseInstruction(event){
     	this.instruId = event.target.id
-    	this.render()
-      // this.setState({instru : event.target.id})
+    	// this.render()
+      this.setState({instru : event.target.id})
     }
 
 
@@ -220,13 +220,15 @@ class App extends Component{
 
 	Center(currInstru) {
 
+		console.log('Centerr cur dzeb ',currInstru)
+
 		return (
 
 			<div className="col-lg-7 border">
 
 	              <div className="row border">
 	                
-	              <div className="col border" style={{height:'45px'}}> Central picture { currInstru.instru} </div>
+	              <div className="col border" style={{height:'45px'}}> Central picture {currInstru.instru} </div>
 	              </div>
 
 
