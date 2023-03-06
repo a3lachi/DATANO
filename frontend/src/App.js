@@ -152,6 +152,12 @@ class App extends Component{
 	}
 
 
+
+
+
+
+
+
     render(){
 
     	var [firstCollecArray, restCollec, viewCollec, currentInstru] = this.getCollectionData(this.state)
@@ -167,7 +173,7 @@ class App extends Component{
           <div class="row border">
 
 
-          		{this.Left([firstCollecArray, restCollec, viewCollec, currentInstru] )}
+          		{this.Left([firstCollecArray, restCollec, viewCollec, currentInstru])}
 
 
           		{this.Center(currentInstru)}
