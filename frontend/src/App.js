@@ -169,6 +169,14 @@ class App extends Component{
 		}
 
 	}
+	qsstiKanvaUp(event){
+		console.log('MOUSE UP')
+
+	}
+	qsstiKanvaMove(event){
+		console.log('TMOVI')
+
+	}
 
 	Kanva(currInstru){
 		var url = '{{width: 200}}'
@@ -178,7 +186,7 @@ class App extends Component{
 					<div id="central" className="row border">
 						
 		              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
-		                <canvas style={{width: '100%' , height: '100%'}} onMouseDown={this.qsstiKanvaDown}> </canvas>
+		                <canvas style={{width: '100%' , height: '100%'}} onMouseDown={this.qsstiKanvaDown} onMouseUp={this.qsstiKanvaUp}> onMouseMove={this.qsstiKanvaMove}> </canvas>
 		            </div>
 		        
 			)
