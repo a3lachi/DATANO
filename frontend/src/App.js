@@ -167,7 +167,7 @@ class App extends Component{
 	qsstiKanvaDown(event){
 		var nva = document.querySelector('canvas')
 		
-		this.canvaCordX = event.pageX
+		this.canvaCordX = event.pageX 
 		this.canvaCordY = event.pageY
 
 		console.log('Qssti kanva ', event.pageX , event.pageX)
