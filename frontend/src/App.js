@@ -208,7 +208,8 @@ class App extends Component{
 	}
 	
 	deleteCrop(){
-		console.log('Length dyal had zbi ',this.theCropsCord.length)
+		var qhba = this.theCropsCord
+		console.log('Length dyal had zbi ', qhba.length)
 		if (this.theCropsCord.length>2) {
 			var [cropX , cropY , cropWidth , cropHeight ] = this.theCropsCord[2]
 
@@ -279,7 +280,7 @@ class App extends Component{
 	              <div className="row border">
 	                
 	              <div className="col border" style={{height:'45px'}}> Central picture {currInstru.instru} </div>
-	              <button onClick={this.deleteCrop} text='DELETE CROP' />
+	              <button onClick={this.deleteCrop} >DELETE CROP</button>
 	              </div>
 
 
