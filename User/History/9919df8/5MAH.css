@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+
+
+
+}
+
+#mainimage{
+  pointer-events: none ;
+
+}
+
+
+#kanva{
+  ;
+}
+
+#central { position:relative;  }
+#central canvas { position:absolute; top:0; left:0; background-size: 100% 100%; }
