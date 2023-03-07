@@ -13,7 +13,7 @@ class App extends Component{
 	canvaCordX = ''
 	canvaCordY = ''
 	isCrop = 0
-	theCropsCord = [[0,0]]
+	theCropsCord = [[0,0],]
 
     constructor(props){
       super(props);
@@ -206,7 +206,7 @@ class App extends Component{
 		var rayCord = [ this.canvaCordX , this.canvaCordY , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]
 
 		console.log('Len dyal rayCord ', rayCord.length)
-		this.theCropsCord.push(rayCord)
+		this.theCropsCord.push(new Array(rayCord))
 		
 
 	}
@@ -215,7 +215,7 @@ class App extends Component{
 		var qhba = this.theCropsCord
 		console.log('Length dyal had zbi ', qhba.length)
 		if (qhba.length>2) {
-			var [cropX , cropY , cropWidth , cropHeight ] = qhba[2]
+			var [cropX , cropY , cropWidth , cropHeight ] = qhba[1]
 
 
 
