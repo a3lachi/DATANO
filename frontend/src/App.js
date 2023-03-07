@@ -172,7 +172,11 @@ class App extends Component{
 
 		console.log('Qssti kanva ', nva)
 		this.isCrop = 1
-		// var cropHayd = this.theCrops.slice(-1)[0]
+		var cropHayd = this.theCrops.slice(-1)[0]
+		if (cropHayd && cropHayd.length>3) {
+			var cropHayd = this.theCrops.slice[2]
+			cropHayd.clearRect(0, 0, 1000, 1000);
+		}
 		// cropHayd.clearRect(0, 0, 1000, 1000);
 		// var ba = nva.getContext('2d')
 		// ba.beginPath(); 
@@ -184,14 +188,7 @@ class App extends Component{
 		
 
 	}
-	qsstiKanvaUp(event){
-		console.log('MOUSE UP')
-		console.log('Bdaya mn ', this.canvaCordX ,this.canvaCordY )
-		this.isCrop = 0
-		var cropLakhar = this.theCrops.slice(-1)[0]
-		cropLakhar.strok()
 
-	}
 	qsstiKanvaMove(event){
 		if (this.isCrop == 1) {
 			var canvas = document.querySelector('canvas');
@@ -215,6 +212,19 @@ class App extends Component{
 		// console.log('TMOVI -- ' , event.clientX , event.clientY)
 
 	}
+
+
+
+
+	qsstiKanvaUp(event){
+		console.log('MOUSE UP')
+		console.log('Bdaya mn ', this.canvaCordX ,this.canvaCordY )
+		this.isCrop = 0
+		var cropLakhar = this.theCrops.slice(-1)[0]
+		cropLakhar.stroke()
+
+	}
+	
 
 	Kanva(currInstru){
 		return(
