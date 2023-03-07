@@ -228,7 +228,7 @@ class App extends Component{
 
 
 		  	const croppedImg = new Image();
-	  		croppedImg.src = canvas.toDataURL('image/png');
+	  		croppedImg.src = canvas.toDataURL();
 
 	  		console.log('Ha limage cropped ',croppedImg)
 
