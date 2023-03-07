@@ -193,10 +193,10 @@ class App extends Component{
 			var context = canvas.getContext("2d");
 			// context.clearRect(0, 0, canvas.width, canvas.height);
 
-			var bdaX = Number(document.innerWidth)*0.8
+			var bdaX = Number(window.innerWidth)*0.2
 			console.log('HA MNINA BADYA' , bdaX)
 
-			context.rect(this.canvaCordX , this.canvaCordY , Math.abs(event.clientX-this.canvaCordX), Math.abs(event.clientY-this.canvaCordY));
+			context.rect(this.canvaCordX, this.canvaCordY , Math.abs(event.clientX-this.canvaCordX), Math.abs(event.clientY-this.canvaCordY));
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
