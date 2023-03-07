@@ -172,7 +172,7 @@ class App extends Component{
 
 		console.log('Qssti kanva ', nva)
 		this.isCrop = 1
-		this.aCrop.clearRect(0, 0, canvas.width, canvas.height);
+		this.aCrop.clearRect(0, 0, 1000, 1000);
 		// var ba = nva.getContext('2d')
 		// ba.beginPath(); 
 		// ba.moveTo(this.state.qanva[0] , this.state.qanva[1]); 
