@@ -13,7 +13,7 @@ class App extends Component{
 	canvaCordX = ''
 	canvaCordY = ''
 	isCrop = 0
-	theCropsCord = [[0,0],]
+	theCropsCord = []
 
     constructor(props){
       super(props);
@@ -203,17 +203,18 @@ class App extends Component{
 
 	qsstiKanvaUp(event){
 		this.isCrop = 0
-		var rayCord = [ this.canvaCordX , this.canvaCordY , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]
+		const  rayCord = [ this.canvaCordX , this.canvaCordY , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]
 
 		console.log('Len dyal rayCord ', rayCord.length)
-		this.theCropsCord.push(new Array(rayCord))
+		this.theCropsCord.push(rayCord)
 		
 
 	}
 	
 	deleteCrop(){
-		var qhba = this.theCropsCord
+		const qhba = this.theCropsCord
 		console.log('Length dyal had zbi ', qhba.length)
+		console.log('Had zbi ',qhba)
 		if (qhba.length>2) {
 			var [cropX , cropY , cropWidth , cropHeight ] = qhba[1]
 
