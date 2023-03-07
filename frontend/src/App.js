@@ -10,7 +10,8 @@ import { flushSync } from 'react-dom';
 
 class App extends Component{
 
-	instruId = ''
+	canvaCordX = ''
+	canvaCordY = ''
 
     constructor(props){
       super(props);
