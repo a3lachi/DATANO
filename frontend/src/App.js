@@ -194,10 +194,10 @@ class App extends Component{
 			context.clearRect(0, 0, canvas.width, canvas.height);
 
 			context.rect(this.canvaCordX , this.canvaCordY , Math.abs(event.clientX-this.canvaCordX), Math.abs(event.clientY-this.canvaCordY));
-			context.globalAlpha = 0.2
-			context.fillStyle = "#8ED6FF";
+			context.globalAlpha = 0.3
+			context.fillStyle = "#FF0000";
 			context.fill();
-			context.lineWidth = 5;
+			context.lineWidth = 1;
 			context.strokeStyle = "black";
 			context.stroke();
 		}
