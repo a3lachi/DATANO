@@ -13,7 +13,7 @@ class App extends Component{
 	canvaCordX = ''
 	canvaCordY = ''
 	isCrop = 0
-	aCrop = ''
+	theCrops = []
 
     constructor(props){
       super(props);
@@ -172,7 +172,8 @@ class App extends Component{
 
 		console.log('Qssti kanva ', nva)
 		this.isCrop = 1
-		this.aCrop.clearRect(0, 0, 1000, 1000);
+		cropHayd = this.theCrops.slice(-1)
+		cropHayd.clearRect(0, 0, 1000, 1000);
 		// var ba = nva.getContext('2d')
 		// ba.beginPath(); 
 		// ba.moveTo(this.state.qanva[0] , this.state.qanva[1]); 
@@ -202,7 +203,7 @@ class App extends Component{
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
-			this.aCrop = context
+			this.theCrops.push(context)
 			// context.lineWidth = 1;
 			// context.strokeStyle = "black";
 			// context.stroke();
