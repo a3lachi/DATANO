@@ -217,7 +217,7 @@ class App extends Component{
 
 
 
-			var img = document.querySelector('#mainimage')
+			var img = document.querySelector('#cropat')
 
 			const canvas = document.createElement('canvas');
 		  	canvas.width = cropWidth;
