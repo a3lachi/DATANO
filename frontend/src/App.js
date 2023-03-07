@@ -193,6 +193,7 @@ class App extends Component{
 			var context = canvas.getContext("2d");
 
 			context.rect(this.canvaCordX , this.canvaCordY , event.clientX, event.clientY);
+			context.globalAlpha = 0.2
 			context.fillStyle = "#8ED6FF";
 			context.fill();
 			context.lineWidth = 5;
