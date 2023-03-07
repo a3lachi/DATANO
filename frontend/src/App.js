@@ -172,10 +172,11 @@ class App extends Component{
 
 		console.log('Qssti kanva ', nva)
 		this.isCrop = 1
-		var cropHayd = this.theCrops.slice(-1)[0]
+		var cropHayd = this.theCrops
 		if (cropHayd && cropHayd.length>3) {
-			var cropHayd = this.theCrops.slice[2]
+			var cropHayd = this.theCrops[2]
 			cropHayd.clearRect(0, 0, 1000, 1000);
+			console.log('WARAH DKHL IHYED')
 		}
 		// cropHayd.clearRect(0, 0, 1000, 1000);
 		// var ba = nva.getContext('2d')
@@ -193,7 +194,6 @@ class App extends Component{
 		if (this.isCrop == 1) {
 			var canvas = document.querySelector('canvas');
 			var context = canvas.getContext("2d");
-			console.log('HA CHKICLERI ',canvas.width, canvas.height)
 			context.clearRect(0, 0, canvas.width, canvas.height);
 			// context.beginPath()
 
@@ -217,8 +217,6 @@ class App extends Component{
 
 
 	qsstiKanvaUp(event){
-		console.log('MOUSE UP')
-		console.log('Bdaya mn ', this.canvaCordX ,this.canvaCordY )
 		this.isCrop = 0
 		var cropLakhar = this.theCrops.slice(-1)[0]
 		cropLakhar.stroke()
