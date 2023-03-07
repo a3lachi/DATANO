@@ -180,6 +180,7 @@ class App extends Component{
 		if (this.isCrop == 1) {
 			var canvas = document.querySelector('canvas');
 			var context = canvas.getContext("2d");
+			context.clearRect(0, 0, canvas.width, canvas.height);
 
 
 			context.rect(this.canvaCordX , this.canvaCordY , event.pageX-this.canvaCordX-280, event.pageY-this.canvaCordY-102);
