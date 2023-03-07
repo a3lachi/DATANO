@@ -32,6 +32,8 @@ class App extends Component{
       this.qsstiKanvaDown = this.qsstiKanvaDown.bind(this)
       this.qsstiKanvaUp = this.qsstiKanvaUp.bind(this)
       this.qsstiKanvaMove = this.qsstiKanvaMove.bind(this)
+      this.deleteCrop = this.deleteCrop.bind(this)
+      
     }
 
     dragView(event){
@@ -201,7 +203,7 @@ class App extends Component{
 
 	qsstiKanvaUp(event){
 		this.isCrop = 0
-		var rayCord = [ this.canvaCordX , this.canvaCordY , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]
+		var rayCord = [[ this.canvaCordX , this.canvaCordY , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]]
 		this.theCropsCord.push(rayCord)
 		
 
@@ -210,8 +212,8 @@ class App extends Component{
 	deleteCrop(){
 		var qhba = this.theCropsCord
 		console.log('Length dyal had zbi ', qhba.length)
-		if (this.theCropsCord.length>2) {
-			var [cropX , cropY , cropWidth , cropHeight ] = this.theCropsCord[2]
+		if (qhba.length>2) {
+			var [cropX , cropY , cropWidth , cropHeight ] = qhba[2]
 
 
 
