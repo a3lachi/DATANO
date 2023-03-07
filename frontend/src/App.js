@@ -167,10 +167,10 @@ class App extends Component{
 	qsstiKanvaDown(event){
 		var nva = document.querySelector('canvas')
 		
-		this.canvaCordX = event.screenX
-		this.canvaCordY = event.screenY
+		this.canvaCordX = event.pageX
+		this.canvaCordY = event.pageY
 
-		console.log('Qssti kanva ', nva)
+		console.log('Qssti kanva ', event.screenX , event.screenY)
 		this.isCrop = 1
 	}
 
@@ -178,11 +178,9 @@ class App extends Component{
 		if (this.isCrop == 1) {
 			var canvas = document.querySelector('canvas');
 			var context = canvas.getContext("2d");
-			context.clearRect(0, 0, canvas.width, canvas.height);
-			// context.beginPath()
 
 
-			context.rect(this.canvaCordX-285 , this.canvaCordY-193 , event.screenX-this.canvaCordX, event.screenY-this.canvaCordY);
+			context.rect(this.canvaCordX-285 , this.canvaCordY-193 , event.pageX-this.canvaCordX, event.pageY-this.canvaCordY);
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
