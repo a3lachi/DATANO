@@ -168,7 +168,7 @@ class App extends Component{
 		var nva = document.querySelector('canvas')
 		
 		this.canvaCordX = event.pageX - 280
-		this.canvaCordY = event.pageY
+		this.canvaCordY = event.pageY - 102
 
 		console.log('Qssti kanva ', event.pageX , event.pageY)
 		this.isCrop = 1
@@ -180,7 +180,7 @@ class App extends Component{
 			var context = canvas.getContext("2d");
 
 
-			context.rect(this.canvaCordX , this.canvaCordY , event.pageX-280-this.canvaCordX, event.pageY-this.canvaCordY);
+			context.rect(this.canvaCordX , this.canvaCordY , event.pageX-this.canvaCordX-280, event.pageY-this.canvaCordY-102);
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
