@@ -172,22 +172,6 @@ class App extends Component{
 
 		console.log('Qssti kanva ', nva)
 		this.isCrop = 1
-		var cropHayd = this.theCrops
-		if (cropHayd && cropHayd.length>3) {
-			var hadaHayd = cropHayd[2]
-			hadaHayd.clearRect(0, 0, 1000, 1000);
-			console.log('WARAH DKHL IHYED')
-		}
-		// cropHayd.clearRect(0, 0, 1000, 1000);
-		// var ba = nva.getContext('2d')
-		// ba.beginPath(); 
-		// ba.moveTo(this.state.qanva[0] , this.state.qanva[1]); 
-		// ba.lineTo(Number(event.clientX), Number(event.clientY));
-		// ba.stroke()
-
-			// this.setState({ qanva: [event.clientX , event.clientY] })
-		
-
 	}
 
 	qsstiKanvaMove(event){
