@@ -208,16 +208,26 @@ class App extends Component{
 	}
 	
 	deleteCrop(num){
-		[cropX , cropY , widthCrop , heightCrop ] = theCropsCord[num]
+		if (theCropsCord.length>3) {
+			[cropX , cropY , cropWidth , cropHeight ] = this.theCropsCord[num]
 
 
 
-		img = document.querySelector('#mainimage')
+			img = document.querySelector('#mainimage')
 
-		const canvas = document.createElement('canvas');
-	  	canvas.width = cropWidth;
-	 	canvas.height = cropHeight;
-	  	const ctx = canvas.getContext('2d');
+			const canvas = document.createElement('canvas');
+		  	canvas.width = cropWidth;
+		 	canvas.height = cropHeight;
+		  	const ctx = canvas.getContext('2d');
+
+		  	ctx.drawImage(img, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+
+
+		  	const croppedImg = new Image();
+	  		croppedImg.src = canvas.toDataURL('image/png');
+
+	  		document.querySelector('#mainimage').appendChild(croppedImg);
+		}
 
 	}
 
@@ -325,7 +335,7 @@ class App extends Component{
 	            
 
 	            <div className="col border">
-					<div className="row border">
+					<div id="cropat" className="row border">
 			              Annotations 
 			        </div>
 
