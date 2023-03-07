@@ -205,8 +205,8 @@ class App extends Component{
 		this.isCrop = 0
 		const  rayCord = [ Number(this.canvaCordX) , Number(this.canvaCordY) , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]
 
-		console.log('Len dyal rayCord ', rayCord.length)
-		(this.theCropsCord).push(rayCord)
+		console.log('rayCord ', rayCord)
+		this.theCropsCord.push(rayCord)
 		
 
 	}
