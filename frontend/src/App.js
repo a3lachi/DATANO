@@ -168,9 +168,9 @@ class App extends Component{
 		
 		this.canvaCordX = event.clientX
 		this.canvaCordY = event.clientY
-		var bar =  nva.getContext('2d')
-		bar.fillRect(0,0,100,100)
+
 		console.log('Qssti kanva ', nva)
+		this.isCrop = 1
 		// var ba = nva.getContext('2d')
 		// ba.beginPath(); 
 		// ba.moveTo(this.state.qanva[0] , this.state.qanva[1]); 
@@ -184,19 +184,22 @@ class App extends Component{
 	qsstiKanvaUp(event){
 		console.log('MOUSE UP')
 		console.log('Bdaya mn ', this.canvaCordX ,this.canvaCordY )
-		this.isCrop = 1
+		this.isCrop = 0
 
 	}
 	qsstiKanvaMove(event){
-		var canvas = document.querySelector('canvas');
-		var context = canvas.getContext("2d");
+		if (this.isCrop == 1) {
+			var canvas = document.querySelector('canvas');
+			var context = canvas.getContext("2d");
 
-		context.rect(this.canvaCordX , this.canvaCordY , event.clientX, event.clientY);
-		context.fillStyle = "#8ED6FF";
-		context.fill();
-		context.lineWidth = 5;
-		context.strokeStyle = "black";
-		context.stroke();
+			context.rect(this.canvaCordX , this.canvaCordY , event.clientX, event.clientY);
+			context.fillStyle = "#8ED6FF";
+			context.fill();
+			context.lineWidth = 5;
+			context.strokeStyle = "black";
+			context.stroke();
+		}
+		
 		// console.log('TMOVI -- ' , event.clientX , event.clientY)
 
 	}
