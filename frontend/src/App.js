@@ -198,6 +198,7 @@ class App extends Component{
 
 
 
+
 	qsstiKanvaUp(event){
 		this.isCrop = 0
 		var rayCord = [ this.canvaCordX , this.canvaCordY , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]
@@ -206,6 +207,13 @@ class App extends Component{
 
 	}
 	
+	deleteCrop(num){
+		crop = theCropsCord[num]
+
+	}
+
+
+
 
 	Kanva(currInstru){
 		return(
