@@ -172,8 +172,8 @@ class App extends Component{
 
 		console.log('Qssti kanva ', nva)
 		this.isCrop = 1
-		cropHayd = this.theCrops.slice(-1)
-		cropHayd.clearRect(0, 0, 1000, 1000);
+		// var cropHayd = this.theCrops.slice(-1)[0]
+		// cropHayd.clearRect(0, 0, 1000, 1000);
 		// var ba = nva.getContext('2d')
 		// ba.beginPath(); 
 		// ba.moveTo(this.state.qanva[0] , this.state.qanva[1]); 
@@ -196,7 +196,7 @@ class App extends Component{
 			var context = canvas.getContext("2d");
 			console.log('HA CHKICLERI ',canvas.width, canvas.height)
 			context.clearRect(0, 0, canvas.width, canvas.height);
-			context.beginPath()
+			// context.beginPath()
 
 
 			context.rect(this.canvaCordX-285 , this.canvaCordY-193 , event.screenX-this.canvaCordX, event.screenY-this.canvaCordY);
