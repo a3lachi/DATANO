@@ -191,8 +191,9 @@ class App extends Component{
 		if (this.isCrop == 1) {
 			var canvas = document.querySelector('canvas');
 			var context = canvas.getContext("2d");
+			context.clearRect(0, 0, canvas.width, canvas.height);
 
-			context.rect(this.canvaCordX , this.canvaCordY , event.clientX, event.clientY);
+			context.rect(this.canvaCordX , this.canvaCordY , Math.abs(event.clientX-this.canvaCordX), Math.abs(event.clientY-this.canvaCordY));
 			context.globalAlpha = 0.2
 			context.fillStyle = "#8ED6FF";
 			context.fill();
