@@ -217,7 +217,7 @@ class App extends Component{
 
 
 
-			var img = document.querySelector('#cropat')
+			var img = document.querySelector('#mainimage')
 
 			const canvas = document.createElement('canvas');
 		  	canvas.width = cropWidth;
@@ -232,7 +232,7 @@ class App extends Component{
 
 	  		console.log('Ha limage cropped ',croppedImg)
 
-	  		document.querySelector('#mainimage').appendChild(croppedImg);
+	  		document.querySelector('#cropat').appendChild(croppedImg);
 		}
 
 	}
