@@ -199,9 +199,10 @@ class App extends Component{
 
 
 	qsstiKanvaUp(event){
-		var rayCord = [ event.pageX , event.pageY , this.canvaCordX , this.canvaCordY ]
-		theCropsCord.push(rayCord)
 		this.isCrop = 0
+		var rayCord = [ event.pageX , event.pageY , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]
+		theCropsCord.push(rayCord)
+		
 
 	}
 	
