@@ -208,6 +208,7 @@ class App extends Component{
 	}
 	
 	deleteCrop(num){
+		console.log('Length dyal had zbi ',this.theCropsCord.length)
 		if (this.theCropsCord.length>3) {
 			var [cropX , cropY , cropWidth , cropHeight ] = this.theCropsCord[num]
 
@@ -225,6 +226,8 @@ class App extends Component{
 
 		  	const croppedImg = new Image();
 	  		croppedImg.src = canvas.toDataURL('image/png');
+
+	  		console.log('Ha limage cropped ',croppedImg)
 
 	  		document.querySelector('#mainimage').appendChild(croppedImg);
 		}
@@ -380,7 +383,7 @@ class App extends Component{
 
           </div>
 
-          {this.deleteCrop(2)}
+          
 
         </main>
 
