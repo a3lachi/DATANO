@@ -208,7 +208,16 @@ class App extends Component{
 	}
 	
 	deleteCrop(num){
-		crop = theCropsCord[num]
+		[cropX , cropY , widthCrop , heightCrop ] = theCropsCord[num]
+
+
+
+		img = document.querySelector('#mainimage')
+
+		const canvas = document.createElement('canvas');
+	  	canvas.width = cropWidth;
+	 	canvas.height = cropHeight;
+	  	const ctx = canvas.getContext('2d');
 
 	}
 
