@@ -212,7 +212,7 @@ class App extends Component{
 		const qhba = this.theCropsCord
 		console.log('Length dyal had zbi ', qhba.length)
 		console.log('Had zbi ',qhba)
-		if (qhba.length>2) {
+		if (qhba.length>0) {
 			var [cropX , cropY , cropWidth , cropHeight ] = qhba[qhba.length-1]
 
 
