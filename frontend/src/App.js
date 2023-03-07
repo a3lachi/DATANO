@@ -207,10 +207,10 @@ class App extends Component{
 
 	}
 	
-	deleteCrop(num){
+	deleteCrop(){
 		console.log('Length dyal had zbi ',this.theCropsCord.length)
-		if (this.theCropsCord.length>3) {
-			var [cropX , cropY , cropWidth , cropHeight ] = this.theCropsCord[num]
+		if (this.theCropsCord.length>2) {
+			var [cropX , cropY , cropWidth , cropHeight ] = this.theCropsCord[2]
 
 
 
@@ -279,6 +279,7 @@ class App extends Component{
 	              <div className="row border">
 	                
 	              <div className="col border" style={{height:'45px'}}> Central picture {currInstru.instru} </div>
+	              <button onClick={this.deleteCrop} text='DELETE CROP' />
 	              </div>
 
 
