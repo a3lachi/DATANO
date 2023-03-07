@@ -196,13 +196,13 @@ class App extends Component{
 			var bdaX = Number(window.innerWidth)*0.2
 			console.log('HA MNINA BADYA' , bdaX)
 
-			context.rect(this.canvaCordX-285 , this.canvaCordY-193 , Math.abs(event.screenX-this.canvaCordX), Math.abs(event.screenY-this.canvaCordY));
+			context.rect(this.canvaCordX-285 , this.canvaCordY-193 , event.screenX-this.canvaCordX, event.screenY-this.canvaCordY);
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
-			context.lineWidth = 1;
-			context.strokeStyle = "black";
-			context.stroke();
+			// context.lineWidth = 1;
+			// context.strokeStyle = "black";
+			// context.stroke();
 		}
 		
 		// console.log('TMOVI -- ' , event.clientX , event.clientY)
