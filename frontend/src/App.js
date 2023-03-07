@@ -167,6 +167,8 @@ class App extends Component{
 	qsstiKanvaDown(event){
 		var nva = document.querySelector('canvas')
 		
+
+		// fix the height later and the width ::: 
 		this.canvaCordX = event.pageX - 280
 		this.canvaCordY = event.pageY - 102
 
