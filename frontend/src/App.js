@@ -190,9 +190,6 @@ class App extends Component{
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
-
-			this.theCropsCord.push(context)
-
 		}
 		
 	}
