@@ -213,7 +213,7 @@ class App extends Component{
 		console.log('Length dyal had zbi ', qhba.length)
 		console.log('Had zbi ',qhba)
 		if (qhba.length>2) {
-			var [cropX , cropY , cropWidth , cropHeight ] = qhba.slice(-1)
+			var [cropX , cropY , cropWidth , cropHeight ] = qhba[3]
 
 
 
