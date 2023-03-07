@@ -13,7 +13,7 @@ class App extends Component{
 	canvaCordX = ''
 	canvaCordY = ''
 	isCrop = 0
-	theCrops = []
+	theCropsCord = []
 
     constructor(props){
       super(props);
