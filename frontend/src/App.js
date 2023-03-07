@@ -188,6 +188,8 @@ class App extends Component{
 		console.log('MOUSE UP')
 		console.log('Bdaya mn ', this.canvaCordX ,this.canvaCordY )
 		this.isCrop = 0
+		var cropLakhar = this.theCrops.slice(-1)[0]
+		cropLakhar.strok()
 
 	}
 	qsstiKanvaMove(event){
@@ -203,6 +205,7 @@ class App extends Component{
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
+
 			this.theCrops.push(context)
 			// context.lineWidth = 1;
 			// context.strokeStyle = "black";
