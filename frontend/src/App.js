@@ -191,12 +191,12 @@ class App extends Component{
 		if (this.isCrop == 1) {
 			var canvas = document.querySelector('canvas');
 			var context = canvas.getContext("2d");
-			// context.clearRect(0, 0, canvas.width, canvas.height);
+			context.clearRect(0, 0, canvas.width, canvas.height);
 
 			var bdaX = Number(window.innerWidth)*0.2
 			console.log('HA MNINA BADYA' , bdaX)
 
-			context.rect(this.canvaCordX , this.canvaCordY-194 , Math.abs(event.screenX-this.canvaCordX), Math.abs(event.screenY-this.canvaCordY));
+			context.rect(this.canvaCordX-285 , this.canvaCordY-193 , Math.abs(event.screenX-this.canvaCordX), Math.abs(event.screenY-this.canvaCordY));
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
