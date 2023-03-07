@@ -174,8 +174,8 @@ class App extends Component{
 		this.isCrop = 1
 		var cropHayd = this.theCrops
 		if (cropHayd && cropHayd.length>3) {
-			var cropHayd = this.theCrops[2]
-			cropHayd.clearRect(0, 0, 1000, 1000);
+			var hadaHayd = cropHayd[2]
+			hadaHayd.clearRect(0, 0, 1000, 1000);
 			console.log('WARAH DKHL IHYED')
 		}
 		// cropHayd.clearRect(0, 0, 1000, 1000);
