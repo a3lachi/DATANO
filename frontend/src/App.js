@@ -13,7 +13,7 @@ class App extends Component{
 	canvaCordX = ''
 	canvaCordY = ''
 	isCrop = 0
-	theCropsCord = []
+	theCropsCord = [[0,0]]
 
     constructor(props){
       super(props);
@@ -203,7 +203,9 @@ class App extends Component{
 
 	qsstiKanvaUp(event){
 		this.isCrop = 0
-		var rayCord = [[ this.canvaCordX , this.canvaCordY , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]]
+		var rayCord = [ this.canvaCordX , this.canvaCordY , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]
+
+		console.log('Len dyal rayCord ', rayCord.length)
 		this.theCropsCord.push(rayCord)
 		
 
