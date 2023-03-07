@@ -170,7 +170,7 @@ class App extends Component{
 		this.canvaCordX = event.pageX
 		this.canvaCordY = event.pageY
 
-		console.log('Qssti kanva ', event.screenX , event.screenY)
+		console.log('Qssti kanva ', event.pageX , event.pageX)
 		this.isCrop = 1
 	}
 
