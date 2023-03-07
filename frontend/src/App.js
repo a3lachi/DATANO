@@ -166,8 +166,8 @@ class App extends Component{
 	qsstiKanvaDown(event){
 		var nva = document.querySelector('canvas')
 		
-		this.canvaCordX = event.clientX
-		this.canvaCordY = event.clientY
+		this.canvaCordX = event.screenX
+		this.canvaCordY = event.screenY
 
 		console.log('Qssti kanva ', nva)
 		this.isCrop = 1
@@ -196,7 +196,7 @@ class App extends Component{
 			var bdaX = Number(window.innerWidth)*0.2
 			console.log('HA MNINA BADYA' , bdaX)
 
-			context.rect(this.canvaCordX, this.canvaCordY , Math.abs(event.clientX-this.canvaCordX), Math.abs(event.clientY-this.canvaCordY));
+			context.rect(this.canvaCordX, this.canvaCordY , Math.abs(event.screenX-this.canvaCordX), Math.abs(event.screenY-this.canvaCordY));
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
