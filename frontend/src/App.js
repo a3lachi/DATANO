@@ -180,7 +180,7 @@ class App extends Component{
 			var context = canvas.getContext("2d");
 
 
-			context.rect(this.canvaCordX-285 , this.canvaCordY-193 , event.pageX-this.canvaCordX, event.pageY-this.canvaCordY);
+			context.rect(this.canvaCordX , this.canvaCordY , event.pageX-this.canvaCordX, event.pageY-this.canvaCordY);
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
