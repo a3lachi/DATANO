@@ -195,6 +195,7 @@ class App extends Component{
 			var context = canvas.getContext("2d");
 			console.log('HA CHKICLERI ',canvas.width, canvas.height)
 			context.clearRect(0, 0, canvas.width, canvas.height);
+			context.beginPath()
 
 
 			context.rect(this.canvaCordX-285 , this.canvaCordY-193 , event.screenX-this.canvaCordX, event.screenY-this.canvaCordY);
