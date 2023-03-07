@@ -196,7 +196,7 @@ class App extends Component{
 			var bdaX = Number(window.innerWidth)*0.2
 			console.log('HA MNINA BADYA' , bdaX)
 
-			context.rect(this.canvaCordX, this.canvaCordY , Math.abs(event.screenX-this.canvaCordX), Math.abs(event.screenY-this.canvaCordY));
+			context.rect(this.canvaCordX , this.canvaCordY-194 , Math.abs(event.screenX-this.canvaCordX), Math.abs(event.screenY-this.canvaCordY));
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
