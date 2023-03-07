@@ -12,6 +12,7 @@ class App extends Component{
 
 	canvaCordX = ''
 	canvaCordY = ''
+	isCrop = 0
 
     constructor(props){
       super(props);
@@ -183,9 +184,19 @@ class App extends Component{
 	qsstiKanvaUp(event){
 		console.log('MOUSE UP')
 		console.log('Bdaya mn ', this.canvaCordX ,this.canvaCordY )
+		this.isCrop = 1
 
 	}
 	qsstiKanvaMove(event){
+		var canvas = document.querySelector('canvas');
+		var context = canvas.getContext("2d");
+
+		context.rect(this.canvaCordX , this.canvaCordY , event.clientX, event.clientY);
+		context.fillStyle = "#8ED6FF";
+		context.fill();
+		context.lineWidth = 5;
+		context.strokeStyle = "black";
+		context.stroke();
 		// console.log('TMOVI -- ' , event.clientX , event.clientY)
 
 	}
@@ -196,7 +207,7 @@ class App extends Component{
 				<div id="central" className="row border">
 					
 	              	<div className="col border" id="lol"  style={{position: 'relative'}}  onClick={this.cropCenter} ><img id="mainimage" alt={currInstru.taskId} src={currInstru.src} onDrag={this.dragView}/></div>
-	                <canvas style={{width: '100%' , height: '100%'}} onMouseDown={this.qsstiKanvaDown} onMouseUp={this.qsstiKanvaUp} onMouseMove={this.qsstiKanvaMove}> <div id="crop1" ></div></canvas>
+	                <canvas style={{width: '100%' , height: '100%'}} onMouseDown={this.qsstiKanvaDown} onMouseUp={this.qsstiKanvaUp} onMouseMove={this.qsstiKanvaMove}> <div id="crop1" className=""></div></canvas>
 	            </div>
 	        
 		)
