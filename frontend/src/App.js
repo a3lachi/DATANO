@@ -189,7 +189,7 @@ class App extends Component{
 			context.fillStyle = "#FF0000";
 			context.fill();
 
-			this.theCrops.push(context)
+			this.theCropsCord.push(context)
 
 		}
 		
@@ -202,18 +202,18 @@ class App extends Component{
 	qsstiKanvaUp(event){
 		this.isCrop = 0
 		var rayCord = [ this.canvaCordX , this.canvaCordY , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]
-		theCropsCord.push(rayCord)
+		this.theCropsCord.push(rayCord)
 		
 
 	}
 	
 	deleteCrop(num){
-		if (theCropsCord.length>3) {
-			[cropX , cropY , cropWidth , cropHeight ] = this.theCropsCord[num]
+		if (this.theCropsCord.length>3) {
+			var [cropX , cropY , cropWidth , cropHeight ] = this.theCropsCord[num]
 
 
 
-			img = document.querySelector('#mainimage')
+			var img = document.querySelector('#mainimage')
 
 			const canvas = document.createElement('canvas');
 		  	canvas.width = cropWidth;
@@ -380,7 +380,7 @@ class App extends Component{
 
           </div>
 
-
+          {this.deleteCrop(2)}
 
         </main>
 
