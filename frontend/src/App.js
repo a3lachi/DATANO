@@ -165,7 +165,8 @@ class App extends Component{
 	qsstiKanvaDown(event){
 		var nva = document.querySelector('canvas')
 		
-			
+		this.canvaCordX = event.clientX
+		this.canvaCordY = event.clientY
 		var bar =  nva.getContext('2d')
 		bar.fillRect(0,0,100,100)
 		console.log('Qssti kanva ', nva)
@@ -181,6 +182,7 @@ class App extends Component{
 	}
 	qsstiKanvaUp(event){
 		console.log('MOUSE UP')
+		console.log('Bdaya mn ', this.canvaCordX ,this.canvaCordY )
 
 	}
 	qsstiKanvaMove(event){
