@@ -204,13 +204,9 @@ class App extends Component{
 			context.fill();
 
 			this.theCrops.push(context)
-			// context.lineWidth = 1;
-			// context.strokeStyle = "black";
-			// context.stroke();
+
 		}
 		
-		// console.log('TMOVI -- ' , event.clientX , event.clientY)
-
 	}
 
 
@@ -218,8 +214,6 @@ class App extends Component{
 
 	qsstiKanvaUp(event){
 		this.isCrop = 0
-		var cropLakhar = this.theCrops.slice(-1)[0]
-		cropLakhar.stroke()
 
 	}
 	
