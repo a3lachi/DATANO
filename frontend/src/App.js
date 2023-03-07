@@ -182,8 +182,9 @@ class App extends Component{
 			var context = canvas.getContext("2d");
 			context.clearRect(0, 0, canvas.width, canvas.height);
 
-
-			context.rect(this.canvaCordX , this.canvaCordY , event.pageX-this.canvaCordX-280, event.pageY-this.canvaCordY-102);
+			var width = event.pageX-this.canvaCordX-280
+			var height = event.pageY-this.canvaCordY-102
+			context.rect(this.canvaCordX , this.canvaCordY , width , height);
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
@@ -198,6 +199,8 @@ class App extends Component{
 
 
 	qsstiKanvaUp(event){
+		var rayCord = [ event.pageX , event.pageY , this.canvaCordX , this.canvaCordY ]
+		theCropsCord.push(rayCord)
 		this.isCrop = 0
 
 	}
