@@ -135,8 +135,8 @@ class App extends Component{
                       
                   </div>
 
-                  <div id='zbi' className="row border" >
-                    <div className="col border" >
+                  <div id='zbi' className="row border">
+                    <div className="col border">
                         { firstCollecArray.map((item,index) => { return <div className="row" key={item.toString()}><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis} /><label>{item.toString()}</label></div>; }) }
                         { restCollec.map((item,index) => { return <div className="row" key={item.toString()}><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis}  /><label>{item.toString()}</label></div>; }) }
                     </div>
@@ -150,9 +150,9 @@ class App extends Component{
                       Up Next 
                     </div>
                     <div className="row border">
-						
-                      <div className="col border" style={{height:'450px' , overflow : 'auto'}}>
-					  	<div className="row" style={{height:'20px'}}></div>
+                      
+                      <div className="col border">
+                      	<div className="row" style={{height:'20px'}}></div>
                         {viewCollec.map((item,index) => { return <div className="row" key={item.id.toString()}><div className="col"><img alt={item.taskId.toString()} src={item.src.toString()} id={item.id.toString()} style={{width:'100%'}} onClick={this.chooseInstruction} onDrag={this.dragView} /><div style={{height:'20px'}}></div></div></div>; }) }
                       </div>
                       
@@ -202,13 +202,6 @@ class App extends Component{
 		const  rayCord = [ Number(this.canvaCordX) , Number(this.canvaCordY) , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]
 		this.theCropsCord.push(rayCord)
 	}
-
-	delCrop(event){
-		console.log('HAYD HADI')
-		var idd = 'cropi'+event.target.id.toString()
-		document.getElementById(idd).remove()
-
-	}
 	
 	deleteCrop(){
 		const qhba = this.theCropsCord
@@ -225,7 +218,6 @@ class App extends Component{
 			var img = this.mainImage
 			console.log('DIMENSION dimage dcrop ',img.width , img.height)
 			const canvas = document.createElement('canvas');
-			
 		  	canvas.width = cropWidth;
 		 	canvas.height = cropHeight;
 		  	const ctx = canvas.getContext('2d');
@@ -234,30 +226,20 @@ class App extends Component{
 
 
 		  	const croppedImg = new Image();
-			croppedImg.setAttribute("style", "max-width: 100%; height: auto;");
 	  		croppedImg.src = canvas.toDataURL();
 			croppedImg.setAttribute("className", "row");
 
 	  		console.log('Ha limage cropped ',croppedImg)
 
 			var elem = document.createElement("div");
-			elem.setAttribute("id", "cropi"+this.theCropsCord.length.toString());
 			elem.setAttribute("className", "row");
-			elem.setAttribute("style", "width:auto;height:auto;position:relative;text-align: center;");
+			elem.setAttribute("style", "width:auto;height:auto;position:relative");
 			elem.appendChild(croppedImg);
 
 			var divSpace = document.createElement("div");
 			divSpace.setAttribute("style", "height:15px");
 			divSpace.setAttribute("className", "row");
 			elem.appendChild(divSpace);
-
-			var btnDeleteCrop = document.createElement('button');
-			btnDeleteCrop.innerText = 'X'
-			btnDeleteCrop.setAttribute("style", "position: absolute; top: 0; left: 0;");
-			btnDeleteCrop.setAttribute("id", this.theCropsCord.length.toString());
-			btnDeleteCrop.addEventListener("click", this.delCrop);
-			elem.appendChild(btnDeleteCrop);
-
 
 	  		document.querySelector('#cropat').appendChild(elem);
 		}
@@ -391,7 +373,7 @@ class App extends Component{
 
 	            <div className="col border">
 					<div className="col border" style={{height : '30px'}}>Annotations</div>
-					<div id="cropat" className="col border" style={{height:'450px' , overflow : 'auto'}} >
+					<div id="cropat" className="col border">
 			              
 			        </div>
 

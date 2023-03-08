@@ -205,8 +205,8 @@ class App extends Component{
 
 	delCrop(event){
 		console.log('HAYD HADI')
-		var idd = 'cropi'+event.target.id.toString()
-		document.getElementById(idd).remove()
+		var idd = event.target.id
+		document.getElementById('idd').remove()
 
 	}
 	

@@ -202,13 +202,6 @@ class App extends Component{
 		const  rayCord = [ Number(this.canvaCordX) , Number(this.canvaCordY) , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]
 		this.theCropsCord.push(rayCord)
 	}
-
-	delCrop(event){
-		console.log('HAYD HADI')
-		var idd = 'cropi'+event.target.id.toString()
-		document.getElementById(idd).remove()
-
-	}
 	
 	deleteCrop(){
 		const qhba = this.theCropsCord
@@ -241,7 +234,6 @@ class App extends Component{
 	  		console.log('Ha limage cropped ',croppedImg)
 
 			var elem = document.createElement("div");
-			elem.setAttribute("id", "cropi"+this.theCropsCord.length.toString());
 			elem.setAttribute("className", "row");
 			elem.setAttribute("style", "width:auto;height:auto;position:relative;text-align: center;");
 			elem.appendChild(croppedImg);
@@ -252,12 +244,6 @@ class App extends Component{
 			elem.appendChild(divSpace);
 
 			var btnDeleteCrop = document.createElement('button');
-			btnDeleteCrop.innerText = 'X'
-			btnDeleteCrop.setAttribute("style", "position: absolute; top: 0; left: 0;");
-			btnDeleteCrop.setAttribute("id", this.theCropsCord.length.toString());
-			btnDeleteCrop.addEventListener("click", this.delCrop);
-			elem.appendChild(btnDeleteCrop);
-
 
 	  		document.querySelector('#cropat').appendChild(elem);
 		}

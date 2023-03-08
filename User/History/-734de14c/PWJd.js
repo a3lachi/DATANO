@@ -203,11 +203,8 @@ class App extends Component{
 		this.theCropsCord.push(rayCord)
 	}
 
-	delCrop(event){
+	delCrop(){
 		console.log('HAYD HADI')
-		var idd = 'cropi'+event.target.id.toString()
-		document.getElementById(idd).remove()
-
 	}
 	
 	deleteCrop(){
