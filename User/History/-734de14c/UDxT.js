@@ -200,7 +200,6 @@ class App extends Component{
 		const  rayCord = [ Number(this.canvaCordX) , Number(this.canvaCordY) , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]
 		this.theCropsCord.push(rayCord)
 		this.deleteCrop()
-		 
 	}
 
 	delCrop(event){
@@ -233,35 +232,34 @@ class App extends Component{
 		  	ctx.drawImage(img, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
 
 
-		  	
+		  	const croppedImg = new Image();
+			croppedImg.setAttribute("style", "max-width: 100%; height: auto;");
+	  		croppedImg.src = canvas.toDataURL();
+			croppedImg.setAttribute("className", "row");
 
 	  		console.log('Ha limage cropped ',croppedImg)
 
 			var elem = document.createElement("div");
 			elem.setAttribute("id", "cropi"+this.theCropsCord.length.toString());
 			elem.setAttribute("className", "row");
-			elem.setAttribute("style", "margin-bottom:20px;width:auto;height:auto;position:relative;text-align: center;padding-left:6px");
+			elem.setAttribute("style", "width:auto;height:auto;position:relative;text-align: center;");
+			elem.appendChild(croppedImg);
 
+			var divSpace = document.createElement("div");
+			divSpace.setAttribute("style", "height:15px");
+			divSpace.setAttribute("className", "row");
+			elem.appendChild(divSpace);
 
 			var btnDeleteCrop = document.createElement('button');
-			btnDeleteCrop.innerText = 'x'
-			// btnDeleteCrop.setAttribute("style", "position: absolute; top: 0; left: 0;border-radius: 5px;");
+			btnDeleteCrop.innerText = 'X'
+			btnDeleteCrop.setAttribute("style", "position: absolute; top: 0; left: 0;");
 			btnDeleteCrop.setAttribute("id", this.theCropsCord.length.toString());
-			btnDeleteCrop.setAttribute("class", "row close-button");
 			btnDeleteCrop.addEventListener("click", this.delCrop);
 			elem.appendChild(btnDeleteCrop);
 
 
-			var croppedImg = new Image();
-			croppedImg.setAttribute("style", "max-width: 100%; height: auto;");
-	  		croppedImg.src = canvas.toDataURL();
-			croppedImg.setAttribute("className", "row");
-			elem.appendChild(croppedImg);
-
-			
-
-
-	  		document.querySelector('#cropat').prepend(elem);
+	  		document.querySelector('#cropat').appendChild(elem);
+			document.getElementById('cropat').scroll(0,1000) 
 		}
 
 	}
@@ -396,6 +394,7 @@ class App extends Component{
 			              
 			        </div>
 
+
 			        <div className="row border" style={{height : '200px'}}>
 			               
 			        </div>
@@ -422,7 +421,7 @@ class App extends Component{
           {this.NavBar()}
 
           
-          <div className="row border" >
+          <div className="row border">
 
 
           		{this.Left([firstCollecArray, restCollec, viewCollec, currentInstru])}

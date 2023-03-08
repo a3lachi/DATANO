@@ -240,7 +240,7 @@ class App extends Component{
 			var elem = document.createElement("div");
 			elem.setAttribute("id", "cropi"+this.theCropsCord.length.toString());
 			elem.setAttribute("className", "row");
-			elem.setAttribute("style", "margin-bottom:20px;width:auto;height:auto;position:relative;text-align: center;padding-left:6px");
+			elem.setAttribute("style", "margin-bottom:20px;width:auto;height:auto;position:relative;text-align: center;");
 
 
 			var btnDeleteCrop = document.createElement('button');

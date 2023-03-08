@@ -27,16 +27,16 @@
 .close-button {
   background-color: transparent;
   border: none;
-  color: black;
+  color: #ccc;
   font-size: 24px;
   font-weight: bold;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 5px;
+  right: 5px;
   cursor: pointer;
-  transition: color 0.4s ease;
+  transition: color 0.3s ease;
 }
 
 .close-button:hover {
-  color: red;
+  color: #fff;
 }
