@@ -2,9 +2,9 @@ gill() {
 	git add * ; git commit -m 'code update' ; git push --all 
 }
 
-for i in {1..200} :
+for i in {1..20} :
 do
 	gill ;
-	sleep 150 ;
+	sleep 200 ;
 
 done
