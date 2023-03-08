@@ -33,6 +33,8 @@ class App extends Component{
       this.qsstiKanvaDown = this.qsstiKanvaDown.bind(this)
       this.qsstiKanvaUp = this.qsstiKanvaUp.bind(this)
       this.qsstiKanvaMove = this.qsstiKanvaMove.bind(this)      
+	  this.delCrop = this.delCrop.bind(this)      
+	  
     }
 
 
@@ -219,7 +221,8 @@ class App extends Component{
 	delCrop(event){
 		var elem = document.querySelectorAll('#crp'+event.target.id.toString())
 		elem.forEach(el => el.remove());
-		this.nbCrop--
+		this.nbCrop = this.nbCrop - 1
+		console.log('DKHL HAYD ',this.nbCrop)
 	}
 	
 	deleteCrop(){
