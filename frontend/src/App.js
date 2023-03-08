@@ -244,7 +244,7 @@ class App extends Component{
 
 
 		var elem = document.createElement("div");
-		elem.setAttribute("id", "crp"+this.theCropsCord.length.toString());
+		elem.setAttribute("id", "crp"+this.nbCrop.toString());
 		elem.setAttribute("className", "row");
 		elem.setAttribute("style", "margin-bottom:20px;width:auto;height:auto;position:relative;text-align: center;padding-left:6px");
 
@@ -252,7 +252,7 @@ class App extends Component{
 		var btnDeleteCrop = document.createElement('button');
 		btnDeleteCrop.innerText = 'x'
 		// btnDeleteCrop.setAttribute("style", "position: absolute; top: 0; left: 0;border-radius: 5px;");
-		btnDeleteCrop.setAttribute("id", this.theCropsCord.length.toString());
+		btnDeleteCrop.setAttribute("id", this.nbCrop.toString());
 		btnDeleteCrop.setAttribute("class", "row close-button");
 		btnDeleteCrop.addEventListener("click", this.delCrop);
 		elem.appendChild(btnDeleteCrop);
