@@ -149,7 +149,7 @@ class App extends Component{
                     </div>
                     <div className="row border">
 						
-                      <div className="col border" style={{height:'450px' , overflow : 'auto'}}>
+                      <div className="col border" style={{height:'550px' , overflow : 'auto'}}>
 					  	<div className="row" style={{height:'20px'}}></div>
                         {viewCollec.map((item,index) => { return <div className="row" key={item.id.toString()}><div className="col"><img alt={item.taskId.toString()} src={item.src.toString()} id={item.id.toString()} style={{width:'100%'}} onClick={this.chooseInstruction} onDrag={this.dragView} /><div style={{height:'20px'}}></div></div></div>; }) }
                       </div>
@@ -391,8 +391,9 @@ class App extends Component{
 	            
 
 	            <div className="col border">
-					<div className="col border" style={{height : '30px'}}>Annotations</div>
-					<div id="cropat" className="col border" style={{height:'450px' , overflow : 'auto'}} >
+					<div className="row" style={{height : '30px'}}>Annotations</div>
+					<div className="row" style={{height : '30px'}}></div>
+					<div id="cropat" className="col" style={{height:'450px' , overflow : 'auto'}} >
 			              
 			        </div>
 
