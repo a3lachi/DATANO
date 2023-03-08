@@ -62,3 +62,9 @@
   padding-left: 35px;
   padding-top: 7px;
 }
+
+input[type='checkbox'] {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}

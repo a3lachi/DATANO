@@ -130,8 +130,8 @@ class App extends Component{
 
 					<div id='objectzList' className="row" >
 						<div className="col" >
-							{ firstCollecArray.map((item,index) => { return <div className="row" key={item.toString()}><label>{item.toString()}</label><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis} /></div>; }) }
-							{ restCollec.map((item,index) => { return <div className="row" key={item.toString()}><label>{item.toString()}</label><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis}  /></div>; }) }
+							{ firstCollecArray.map((item,index) => { return <div className="row" key={item.toString()}><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis} />{item.toString()}</div>; }) }
+							{ restCollec.map((item,index) => { return <div className="row" key={item.toString()}><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis}  />{item.toString()}</div>; }) }
 						</div>
 					</div>
 					</div>
