@@ -123,7 +123,10 @@ class App extends Component{
 
 
                 <div id="objectz" className="col">
-                  
+                  <div id='objectzName'className="row">
+                      Objects :
+                      
+                  </div>
 
                   <div id='objectzList' className="row" >
                     <div className="col" >
