@@ -121,20 +121,21 @@ class App extends Component{
 
               <div className="col-lg-2">
 
+				<div>
+					<div id="objectz" className="col">
+					<div id='objectzName'className="row">
+						Objects :
+						
+					</div>
 
-                <div id="objectz" className="col">
-                  <div id='objectzName'className="row">
-                      Objects :
-                      
-                  </div>
-
-                  <div id='objectzList' className="row" >
-                    <div className="col" >
-                        { firstCollecArray.map((item,index) => { return <div className="row" key={item.toString()}><label>{item.toString()}</label><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis} /></div>; }) }
-                        { restCollec.map((item,index) => { return <div className="row" key={item.toString()}><label>{item.toString()}</label><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis}  /></div>; }) }
-                    </div>
-                  </div>
-                </div>
+					<div id='objectzList' className="row" >
+						<div className="col" >
+							{ firstCollecArray.map((item,index) => { return <div className="row" key={item.toString()}><label>{item.toString()}</label><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis} /></div>; }) }
+							{ restCollec.map((item,index) => { return <div className="row" key={item.toString()}><label>{item.toString()}</label><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis}  /></div>; }) }
+						</div>
+					</div>
+					</div>
+				</div>
 
                 <div className="col" style={{height : '40px'}}></div>
 
