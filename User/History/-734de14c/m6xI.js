@@ -16,7 +16,7 @@ class App extends Component{
 	theCropsCord = []
 	tkhrbiqa = 0
 	mainImage  = ''
-	nbCrop = 1
+	nbCrop = 0
 
     constructor(props){
       super(props);
@@ -156,23 +156,22 @@ class App extends Component{
       )
 	}
 
-	qsstiKanvaDown(event){		
+	qsstiKanvaDown(event){
+		var nva = document.querySelector('#finTrssm')
+		
+		var img=this.mainImage
+		// fix the height later and the width ::: 
+		console.log('NAV HEIGHT ',document.querySelector('nav').height)
+		this.canvaCordX = (event.pageX*(12/7)*(img.width/img.height) - (window.innerWidth*(2/12)))
+		this.canvaCordY = (event.pageY*(12/7)*(img.width/img.height) - 102)
 
-		var finTrssm = this.mainImage
-
-		this.canvaCordX = (event.pageX- (window.innerWidth*(2/12)))
-		this.canvaCordY = (event.pageY - 102)/finTrssm.height
-
+		console.log('Qssti kanva ', event.pageX , event.pageY)
+		this.nbCrop++
+		var finTrssm = document.getElementById('imgCanva');
 		var canvas = document.createElement('canvas');
 		canvas.setAttribute('id','crp'+this.nbCrop.toString())
-		canvas.style.height = '100%'
-		canvas.style.width = '100%'
-		canvas.addEventListener("mousedown", this.qsstiKanvaDown)
-		canvas.addEventListener("mousemove", this.qsstiKanvaMove)
-		canvas.addEventListener("mouseup", this.qsstiKanvaUp)
-
-		document.getElementById('central').appendChild(canvas)
-
+		canvas.setAttribute('style','width: 100% ; height:'+finTrssm.style.height)
+		finTrssm.appendChild(canvas)
 		this.isCrop = 1
 	}
 
@@ -180,27 +179,20 @@ class App extends Component{
 		if (this.isCrop == 1) {
 			
 			var canvas = document.querySelector('#crp'+this.nbCrop.toString());
+			console.log('vvvvvv ',canvas)
 			var context = canvas.getContext("2d");
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			var img=this.mainImage
+
 			
-			var img = this.mainImage;
-
-			console.log('image dims : ',img.width , img.height)
-
-			if (img.height<img.width) {
-				var width = (event.pageX-(window.innerWidth*(2/12)))*(img.height/img.width)*(7/12)
-				var height = ((event.pageY-102))*(img.height/img.width)*(7/12)
-			}
-			else {
-				var width = (event.pageX-(window.innerWidth*(2/12)))*(img.width/img.height)*(7/12)
-				var height = ((event.pageY-102))*(img.width/img.height)*(7/12)
-			}
-
-
-			context.clearRect(0, 0, img.width, img.width);
+			var width = (event.pageX*(12/7)*(img.width/img.height)-this.canvaCordX-(window.innerWidth*(2/12)))
+			var height = ((event.pageY*(12/7)*(img.width/img.height)-this.canvaCordY-102))
 			context.rect(this.canvaCordX , this.canvaCordY , width , height);
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
+			console.log('dkhel irssm')
+
 		}
 		
 	}
@@ -209,61 +201,64 @@ class App extends Component{
 		this.isCrop = 0
 		const  rayCord = [ Number(this.canvaCordX) , Number(this.canvaCordY) , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]
 		this.theCropsCord.push(rayCord)
-		this.nbCrop++
 		this.deleteCrop()
-		console.log('mouse up')
-		
 		 
 	}
 
 	delCrop(event){
-		var elem = document.querySelectorAll('#crp'+event.target.id.toString())
-		elem.forEach(el => el.remove());
+		console.log('HAYD HADI')
+		var idd = 'cropi'+event.target.id.toString()
+		document.getElementById(idd).remove()
+
 	}
 	
 	deleteCrop(){
 		const qhba = this.theCropsCord
 		console.log('Length dyal had zbi ', qhba.length)
 		console.log('Had zbi ',qhba)
-		var [cropX , cropY , cropWidth , cropHeight ] = qhba[qhba.length-1]
-		// cropHayd.clearRect(0, 0, 10000, 10000);
-
-		var img = this.mainImage
-		console.log('DIMENSION dimage dcrop ',img.width , img.height)
-		const canvas = document.createElement('canvas');
-		
-		canvas.width = cropWidth;
-		canvas.height = cropHeight;
-		const ctx = canvas.getContext('2d');
-
-		ctx.drawImage(img, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+		if (qhba.length>0) {
+			var [cropX , cropY , cropWidth , cropHeight ] = qhba[qhba.length-1]
+			// cropHayd.clearRect(0, 0, 10000, 10000);
 
 
-		var elem = document.createElement("div");
-		elem.setAttribute("id", "crp"+this.theCropsCord.length.toString());
-		elem.setAttribute("className", "row");
-		elem.setAttribute("style", "margin-bottom:20px;width:auto;height:auto;position:relative;text-align: center;padding-left:6px");
+
+			var img = this.mainImage
+			console.log('DIMENSION dimage dcrop ',img.width , img.height)
+			const canvas = document.createElement('canvas');
+			
+		  	canvas.width = cropWidth;
+		 	canvas.height = cropHeight;
+		  	const ctx = canvas.getContext('2d');
+
+		  	ctx.drawImage(img, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
 
 
-		var btnDeleteCrop = document.createElement('button');
-		btnDeleteCrop.innerText = 'x'
-		// btnDeleteCrop.setAttribute("style", "position: absolute; top: 0; left: 0;border-radius: 5px;");
-		btnDeleteCrop.setAttribute("id", this.theCropsCord.length.toString());
-		btnDeleteCrop.setAttribute("class", "row close-button");
-		btnDeleteCrop.addEventListener("click", this.delCrop);
-		elem.appendChild(btnDeleteCrop);
+			var elem = document.createElement("div");
+			elem.setAttribute("id", "cropi"+this.theCropsCord.length.toString());
+			elem.setAttribute("className", "row");
+			elem.setAttribute("style", "margin-bottom:20px;width:auto;height:auto;position:relative;text-align: center;padding-left:6px");
 
 
-		var croppedImg = new Image();
-		croppedImg.setAttribute("style", "max-width: 100%; height: auto;");
-		croppedImg.src = canvas.toDataURL();
-		croppedImg.setAttribute("className", "row");
-		elem.appendChild(croppedImg);
+			var btnDeleteCrop = document.createElement('button');
+			btnDeleteCrop.innerText = 'x'
+			// btnDeleteCrop.setAttribute("style", "position: absolute; top: 0; left: 0;border-radius: 5px;");
+			btnDeleteCrop.setAttribute("id", this.theCropsCord.length.toString());
+			btnDeleteCrop.setAttribute("class", "row close-button");
+			btnDeleteCrop.addEventListener("click", this.delCrop);
+			elem.appendChild(btnDeleteCrop);
 
-		
+
+			var croppedImg = new Image();
+			croppedImg.setAttribute("style", "max-width: 100%; height: auto;");
+	  		croppedImg.src = canvas.toDataURL();
+			croppedImg.setAttribute("className", "row");
+			elem.appendChild(croppedImg);
+
+			
 
 
-		document.querySelector('#cropat').prepend(elem);
+	  		document.querySelector('#cropat').prepend(elem);
+		}
 
 	}
 
@@ -275,8 +270,10 @@ class App extends Component{
 			
 				<div id="central" className="row border">
 					
-	                <canvas id="imgCanva" style={{width: '100%' , height: '100%'}} onMouseDown={this.qsstiKanvaDown} onMouseUp={this.qsstiKanvaUp} onMouseMove={this.qsstiKanvaMove} >
+	                <canvas id="imgCanva" style={{width: '100%' , height: '100%'}} >
 					</canvas>
+					<canvas id="finTrssm" style={{width: '100%' , height: '100%'}} onMouseDown={this.qsstiKanvaDown} onMouseUp={this.qsstiKanvaUp} onMouseMove={this.qsstiKanvaMove} ></canvas>
+
 					
 	            </div>
 	        
@@ -287,24 +284,29 @@ class App extends Component{
 
 
 	friKanva(currInstru){
-		console.log('KHONA DKHEL IRSSM CANVA')
 		var nva = document.querySelector('#imgCanva')
 
-		// var rssm = document.querySelector('#crp1')		
+		var rssm = document.querySelector('#finTrssm')
+
+		var cntrl = document.getElementById('central')
+		console.log('CENTRAL DZEB ',cntrl)
+		
 		// var img = document.querySelector('#mainimage')
 		if(nva && currInstru) {
 			var ctx1 = nva.getContext("2d");
-			// var ctx2 = rssm.getContext("2d");
+			var ctx2 = rssm.getContext("2d");
 			var img = new Image()
 			
 			console.log('HA CURR LI KHSS ITRSSEM ',currInstru)
 			img.onload = function(){
 				ctx1.canvas.width = img.width;
   				ctx1.canvas.height = img.height;
-				// ctx2.canvas.width = img.width;
-  				// ctx2.canvas.height = img.height;
-				document.getElementById('central').style.height = (((7/12)*(window.innerWidth))*(img.height)/(img.width)).toString()+"px"
+				ctx2.canvas.width = img.width;
+  				ctx2.canvas.height = img.height;
+				console.log('Image dimensions ', img.width , img.height)				 
+				cntrl.style.height = (((7/12)*(window.innerWidth))*(img.height)/(img.width)).toString()+"px"
 				ctx1.drawImage(img,0,0);  
+
 			}
 			img.src = currInstru.src
 			this.mainImage = img

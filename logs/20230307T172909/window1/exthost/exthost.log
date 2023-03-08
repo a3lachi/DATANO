@@ -685,3 +685,39 @@
 2023-03-08 00:31:46.724 [warning] [Decorations] CAPPING events from decorations provider vscode.git 1725
 2023-03-08 00:31:51.781 [warning] [Decorations] CAPPING events from decorations provider vscode.git 1725
 2023-03-08 01:45:34.790 [info] ExtensionService#_doActivateExtension vscode.html-language-features, startup: false, activationEvent: 'onLanguage:html'
+2023-03-08 16:19:04.407 [info] Extension host terminating: renderer closed the MessagePort
+2023-03-08 16:19:04.774 [error] Canceled: Canceled
+	at new a (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:88793)
+	at c.O (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:106:11260)
+	at V.<computed>.Q.charCodeAt.V.<computed> (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:106:8550)
+	at l.g (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:108198)
+	at l.executeCommand (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:107574)
+	at O.registerCommand.description (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:106867)
+	at l.h (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:108784)
+	at l.g (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:107674)
+	at l.executeCommand (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:107574)
+	at Object.executeCommand (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:117:30781)
+	at D (/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/main.js:2:1467127)
+	at f.invoke (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:63:145)
+	at g.deliver (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:63:2066)
+	at h.fire (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:63:1704)
+	at Object.m [as dispose] (/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/main.js:2:1481856)
+	at /Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/main.js:2:1485923
+	at Array.forEach (<anonymous>)
+	at g.dispose (/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/main.js:2:1485909)
+	at C.<anonymous> (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:94:12431)
+	at C.dispose (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:94:12566)
+	at C.<anonymous> (/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/main.js:2:1469257)
+	at C.dispose (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:94:12566)
+	at k (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:10:12074)
+	at f.X (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:108:11284)
+	at /Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:108:9088
+	at Array.map (<anonymous>)
+	at f.Q (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:108:9075)
+	at f.terminate (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:108:9347)
+	at u.terminate (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:112:1397)
+	at p (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:122:18592)
+	at MessagePortMain.<anonymous> (/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:122:14731)
+	at MessagePortMain.emit (node:events:526:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:5:364) setContext undefined
+2023-03-08 16:19:04.790 [info] Extension host with pid 2789 exiting with code 0
