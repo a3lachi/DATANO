@@ -138,7 +138,7 @@ class App extends Component{
 
                 <div className="col" style={{height : '40px'}}></div>
 
-                <div className="col">
+                <div id="lezobjet" className="col">
                     <div className="row">
                       Up Next 
                     </div>
@@ -354,7 +354,7 @@ class App extends Component{
 		return(
 			<div className="col-lg-3">
 	            
-	            <div className="col">
+	            <div id="infoz" className="col">
 					<div className="row">
 		            	Info 
 		        	</div>
@@ -385,7 +385,7 @@ class App extends Component{
 	            <div className="col" style={{height : '20px'}}></div>
 	            
 
-	            <div className="col">
+	            <div id="zcrops" className="col">
 					<div className="row" style={{height : '30px'}}>Annotations</div>
 					<div className="row" style={{height : '30px'}}></div>
 					<div id="cropat" className="col" style={{height:'450px' , overflow : 'auto'}} >
