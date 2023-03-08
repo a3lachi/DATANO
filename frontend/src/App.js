@@ -219,6 +219,7 @@ class App extends Component{
 	delCrop(event){
 		var elem = document.querySelectorAll('#crp'+event.target.id.toString())
 		elem.forEach(el => el.remove());
+		this.nbCrop--
 	}
 	
 	deleteCrop(){
