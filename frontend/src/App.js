@@ -122,7 +122,7 @@ class App extends Component{
               <div className="col-lg-2">
 
 
-                <div className="col">
+                <div id="objectz" className="col">
                   <div className="row">
                       Objects :
                       
