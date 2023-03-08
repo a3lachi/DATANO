@@ -16,6 +16,7 @@ class App extends Component{
 	theCropsCord = []
 	tkhrbiqa = 0
 	mainImage  = ''
+	contextCrops = []
 
     constructor(props){
       super(props);
@@ -110,7 +111,7 @@ class App extends Component{
 
 	NavBar() {
 		return(
-				<nav className="navbar navbar-inverse navbar-fixed-top">
+				<nav className="navbar navbar-inverse navbar-fixed-top" >
 			        <div className="container-fluid">
 			          <div className="navbar-header">
 			            <a  href="navDatano" className="navbar-brand" >DATANO API - Image Annotation</a>
@@ -167,10 +168,11 @@ class App extends Component{
 	qsstiKanvaDown(event){
 		var nva = document.querySelector('#finTrssm')
 		
-
+		var img=this.mainImage
 		// fix the height later and the width ::: 
-		this.canvaCordX = event.pageX - 280
-		this.canvaCordY = event.pageY - 102
+		console.log('NAV HEIGHT ',document.querySelector('nav').height)
+		this.canvaCordX = (event.pageX - (window.innerWidth*(2/12)))
+		this.canvaCordY = (event.pageY - 102)
 
 		console.log('Qssti kanva ', event.pageX , event.pageY)
 		this.isCrop = 1
@@ -181,13 +183,16 @@ class App extends Component{
 			var canvas = document.querySelector('#finTrssm');
 			var context = canvas.getContext("2d");
 			context.clearRect(0, 0, canvas.width, canvas.height);
+			var img=this.mainImage
 
-			var width = event.pageX-this.canvaCordX-280
-			var height = event.pageY-this.canvaCordY-102
+			
+			var width = (event.pageX-this.canvaCordX-(window.innerWidth*(2/12)))
+			var height = ((event.pageY-this.canvaCordY-102))
 			context.rect(this.canvaCordX , this.canvaCordY , width , height);
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
+			this.contextCrops.push(context)
 		}
 		
 	}
@@ -205,10 +210,13 @@ class App extends Component{
 		if (qhba.length>0) {
 			var [cropX , cropY , cropWidth , cropHeight ] = qhba[qhba.length-1]
 
+			var cropHayd = this.contextCrops[this.contextCrops.length-1]
+			// cropHayd.clearRect(0, 0, 10000, 10000);
+
 
 
 			var img = this.mainImage
-
+			console.log('DIMENSION dimage dcrop ',img.width , img.height)
 			const canvas = document.createElement('canvas');
 		  	canvas.width = cropWidth;
 		 	canvas.height = cropHeight;
@@ -219,10 +227,20 @@ class App extends Component{
 
 		  	const croppedImg = new Image();
 	  		croppedImg.src = canvas.toDataURL();
+			croppedImg.setAttribute("className", "row");
 
 	  		console.log('Ha limage cropped ',croppedImg)
 
-	  		document.querySelector('#cropat').appendChild(croppedImg);
+			var elem = document.createElement("div");
+			elem.setAttribute("className", "row");
+			elem.appendChild(croppedImg);
+
+			var divSpace = document.createElement("div");
+			divSpace.setAttribute("style", "height:15px");
+			divSpace.setAttribute("className", "row");
+			elem.appendChild(divSpace);
+
+	  		document.querySelector('#cropat').appendChild(elem);
 		}
 
 	}
@@ -267,30 +285,18 @@ class App extends Component{
 			
 			console.log('HA CURR LI KHSS ITRSSEM ',currInstru)
 			img.onload = function(){
-				
-				// ctx1.canvas.width = img.width;
-  				// ctx1.canvas.height = img.height;
-				// ctx2.canvas.width = img.width;
-  				// ctx2.canvas.height = img.height;
-				// cntrl.style.height = '58%' 
+				ctx1.canvas.width = img.width;
+  				ctx1.canvas.height = img.height;
+				ctx2.canvas.width = img.width;
+  				ctx2.canvas.height = img.height;
 				console.log('Image dimensions ', img.width , img.height)				 
-				cntrl.style.height = (((7/12)*(window.innerWidth))*(img.height)/(img.width)).toString()+"px"
+				cntrl.style.height = "auto"
 				ctx1.drawImage(img,0,0);  
 
 			}
 			img.src = currInstru.src
 			this.mainImage = img
 		}
-
-		// if(nva && img) {
-
-		// 	nva.width  = nva.offsetWidth;
-		// 	nva.height  = img.offsetHeight;
-		// 	console.log('Ofsset height  '	,img.height)
-		// }
-		// else {
-		// 	console.log('render daba ')
-		// }
 	}
 
 
@@ -365,8 +371,9 @@ class App extends Component{
 	            
 
 	            <div className="col border">
-					<div id="cropat" className="row border">
-			              Annotations 
+					<div className="col border" style={{height : '30px'}}>Annotations</div>
+					<div id="cropat" className="col border">
+			              
 			        </div>
 
 

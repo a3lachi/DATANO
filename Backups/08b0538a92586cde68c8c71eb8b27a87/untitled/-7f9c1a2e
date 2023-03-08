@@ -1,0 +1,6 @@
+untitled:Untitled-1 {"typeId":""}
+INSERT INTO auth_user (username, password, is_superuser, is_staff, first_name, last_name, email,is_active , date_joined)
+VALUES ('cosmic', 'pass', 1, 1, 'farawa', 'molchi', 'molchi@mol.io',1,  1);
+
+
+PRAGMA table_info(auth_user);
