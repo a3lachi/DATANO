@@ -117,17 +117,17 @@ class App extends Component{
 		var [firstCollecArray, restCollec, viewCollec  ] =[ data[0] , data[1] , data[2] ] ;
 		return(
 
-              <div className="col-lg-2 border">
+              <div className="col-lg-2">
 
 
-                <div className="col border">
-                  <div className="row border">
+                <div className="col">
+                  <div className="row">
                       Objects :
                       
                   </div>
 
-                  <div id='zbi' className="row border" >
-                    <div className="col border" >
+                  <div id='zbi' className="row" >
+                    <div className="col" >
                         { firstCollecArray.map((item,index) => { return <div className="row" key={item.toString()}><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis} /><label>{item.toString()}</label></div>; }) }
                         { restCollec.map((item,index) => { return <div className="row" key={item.toString()}><input type="checkbox" name="myCheckbox" id={item.toString()} onClick={this.selectOnlyThis}  /><label>{item.toString()}</label></div>; }) }
                     </div>
@@ -136,13 +136,13 @@ class App extends Component{
 
                 <div className="col" style={{height : '40px'}}></div>
 
-                <div className="col border">
-                    <div className="row border">
+                <div className="col">
+                    <div className="row">
                       Up Next 
                     </div>
-                    <div className="row border">
+                    <div className="row">
 						
-                      <div className="col border" style={{height:'550px' , overflow : 'auto'}}>
+                      <div className="col" style={{height:'550px' , overflow : 'auto'}}>
 					  	<div className="row" style={{height:'20px'}}></div>
                         {viewCollec.map((item,index) => { return <div className="row" key={item.id.toString()}><div className="col"><img alt={item.taskId.toString()} src={item.src.toString()} id={item.id.toString()} style={{width:'100%'}} onClick={this.chooseInstruction} onDrag={this.dragView} /><div style={{height:'20px'}}></div></div></div>; }) }
                       </div>
@@ -273,7 +273,7 @@ class App extends Component{
 	Kanva(currInstru){
 		return(
 			
-				<div id="central" className="row border">
+				<div id="central" className="row">
 					
 	                <canvas id="imgCanva" style={{width: '100%' , height: '100%'}} onMouseDown={this.qsstiKanvaDown} onMouseUp={this.qsstiKanvaUp} onMouseMove={this.qsstiKanvaMove} >
 					</canvas>
@@ -318,11 +318,11 @@ class App extends Component{
 
 		return (
 
-			<div id="santr" className="col-lg-7 border">
+			<div id="santr" className="col-lg-7">
 
-	              <div className="row border">
+	              <div className="row">
 	                
-	              <div className="col border" style={{height:'45px'}}> Central picture {currInstru.instru} </div>
+	              <div className="col" style={{height:'45px'}}> Central picture {currInstru.instru} </div>
 	              </div>
 
 
@@ -330,10 +330,10 @@ class App extends Component{
 	            	              	              
 
 
-	              <div className="row border" style={{height:'30px'}}></div>
+	              <div className="row" style={{height:'30px'}}></div>
 
 
-	              <div className="row border">
+	              <div className="row">
 	                Message
 	              </div>
 
@@ -348,27 +348,27 @@ class App extends Component{
 
 	Right(currentInstru){
 		return(
-			<div className="col-lg-3 border">
+			<div className="col-lg-3">
 	            
-	            <div className="col border">
+	            <div className="col">
 					<div className="row">
 		            	Info 
 		        	</div>
-		            <div className="row border">
-		            	<div className="col border">
-			            	<div className="row border">
+		            <div className="row">
+		            	<div className="col">
+			            	<div className="row">
 			            		Instruction : {currentInstru.instru}
 			            	</div>
-			            	<div className="row border">
+			            	<div className="row">
 			            		Task ID : {currentInstru.taskId}
 			            	</div>
-			            	<div className="row border">
+			            	<div className="row">
 			            		Created At : {currentInstru.createdAt}
 			            	</div>
-			            	<div className="row border">
+			            	<div className="row">
 			            		Urgency : {currentInstru.urgency}
 			            	</div>
-			            	<div className="row border">
+			            	<div className="row">
 			            		Original Image : 
 			            	</div>
 			            </div>
@@ -381,14 +381,14 @@ class App extends Component{
 	            <div className="col" style={{height : '20px'}}></div>
 	            
 
-	            <div className="col border">
+	            <div className="col">
 					<div className="row" style={{height : '30px'}}>Annotations</div>
 					<div className="row" style={{height : '30px'}}></div>
 					<div id="cropat" className="col" style={{height:'450px' , overflow : 'auto'}} >
 			              
 			        </div>
 
-			        <div className="row border" style={{height : '200px'}}>
+			        <div className="row" style={{height : '200px'}}>
 			               
 			        </div>
 			    </div>
@@ -414,7 +414,7 @@ class App extends Component{
           {this.NavBar()}
 
           
-          <div className="row border" >
+          <div className="row" >
 
 
           		{this.Left([firstCollecArray, restCollec, viewCollec, currentInstru])}
