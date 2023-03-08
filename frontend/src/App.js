@@ -211,8 +211,8 @@ class App extends Component{
 		this.isCrop = 0
 		const  rayCord = [ Number(this.canvaCordX) , Number(this.canvaCordY) , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]
 		this.theCropsCord.push(rayCord)
-		this.nbCrop++
 		this.deleteCrop()
+		this.nbCrop++
 		console.log('mouse up')
 		
 		 
