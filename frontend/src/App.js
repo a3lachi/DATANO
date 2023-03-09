@@ -192,7 +192,7 @@ class App extends Component{
 			var height = Math.abs(   (event.pageY-102)*(150/(window.innerWidth*(7/12)*img.width/img.height)) - this.canvaCordY )
 
 			console.log('WIDTH LI ITRSSM',canvas.height,event.pageX)
-			context.clearRect(this.canvaCordX, this.canvaCordY, img.width, img.width);
+			context.clearRect(0, 0, img.width, img.width);
 			context.rect(this.canvaCordX , this.canvaCordY , width , height);
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
