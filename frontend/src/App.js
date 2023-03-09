@@ -12,6 +12,11 @@ class App extends Component{
 
 	allData = []
 
+	firstCollecArray = [] 
+	restCollec = [] 
+	viewCollec = [] 
+	currentInstru = []
+
 	canvaCordX = ''
 	canvaCordY = ''
 	isCrop = 0
