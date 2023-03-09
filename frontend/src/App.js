@@ -163,8 +163,8 @@ class App extends Component{
 
 		var img = document.getElementById('imgCanva')
 
-		this.canvaCordX = Math.abs((event.pageX-(window.innerWidth*(2/12))))*(300/(window.innerWidth*(7/12)))
-		this.canvaCordY = (event.pageY - 102)*(150/(window.innerWidth*(7/12)))
+		this.canvaCordX = Math.abs(event.pageX-(window.innerWidth*(2/12)))*(300/(window.innerWidth*(7/12))
+		this.canvaCordY = (event.pageY - 102)*(150/102)
 
 		var canvas = document.createElement('canvas');
 		canvas.setAttribute('id','crp'+this.nbCrop.toString())
@@ -189,11 +189,11 @@ class App extends Component{
 
 
 			var width = Math.abs((event.pageX-window.innerWidth*(2/12))*(300/(window.innerWidth*(7/12)))-this.canvaCordX )
-			var height = Math.abs(((event.pageY-102))*(150/(window.innerWidth*(7/12))) - this.canvaCordY )
+			var height = Math.abs(   (event.pageY-102))*(150/102) - this.canvaCordY )
 
 			console.log('WIDTH LI ITRSSM',canvas.height,event.pageX)
 			context.clearRect(this.canvaCordX, this.canvaCordY, img.width, img.width);
-			context.rect(this.canvaCordX , 0 , width , height);
+			context.rect(this.canvaCordX , this.canvaCordY , width , height);
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
