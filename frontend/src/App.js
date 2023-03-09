@@ -235,11 +235,11 @@ class App extends Component{
 
 
 		const canvas = document.createElement('canvas');
-		canvas.width = cropWidth;
-		canvas.height = cropHeight;
+		canvas.width = this.widthCrop;
+		canvas.height = this.heightCrop;
 		const ctx = canvas.getContext('2d');
 
-		ctx.drawImage(img, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+		ctx.drawImage(img, this.canvaCordX*window.innerWidth*(7/12)/300, this.canvaCordY, this.widthCrop, this.heightCrop, 0, 0, this.widthCrop, this.heightCrop);
 
 
 
