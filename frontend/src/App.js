@@ -74,7 +74,7 @@ class App extends Component{
     };
 
     getCollectionData(state) {
-	  const data = this.state.collection;
+	  const data = state.collection;
 	  const firstRow = data[0];
 	  const restCollec = [];
 	  const firstCollecArray = [];
