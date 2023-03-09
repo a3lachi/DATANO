@@ -161,10 +161,11 @@ class App extends Component{
 
 	qsstiKanvaDown(event){		
 
-		var img = document.getElementById('imgCanva')
+		var imgHeit = document.getElementById('central').style.height
+		imgHeit = imgHeit.slice(0,imgHeit.length-2)
 
 		this.canvaCordX = Math.abs(event.pageX-(window.innerWidth*(2/12)) )*300/(window.innerWidth*(7/12))
-		this.canvaCordY = (event.pageY - 102)*(150/img.height)
+		this.canvaCordY = (event.pageY - 102)*(150/imgHeit)
 
 		var canvas = document.createElement('canvas');
 		canvas.setAttribute('id','crp'+this.nbCrop.toString())
@@ -187,9 +188,12 @@ class App extends Component{
 			
 			var img = document.getElementById('imgCanva');
 
+			var imgHeit = document.getElementById('central').style.height
+			imgHeit = imgHeit.slice(0,imgHeit.length-2)
+
 
 			var width = Math.abs((event.pageX-window.innerWidth*(2/12))*(300/(window.innerWidth*(7/12)))-this.canvaCordX )
-			var height = Math.abs(   (event.pageY-102)*(150/img.height) - this.canvaCordY )
+			var height = Math.abs(   (event.pageY-102)*(150/imgHeit) - this.canvaCordY )
 
 			console.log('RATIO IMAGE DIMS',img.width/img.height)
 			console.log('RATIO IMAGE CANVAS',img.width/img.height)
