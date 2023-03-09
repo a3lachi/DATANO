@@ -164,7 +164,7 @@ class App extends Component{
 		var img = document.getElementById('imgCanva')
 
 		this.canvaCordX = Math.abs(event.pageX-(window.innerWidth*(2/12)) )*300/(window.innerWidth*(7/12))
-		this.canvaCordY = (event.pageY - 102)*(150/(window.innerWidth*(7/12)*img.width/img.height))
+		this.canvaCordY = (event.pageY - 102)*(150/img.height)
 
 		var canvas = document.createElement('canvas');
 		canvas.setAttribute('id','crp'+this.nbCrop.toString())
@@ -189,12 +189,12 @@ class App extends Component{
 
 
 			var width = Math.abs((event.pageX-window.innerWidth*(2/12))*(300/(window.innerWidth*(7/12)))-this.canvaCordX )
-			var height = Math.abs(   (event.pageY-102)*(150/(window.innerWidth*(7/12)*img.width/img.height)) - this.canvaCordY )
+			var height = Math.abs(   (event.pageY-102)*(150/img.height) - this.canvaCordY )
 
 			console.log('RATIO IMAGE DIMS',img.width/img.height)
 			console.log('RATIO IMAGE CANVAS',img.width/img.height)
 			context.clearRect(0, 0, img.width, img.width);
-			context.rect(this.canvaCordX , 0 , width , canvas.height);
+			context.rect(this.canvaCordX , this.canvaCordY , width , height);
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
