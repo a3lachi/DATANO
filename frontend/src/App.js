@@ -193,7 +193,7 @@ class App extends Component{
 
 			console.log('WIDTH LI ITRSSM',canvas.height,event.pageX)
 			context.clearRect(0, 0, img.width, img.width);
-			context.rect(this.canvaCordX , this.canvaCordY , width , height);
+			context.rect(this.canvaCordX , 0 , width , canvas.height);
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
