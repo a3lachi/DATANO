@@ -163,7 +163,7 @@ class App extends Component{
 
 		var img = document.getElementById('imgCanva')
 
-		this.canvaCordX = Math.abs((event.pageX-(window.innerWidth*(2/12))))
+		this.canvaCordX = Math.abs((event.pageX-(window.innerWidth*(2/12))))*(window.innerWidth*(7/12)/300)
 		this.canvaCordY = (event.pageY - 102)
 
 		var canvas = document.createElement('canvas');
@@ -188,7 +188,7 @@ class App extends Component{
 			var img = document.getElementById('imgCanva');
 
 
-			var width = Math.abs((event.pageX-window.innerWidth*(2/12))/canvas.width-this.canvaCordX )
+			var width = Math.abs((event.pageX-window.innerWidth*(2/12))*(300/(window.innerWidth*(7/12)))-this.canvaCordX )
 			var height = Math.abs(((event.pageY-102)))
 
 			console.log('WIDTH LI ITRSSM',width,event.pageX)
