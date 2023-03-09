@@ -82,14 +82,14 @@ class App extends Component{
         .get("/api/Instructions/")
         .then((res) => {this.setState({ collection: res.data } , function(){
 			this.allData = res.dat;
-			[this.firstCollecArray, this.restCollec, viewCollec, currentInstru]
+			
 
 		}) })
         .catch((err) => console.log(err));
     };
 
-    getCollectionData(state) {
-	  const data = state.collection;
+    getCollectionData(data) {
+
 	  const firstRow = data[0];
 	  const restCollec = [];
 	  const firstCollecArray = [];
@@ -104,7 +104,7 @@ class App extends Component{
 
 	  const viewCollec = [];
 	  for (let i = 0; i < data.length; i++) {
-	    if (data[i].collection === state.view) {
+	    if (data[i].collection === this.state.view) {
 	      viewCollec.push(data[i]);
 	    }
 	  }
@@ -416,7 +416,7 @@ class App extends Component{
 
     render(){
 
-    	var [firstCollecArray, restCollec, viewCollec, currentInstru] = this.getCollectionData(this.state)
+    	var [firstCollecArray, restCollec, viewCollec, currentInstru] = this.getCollectionData(this.state.collection)
       return(
 
         <main className="container-fluid">
