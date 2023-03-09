@@ -307,7 +307,7 @@ class App extends Component{
 				document.getElementById('central').style.height = (((7/12)*(window.innerWidth))*(img.height)/(img.width)).toString()+"px"
 				ctx1.drawImage(img,0,0);  
 			}
-			img.src = currInstru.src
+			// img.src = currInstru.src
 			this.mainImage = img
 		}
 	}
