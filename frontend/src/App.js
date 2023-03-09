@@ -75,7 +75,7 @@ class App extends Component{
     refreshList = () => {
       axios
         .get("/api/Instructions/")
-        .then((res) => this.setState({ collection: res.data }))
+        .then((res) => {this.setState({ collection: res.data }) ; this.allData = res.dat;})
         .catch((err) => console.log(err));
     };
 
@@ -313,7 +313,7 @@ class App extends Component{
 				document.getElementById('central').style.height = (((7/12)*(window.innerWidth))*(img.height)/(img.width)).toString()+"px"
 				ctx1.drawImage(img,0,0);  
 			}
-			// img.src = currInstru.src
+			img.src = currInstru.src
 			this.mainImage = img
 		}
 	}
