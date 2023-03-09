@@ -161,10 +161,10 @@ class App extends Component{
 
 	qsstiKanvaDown(event){		
 
-		var finTrssm = this.mainImage
+		var img = document.getElementById('imgCanva')
 
-		this.canvaCordX = (event.pageX- (window.innerWidth*(2/12)))
-		this.canvaCordY = (event.pageY - 102)/finTrssm.height
+		this.canvaCordX = Math.abs((event.pageX-(window.innerWidth*(2/12))))
+		this.canvaCordY = (event.pageY - 102)
 
 		var canvas = document.createElement('canvas');
 		canvas.setAttribute('id','crp'+this.nbCrop.toString())
@@ -185,27 +185,20 @@ class App extends Component{
 			var canvas = document.querySelector('#crp'+this.nbCrop.toString());
 			var context = canvas.getContext("2d");
 			
-			var img = this.mainImage;
+			var img = document.getElementById('imgCanva');
 
 			console.log('image dims : ',img.width , img.height)
 
-			if (img.height<img.width) {
-				var width = (event.pageX-(window.innerWidth*(2/12)))*(img.height/img.width)*(7/12)
-				var height = ((event.pageY-102))*(img.height/img.width)*(7/12)
-			}
-			else {
-				var width = (event.pageX-(window.innerWidth*(2/12)))*(img.width/img.height)*(7/12)
-				var height = ((event.pageY-102))*(img.width/img.height)*(7/12)
-			}
+			var width = Math.abs((event.pageX-(window.innerWidth*(2/12))-this.canvaCordX ))
+			var height = Math.abs(((event.pageY-102)))
 
-
-			context.clearRect(0, 0, img.width, img.width);
+			console.log('3lamen trssm',img.width,height)
+			context.clearRect(this.canvaCordX, this.canvaCordY, img.width, img.width);
 			context.rect(this.canvaCordX , this.canvaCordY , width , height);
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
 		}
-		
 	}
 
 	qsstiKanvaUp(event){
@@ -265,13 +258,9 @@ class App extends Component{
 		croppedImg.setAttribute("className", "row");
 		elem.appendChild(croppedImg);
 
-		
-
-
 		document.querySelector('#cropat').prepend(elem);
 
 	}
-
 
 
 
