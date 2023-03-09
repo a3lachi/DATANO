@@ -228,16 +228,22 @@ class App extends Component{
 	deleteCrop(){
 		const qhba = this.theCropsCord
 		var [cropX , cropY , cropWidth , cropHeight ] = qhba[qhba.length-1]
-		// cropHayd.clearRect(0, 0, 10000, 10000);
 
 		var img = this.mainImage
+
+
+
+
 		const canvas = document.createElement('canvas');
-		
 		canvas.width = cropWidth;
 		canvas.height = cropHeight;
 		const ctx = canvas.getContext('2d');
 
 		ctx.drawImage(img, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+
+
+
+
 
 
 		var elem = document.createElement("div");
@@ -248,7 +254,6 @@ class App extends Component{
 
 		var btnDeleteCrop = document.createElement('button');
 		btnDeleteCrop.innerText = 'x'
-		// btnDeleteCrop.setAttribute("style", "position: absolute; top: 0; left: 0;border-radius: 5px;");
 		btnDeleteCrop.setAttribute("id", this.nbCrop.toString());
 		btnDeleteCrop.setAttribute("class", "row close-button");
 		btnDeleteCrop.addEventListener("click", this.delCrop);
