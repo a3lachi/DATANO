@@ -231,7 +231,8 @@ class App extends Component{
 
 		var img = this.mainImage
 
-
+		var imgHeit = document.getElementById('central').style.height
+		imgHeit = imgHeit.slice(0,imgHeit.length-2)
 
 
 		const canvas = document.createElement('canvas');
@@ -239,7 +240,7 @@ class App extends Component{
 		canvas.height = this.heightCrop;
 		const ctx = canvas.getContext('2d');
 
-		ctx.drawImage(img, this.canvaCordX*window.innerWidth*(7/12)/300, this.canvaCordY, this.widthCrop, this.heightCrop, 0, 0, this.widthCrop, this.heightCrop);
+		ctx.drawImage(img, this.canvaCordX*window.innerWidth*(7/12)/300, this.canvaCordY*imgHeit/150, this.widthCrop, this.heightCrop, 0, 0, this.widthCrop, this.heightCrop);
 
 
 
