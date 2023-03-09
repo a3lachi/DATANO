@@ -187,14 +187,13 @@ class App extends Component{
 			
 			var img = document.getElementById('imgCanva');
 
-			console.log('image dims : ',img.width , img.height)
 
-			var width = Math.abs((event.pageX-(window.innerWidth*(2/12))-this.canvaCordX ))
+			var width = Math.abs((event.pageX/canvas.width)-(window.innerWidth*(2/12))-this.canvaCordX )
 			var height = Math.abs(((event.pageY-102)))
 
-			console.log('3lamen trssm',img.width,height)
+			console.log('WIDTH LI ITRSSM',width)
 			context.clearRect(this.canvaCordX, this.canvaCordY, img.width, img.width);
-			context.rect(this.canvaCordX , this.canvaCordY , width , height);
+			context.rect(0 , 0 , width , height);
 			context.globalAlpha = 0.3
 			context.fillStyle = "#FF0000";
 			context.fill();
@@ -221,8 +220,6 @@ class App extends Component{
 	
 	deleteCrop(){
 		const qhba = this.theCropsCord
-		console.log('Length dyal had zbi ', qhba.length)
-		console.log('Had zbi ',qhba)
 		var [cropX , cropY , cropWidth , cropHeight ] = qhba[qhba.length-1]
 		// cropHayd.clearRect(0, 0, 10000, 10000);
 
