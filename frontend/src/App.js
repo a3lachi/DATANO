@@ -197,7 +197,7 @@ class App extends Component{
 			var width = Math.abs((event.pageX-window.innerWidth*(2/12))*(300/(window.innerWidth*(7/12)))-this.canvaCordX )
 			var height = Math.abs(   (event.pageY-102)*(150/imgHeit) - this.canvaCordY )
 
-			this.heightCrop = height 
+			this.heightCrop = height*imgHeit/150
 			this.widthCrop = width*window.innerWidth*(7/12)/300
 
 			console.log('RATIO IMAGE DIMS',img.width/img.height)
