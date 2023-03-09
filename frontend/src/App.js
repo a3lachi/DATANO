@@ -80,7 +80,11 @@ class App extends Component{
     refreshList = () => {
       axios
         .get("/api/Instructions/")
-        .then((res) => {this.setState({ collection: res.data }) ; this.allData = res.dat;})
+        .then((res) => {this.setState({ collection: res.data } , function(){
+			this.allData = res.dat;
+			[this.firstCollecArray, this.restCollec, viewCollec, currentInstru]
+
+		}) })
         .catch((err) => console.log(err));
     };
 
