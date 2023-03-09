@@ -188,10 +188,10 @@ class App extends Component{
 			var img = document.getElementById('imgCanva');
 
 
-			var width = Math.abs((event.pageX/canvas.width)-(window.innerWidth*(2/12))-this.canvaCordX )
+			var width = Math.abs((event.pageX-window.innerWidth*(2/12))/canvas.width-this.canvaCordX )
 			var height = Math.abs(((event.pageY-102)))
 
-			console.log('WIDTH LI ITRSSM',width)
+			console.log('WIDTH LI ITRSSM',width,event.pageX)
 			context.clearRect(this.canvaCordX, this.canvaCordY, img.width, img.width);
 			context.rect(0 , 0 , width , height);
 			context.globalAlpha = 0.3
@@ -205,9 +205,7 @@ class App extends Component{
 		const  rayCord = [ Number(this.canvaCordX) , Number(this.canvaCordY) , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]
 		this.theCropsCord.push(rayCord)
 		this.deleteCrop()
-		this.nbCrop++
-		console.log('mouse up')
-		
+		this.nbCrop++		
 		 
 	}
 
@@ -215,7 +213,6 @@ class App extends Component{
 		var elem = document.querySelectorAll('#crp'+event.target.id.toString())
 		elem.forEach(el => el.remove());
 		this.nbCrop = this.nbCrop - 1
-		console.log('DKHL HAYD ',this.nbCrop)
 	}
 	
 	deleteCrop(){
@@ -224,7 +221,6 @@ class App extends Component{
 		// cropHayd.clearRect(0, 0, 10000, 10000);
 
 		var img = this.mainImage
-		console.log('DIMENSION dimage dcrop ',img.width , img.height)
 		const canvas = document.createElement('canvas');
 		
 		canvas.width = cropWidth;
@@ -278,7 +274,6 @@ class App extends Component{
 
 
 	friKanva(currInstru){
-		console.log('KHONA DKHEL IRSSM CANVA')
 		var nva = document.querySelector('#imgCanva')
 
 		// var rssm = document.querySelector('#crp1')		
@@ -288,7 +283,6 @@ class App extends Component{
 			// var ctx2 = rssm.getContext("2d");
 			var img = new Image()
 			
-			console.log('HA CURR LI KHSS ITRSSEM ',currInstru)
 			img.onload = function(){
 				ctx1.canvas.width = img.width;
   				ctx1.canvas.height = img.height;
@@ -304,9 +298,6 @@ class App extends Component{
 
 
 	Center(currInstru) {
-
-		console.log('Centerr cur dzeb ',currInstru)
-
 		return (
 
 			<div id="santr" className="col-lg-7">
@@ -395,8 +386,6 @@ class App extends Component{
     render(){
 
     	var [firstCollecArray, restCollec, viewCollec, currentInstru] = this.getCollectionData(this.state)
-    	console.log('Cuurent instru ',this.instru)
-
       return(
 
         <main className="container-fluid">
