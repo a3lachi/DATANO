@@ -17,6 +17,8 @@ class App extends Component{
 	tkhrbiqa = 0
 	mainImage  = ''
 	nbCrop = 1
+	widthCrop = 0
+	heightCrop = 0
 
     constructor(props){
       super(props);
@@ -195,6 +197,9 @@ class App extends Component{
 			var width = Math.abs((event.pageX-window.innerWidth*(2/12))*(300/(window.innerWidth*(7/12)))-this.canvaCordX )
 			var height = Math.abs(   (event.pageY-102)*(150/imgHeit) - this.canvaCordY )
 
+			this.heightCrop = height 
+			this.widthCrop = width*window.innerWidth*(7/12)/300
+
 			console.log('RATIO IMAGE DIMS',img.width/img.height)
 			console.log('RATIO IMAGE CANVAS',img.width/img.height)
 			context.clearRect(0, 0, img.width, img.width);
@@ -207,7 +212,7 @@ class App extends Component{
 
 	qsstiKanvaUp(event){
 		this.isCrop = 0
-		const  rayCord = [ Number(this.canvaCordX) , Number(this.canvaCordY) , event.pageX-this.canvaCordX-280 , event.pageY-this.canvaCordY-102 ]
+		const  rayCord = [ Number(this.canvaCordX) , Number(this.canvaCordY) , this.widthCrop , this.heightCrop ]
 		this.theCropsCord.push(rayCord)
 		this.deleteCrop()
 		this.nbCrop++		
