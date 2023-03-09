@@ -10,6 +10,8 @@ import { flushSync } from 'react-dom';
 
 class App extends Component{
 
+	allData = []
+
 	canvaCordX = ''
 	canvaCordY = ''
 	isCrop = 0
@@ -61,7 +63,11 @@ class App extends Component{
 
 
     componentDidMount() {
-      this.refreshList();
+		var executed = false 
+		if (!executed) {
+			executed = true 
+			this.refreshList();
+		}
     }
 
     
