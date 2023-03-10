@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import LeftUp from './LeftUp'
 import LeftDown from './LeftDown'
 import Center from './Center'
+import Right from './Right'
 
 
 
@@ -124,6 +125,8 @@ class Left extends Component {
                     </div> 
 
                     <Center currInstru={currInstru} />
+
+                    <Right currInstru={currInstru} />
                 </>
             ) 
         }

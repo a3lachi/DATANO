@@ -178,8 +178,10 @@ class Center extends Component{
 				<div id="santr" className="col-lg-7">
 
 					<div id='foqcentral' className="row">
-						<div className="col" style={{height:'45px'}}> Central picture {currInstru.instru} </div>
+						<div className="col" > Instruction to follow :  {currInstru.instru} </div>
 					</div>
+
+					<div className="row" style={{height:'30px'}}></div>
 
 
 					<div id="central" className="row">
