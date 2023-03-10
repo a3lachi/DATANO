@@ -5,11 +5,13 @@ import { canvas } from "canvas";
 
 class Right extends Component{
 
-    render(){
-    var currentInstru = this.props.currentInstru
 
-    if(currentInstru.instru) {
-        
+
+    render(){
+
+        var currentInstru = this.props.currentInstru
+
+        if(currentInstru.instru) {
             return(
                 <div className="col-lg-3">
                     
@@ -58,8 +60,8 @@ class Right extends Component{
                 </div>
             )
         }
+        else { return null}
     }
-    else { return null}
 
 }
 
