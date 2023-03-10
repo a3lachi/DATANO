@@ -258,44 +258,31 @@ class App extends Component{
 
 
 
-	Kanva(currInstru){
-		return(
+	
+
+
+	// friKanva(currInstru){
+	// 	var nva = document.querySelector('#imgCanva')
+
+	// 	// var rssm = document.querySelector('#crp1')		
+	// 	// var img = document.querySelector('#mainimage')
+	// 	if(nva && currInstru) {
+	// 		var ctx1 = nva.getContext("2d");
+	// 		// var ctx2 = rssm.getContext("2d");
+	// 		var img = new Image()
 			
-				<div id="central" className="row">
-					
-	                <canvas id="imgCanva" style={{width: '100%' , height: '100%'}} onMouseDown={this.qsstiKanvaDown} onMouseUp={this.qsstiKanvaUp} onMouseMove={this.qsstiKanvaMove} >
-					</canvas>
-					
-	            </div>
-	        
-		)
-
-		
-	}
-
-
-	friKanva(currInstru){
-		var nva = document.querySelector('#imgCanva')
-
-		// var rssm = document.querySelector('#crp1')		
-		// var img = document.querySelector('#mainimage')
-		if(nva && currInstru) {
-			var ctx1 = nva.getContext("2d");
-			// var ctx2 = rssm.getContext("2d");
-			var img = new Image()
-			
-			img.onload = function(){
-				ctx1.canvas.width = img.width;
-  				ctx1.canvas.height = img.height;
-				// ctx2.canvas.width = img.width;
-  				// ctx2.canvas.height = img.height;
-				document.getElementById('central').style.height = (((7/12)*(window.innerWidth))*(img.height)/(img.width)).toString()+"px"
-				ctx1.drawImage(img,0,0);  
-			}
-			img.src = currInstru.src
-			this.mainImage = img
-		}
-	}
+	// 		img.onload = function(){
+	// 			ctx1.canvas.width = img.width;
+  	// 			ctx1.canvas.height = img.height;
+	// 			// ctx2.canvas.width = img.width;
+  	// 			// ctx2.canvas.height = img.height;
+	// 			document.getElementById('central').style.height = (((7/12)*(window.innerWidth))*(img.height)/(img.width)).toString()+"px"
+	// 			ctx1.drawImage(img,0,0);  
+	// 		}
+	// 		img.src = currInstru.src
+	// 		this.mainImage = img
+	// 	}
+	// }
 
 
 	Center(currInstru) {
@@ -398,6 +385,8 @@ class App extends Component{
           <div className="row" >
 				{/* <div>{firstCollecArray}</div> */}
 				<Left data={this.state.collection} ></Left>
+
+				{/* <Center currInstru={this.currInstru} /> */}
 
 
           		{/* {this.Left([firstCollecArray, restCollec, viewCollec, currentInstru])} */}
