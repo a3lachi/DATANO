@@ -7,11 +7,10 @@ class Right extends Component{
 
 
     render(){
-
         var currentInstru = this.props.currentInstru
-
-        if(currentInstru && currentInstru.instru) {
-            console.log('((((((((((( ',currentInstru)
+        console.log('((((((((((( ',currentInstru)
+        if(currentInstru) {
+            
             return(
                 <div className="col-lg-3">
                     
