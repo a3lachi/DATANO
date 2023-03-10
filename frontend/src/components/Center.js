@@ -193,7 +193,7 @@ class Center extends Component{
 					<div className="row" style={{height:'30px'}}></div>
 
 
-					<div className="row">
+					<div id="msgsection" className="row" style={{height:'70px'}}>
 						Message
 					</div>
 
