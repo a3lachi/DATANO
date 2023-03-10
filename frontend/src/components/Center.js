@@ -170,7 +170,9 @@ class Center extends Component{
 
 	render() {
 		var currInstru = this.props.currInstru
+		
 		if (currInstru.instru) {
+			console.log('((((((((((( ',currentInstru)
 			return(
 
 				<div id="santr" className="col-lg-7">

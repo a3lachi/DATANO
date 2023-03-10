@@ -8,8 +8,8 @@ class Right extends Component{
 
     render(){
         var currentInstru = this.props.currentInstru
-        console.log('((((((((((( ',currentInstru)
-        if(currentInstru) {
+        
+        if(currentInstru && currentInstru.instru && currentInstru.taskId  ) {
             
             return(
                 <div className="col-lg-3">
