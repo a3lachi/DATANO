@@ -7,9 +7,9 @@ class Right extends Component{
 
 
     render(){
-        var currentInstru = this.props.currentInstru
+        var currInstru = this.props.currInstru
         
-        if(currentInstru && currentInstru.instru && currentInstru.taskId  ) {
+        if(currInstru.instru) {
             
             return(
                 <div className="col-lg-3">
@@ -21,16 +21,16 @@ class Right extends Component{
                         <div className="row">
                             <div className="col">
                                 <div className="row">
-                                    Instruction : {currentInstru.instru}
+                                    Instruction : {currInstru.instru}
                                 </div>
                                 <div className="row">
-                                    Task ID : {currentInstru.taskId}
+                                    Task ID : {currInstru.taskId}
                                 </div>
                                 <div className="row">
-                                    Created At : {currentInstru.createdAt}
+                                    Created At : {currInstru.createdAt}
                                 </div>
                                 <div className="row">
-                                    Urgency : {currentInstru.urgency}
+                                    Urgency : {currInstru.urgency}
                                 </div>
                                 <div className="row">
                                     Original Image : 
