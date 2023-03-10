@@ -24,9 +24,6 @@ class Center extends Component{
 
 	constructor(props){
 		super(props);
-		this.state = {
-			currI : ""
-		}
 		
 		this.qsstiKanvaDown = this.qsstiKanvaDown.bind(this)
 		this.qsstiKanvaUp = this.qsstiKanvaUp.bind(this)

@@ -7,9 +7,7 @@ import Right from './Right'
 
 
 
-class Left extends Component {
-
-
+class Main extends Component {
 
 
     constructor(props){
@@ -137,7 +135,7 @@ class Left extends Component {
 
 
 
-export default Left ;
+export default Main ;
 
 
 
