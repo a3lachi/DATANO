@@ -35,21 +35,13 @@ class App extends Component{
         qanva:[]
       }
 
-
-      
-      this.qsstiKanvaDown = this.qsstiKanvaDown.bind(this)
-      this.qsstiKanvaUp = this.qsstiKanvaUp.bind(this)
-      this.qsstiKanvaMove = this.qsstiKanvaMove.bind(this)      
-	  this.delCrop = this.delCrop.bind(this)      
+   
 	  
     }
-
 
     componentDidMount() {
 		this.getData();
     }
-
-    
 
     getData = () => {
       axios
@@ -58,36 +50,7 @@ class App extends Component{
         .catch((err) => console.log(err));
     };
 
-    getCollectionData(data) {
 
-	  var firstRow = data[0];
-	  var restCollec = [];
-	  var firstCollecArray = [];
-
-	  for (let i = 1; i < data.length; i++) {
-	    if (!restCollec.includes(data[i].collection) && data[i].collection !== firstRow.collection) {
-	      restCollec.push(data[i].collection);
-	    } else if (firstCollecArray.length < 1) {
-	      firstCollecArray.push(data[i].collection);
-	    }
-	  }
-
-	  const viewCollec = [];
-	  for (let i = 0; i < data.length; i++) {
-	    if (data[i].collection === this.state.view) {
-	      viewCollec.push(data[i]);
-	    }
-	  }
-
-	  let currentInstru = [];
-	  for (let i = 0; i < data.length; i++) {
-	    if (Object.is(data[i].id , Number(this.instruId))) {
-	      currentInstru = data[i];
-	    }
-	  }
-
-	  return [firstCollecArray, restCollec, viewCollec, currentInstru];
-	}
 
 	NavBar() {
 		return(
@@ -105,7 +68,6 @@ class App extends Component{
 
     render(){
 
-    	var [firstCollecArray, restCollec, viewCollec, currentInstru] = this.getCollectionData(this.state.collection)
       return(
 
         <main className="container-fluid">
@@ -116,8 +78,6 @@ class App extends Component{
           
           <div className="row" >
 				<Main data={this.state.collection} ></Main>
-
-
           </div>
 
           
