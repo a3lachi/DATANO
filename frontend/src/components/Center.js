@@ -193,9 +193,9 @@ class Center extends Component{
 					<div className="row" style={{height:'30px'}}></div>
 
 
-					<div id="msgsection" className="row" style={{height:'70px'}}>
-						Message
-					</div>
+					<input id="msgsection" placeholder="Comment.." type='text' className="row" style={{height:'70px'}} />
+						
+					
 
 
 					{this.drawImageOnKanva(currInstru)}
