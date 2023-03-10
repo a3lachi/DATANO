@@ -4,8 +4,7 @@ import './components/Left.css'
 import Styles from './components/Styles'
 import './App.css'
 import { canvas } from "canvas";
-import { flushSync } from 'react-dom';
-
+import Left from './components/Left'
 
 
 class App extends Component{
@@ -37,8 +36,7 @@ class App extends Component{
       }
 
 
-      this.selectOnlyThis = this.selectOnlyThis.bind(this)
-      this.chooseInstruction = this.chooseInstruction.bind(this)
+      
       this.qsstiKanvaDown = this.qsstiKanvaDown.bind(this)
       this.qsstiKanvaUp = this.qsstiKanvaUp.bind(this)
       this.qsstiKanvaMove = this.qsstiKanvaMove.bind(this)      
@@ -47,52 +45,24 @@ class App extends Component{
     }
 
 
-    selectOnlyThis(event){
-      var myCheckbox = document.getElementsByName("myCheckbox");
-      Array.prototype.forEach.call(myCheckbox,function(el){
-        el.checked = false;  
-      });
-      event.target.checked = true;
-      this.setState({view : event.target.id})
-    }
-
-    chooseInstruction(event){
-    	this.instruId = event.target.id
-    	// this.render()
-    	flushSync(() => {
-	      this.setState({instru : event.target.id})
-	    })
-	    this.friKanva()
-      
-    }
-
-
     componentDidMount() {
-		var executed = false 
-		if (!executed) {
-			executed = true 
-			this.refreshList();
-		}
+		this.getData();
     }
 
     
 
-    refreshList = () => {
+    getData = () => {
       axios
         .get("/api/Instructions/")
-        .then((res) => {this.setState({ collection: res.data } , function(){
-			this.allData = res.dat;
-			
-
-		}) })
+        .then((res) => {this.setState({ collection: res.data } ) })
         .catch((err) => console.log(err));
     };
 
     getCollectionData(data) {
 
-	  const firstRow = data[0];
-	  const restCollec = [];
-	  const firstCollecArray = [];
+	  var firstRow = data[0];
+	  var restCollec = [];
+	  var firstCollecArray = [];
 
 	  for (let i = 1; i < data.length; i++) {
 	    if (!restCollec.includes(data[i].collection) && data[i].collection !== firstRow.collection) {
@@ -426,15 +396,17 @@ class App extends Component{
 
           
           <div className="row" >
+				{/* <div>{firstCollecArray}</div> */}
+				<Left data={this.state.collection} ></Left>
 
 
-          		{this.Left([firstCollecArray, restCollec, viewCollec, currentInstru])}
+          		{/* {this.Left([firstCollecArray, restCollec, viewCollec, currentInstru])} */}
 
 
-          		{this.Center(currentInstru)}
+          		{/* {this.Center(currentInstru)}
 	        
 	            
-	         	{this.Right(currentInstru)}
+	         	{this.Right(currentInstru)} */}
 
 
           </div>
