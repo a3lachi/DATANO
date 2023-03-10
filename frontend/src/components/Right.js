@@ -48,7 +48,7 @@ class Right extends Component{
                     <div id="zcrops" className="col">
                         <div className="row" style={{height : '30px'}}>Annotations</div>
                         <div className="row" style={{height : '30px'}}></div>
-                        <div id="cropat" className="col" style={{height:'450px' , overflow : 'auto'}} >
+                        <div id="cropat" className="col" style={{height:'250px' , overflow : 'auto'}} >
                             
                         </div>
 

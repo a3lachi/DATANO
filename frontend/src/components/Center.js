@@ -193,7 +193,7 @@ class Center extends Component{
 					<div className="row" style={{height:'30px'}}></div>
 
 
-					<input id="msgsection" placeholder="Comment.." type='text' className="row" style={{height:'70px'}} />
+					<input id="msgsection" placeholder="Comment.." type='text' className="row" style={{height:'130px' , width:'100%'}} />
 						
 					
 
