@@ -165,7 +165,6 @@ class Center extends Component{
 			}
 			img.src = currInstru.src
 			this.mainImage = img
-			console.log('DKHEL ISSAWB CANVA', currInstru )
 		}
 	}
 

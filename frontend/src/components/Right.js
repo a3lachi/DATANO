@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { canvas } from "canvas";
 
 
 
@@ -11,7 +10,8 @@ class Right extends Component{
 
         var currentInstru = this.props.currentInstru
 
-        if(currentInstru.instru) {
+        if(currentInstru && currentInstru.instru) {
+            console.log('((((((((((( ',currentInstru)
             return(
                 <div className="col-lg-3">
                     
