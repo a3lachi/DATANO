@@ -40,7 +40,7 @@ class Center extends Component{
 		imgHeit = imgHeit.slice(0,imgHeit.length-2)
 
 		this.canvaCordX = Math.abs(event.pageX-(window.innerWidth*(2/12)) )*300/(window.innerWidth*(7/12))
-		this.canvaCordY = (event.pageY - 102)*(150/imgHeit)
+		this.canvaCordY = (event.pageY - 130)*(150/imgHeit)
 
 		var canvas = document.createElement('canvas');
 		canvas.setAttribute('id','crp'+this.nbCrop.toString())
@@ -68,7 +68,7 @@ class Center extends Component{
 
 
 			var width = Math.abs((event.pageX-window.innerWidth*(2/12))*(300/(window.innerWidth*(7/12)))-this.canvaCordX )
-			var height = Math.abs(   (event.pageY-102)*(150/imgHeit) - this.canvaCordY )
+			var height = Math.abs(   (event.pageY-130)*(150/imgHeit) - this.canvaCordY )
 
 			this.heightCrop = height*imgHeit/150
 			this.widthCrop = width*window.innerWidth*(7/12)/300
