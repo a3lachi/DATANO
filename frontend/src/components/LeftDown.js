@@ -12,7 +12,7 @@ class LeftDown extends Component {
             if(viewCollec && viewCollec[0]){
                 return (
                     <div id="lezobjet" className="col">
-                        <div className="row">
+                        <div id='apnxt' className="row">
                         Up Next 
                         </div>
 
