@@ -170,7 +170,6 @@ class Center extends Component{
 
 	render() {
 		var currInstru = this.props.currInstru
-		console.log('ooooooo ',currInstru)
 		if (currInstru.instru) {
 			return(
 

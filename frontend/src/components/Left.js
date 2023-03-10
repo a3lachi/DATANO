@@ -109,7 +109,6 @@ class Left extends Component {
         var currInstru = this.getInstruction(this.props.data)
 
 
-        console.log('------- ',currInstru)
         if (firstRow && restCollec ) {
             return (
                 <>
