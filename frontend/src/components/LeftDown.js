@@ -20,7 +20,7 @@ class LeftDown extends Component {
                             
                         <div className="col" style={{height:'550px' , overflow : 'auto'}}>
                             <div className="row" style={{height:'20px'}}></div>
-                            {viewCollec.map((item,index) => { return <div className="row" key={item.id.toString()}><div className="col"><img alt={item.taskId.toString()} src={item.src.toString()} id={item.id.toString()} style={{width:'100%'}} onClick={this.props.handler} /><div style={{height:'20px'}}></div></div></div>; }) }
+                            {viewCollec.map((item,index) => { return <div className="row" key={item.id.toString()}><div className="col"><img alt="haha"  src={item.src.toString()} id={item.id.toString()} style={{width:'100%'}} onClick={this.props.handler} /><div style={{height:'20px'}}></div></div></div>; }) }
                         </div>
                         
                         </div>

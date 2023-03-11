@@ -1,10 +1,16 @@
-import React, { Component } from "react";
+import React, { Component , useState, useEffect } from "react";
 import axios from "axios";
 import './components/Left.css'
 import Styles from './components/Styles'
 import './App.css'
 import { canvas } from "canvas";
 import Main from './components/Main'
+import { Navigate } from 'react-router-dom';
+
+
+
+
+
 
 
 class App extends Component{
@@ -54,26 +60,47 @@ class App extends Component{
 
 	NavBar() {
 		return(
-				<nav className="navbar navbar-inverse navbar-fixed-top" >
-			        <div className="container-fluid">
-			          <div className="navbar-header">
-			            <a  href="navDatano" className="navbar-brand" >DATANO API - Image Annotation</a>
-			          </div>
-			        </div>
-		        </nav>
+				// <nav className="navbar navbar-inverse navbar-fixed-top" >
+			    //     <div className="container-fluid">
+			    //       <div className="navbar-header">
+			    //         <a  href="brrr" className="navbar-brand" >DATANO API - Image Annotation</a>
+			    //       </div>
+			    //     </div>
+		        // </nav>
+				<nav class="navbar">
+
+
+					<div class="logo">DATANO</div>
+
+
+					<ul class="nav-links">
+
+
+					<div class="menu">
+
+					<li><a id="hom" >Home</a></li>
+
+					<li><a id='abt'>About</a></li>
+
+					</div>
+
+					</ul>
+
+					</nav>
 		)
 	}
+	
 	
 
 
     render(){
 
       return(
+		<>{this.NavBar()}
 
         <main className="container-fluid">
 
-
-          {this.NavBar()}
+          
 
           
           <div className="row" >
@@ -83,6 +110,7 @@ class App extends Component{
           
 
         </main>
+		</>
 
     )
   }

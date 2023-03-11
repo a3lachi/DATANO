@@ -15,11 +15,7 @@ class Right extends Component{
                 <div className="col-lg-3">
                     
                     <div id="infoz" className="col">
-                        <div className="row">
-                            Info 
-                        </div>
-                        <div className="row">
-                            <div className="col">
+                        <div className="col">
                                 <div className="row">
                                     Instruction : {currInstru.instru}
                                 </div>
@@ -35,7 +31,6 @@ class Right extends Component{
                                 <div className="row">
                                     Original Image : 
                                 </div>
-                            </div>
                         </div>
                         
                         
@@ -46,9 +41,9 @@ class Right extends Component{
                     
 
                     <div id="zcrops" className="col">
-                        <div className="row" style={{height : '30px'}}>Annotations</div>
+                        <div className="row" id="ntatio" style={{height : '30px'}}>Annotations</div>
                         <div className="row" style={{height : '30px'}}></div>
-                        <div id="cropat" className="col" style={{height:'550px' , overflow : 'auto'}} >
+                        <div id="cropat" className="col" style={{height:'550px' , display: 'flex' , justifyContent: 'center', flexDirection: 'column' , alignItems: 'center' , height: "100%"}} >
                             
                         </div>
                     </div>

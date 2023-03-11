@@ -4,6 +4,8 @@ import LeftDown from './LeftDown'
 import Center from './Center'
 import Right from './Right'
 
+import { useState, useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
 
 
 
@@ -49,7 +51,6 @@ class Main extends Component {
 
 
 
-    //// BUSINESS LOGICCCC           //////////////////////////////////////////////////////////////////////////////
     getCollectionNames(data) {
         if(data && data[0]){
             const firstRow = data[0];
@@ -88,12 +89,11 @@ class Main extends Component {
                     currentInstru = data[i];
                 }
             }
+            // debugger;
             return currentInstru
         }
         else { return null}
     }
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -113,7 +113,8 @@ class Main extends Component {
                     <div className="col-lg-2">
                         <LeftUp restCollec={restCollec} firstRow={firstRow} handler={this.selectCollection}/>
                         
-                        <div className="col" style={{height : '40px'}}></div>
+                        <div className="col" style={{height : '20px'}}></div>
+                        
 
                         <LeftDown viewCollec={viewCollec} handler={this.selectInstruction} />
 
