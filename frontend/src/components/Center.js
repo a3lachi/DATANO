@@ -31,8 +31,13 @@ class Center extends Component{
 	}
 
 	qsstiKanvaDown(event){	
+		var nva = document.createElement('canvas');
+		nva.setAttribute('id','ccrp'+this.nbCrop.toString())
+		nva.style.height = '100%'
+		nva.style.width = '100%'
+		document.getElementById('central').appendChild(nva)
 		
-
+		// get where original picture is drawn bpxx
 		var imgHeit = document.getElementById('central').style.height
 		imgHeit = imgHeit.slice(0,imgHeit.length-2)
 
@@ -49,6 +54,8 @@ class Center extends Component{
 
 		document.getElementById('central').appendChild(canvas)
 
+		
+
 		this.isCrop = 1
 		console.log('DATA POINTS',this.canvaCordX ,this.canvaCordY)	
 	}
@@ -59,7 +66,6 @@ class Center extends Component{
 			var canvas = document.querySelector('#crp'+this.nbCrop.toString());
 			var context = canvas.getContext("2d");
 			
-			var img = document.getElementById('imgCanva');
 
 			var imgHeit = document.getElementById('central').style.height
 			imgHeit = imgHeit.slice(0,imgHeit.length-2)
@@ -68,13 +74,13 @@ class Center extends Component{
 			var width = Math.abs((event.pageX-window.innerWidth*(2/12))*(300/(window.innerWidth*(7/12)))-this.canvaCordX )
 			var height = Math.abs(   (event.pageY-148)*(150/imgHeit) - this.canvaCordY )
 
-			this.heightCrop = height*imgHeit/150
-			this.widthCrop = width*window.innerWidth*(7/12)/300
+			this.heightCrop = height
+			this.widthCrop = width
 
 
-			context.clearRect(0, 0, img.width, img.width);
+			context.clearRect(0, 0, 10000, 10000);
 			context.rect(this.canvaCordX , this.canvaCordY , width , height);
-			context.globalAlpha = 0.3
+			context.globalAlpha = 0.4
 			context.fillStyle = "#FF0000";
 			context.fill();
 		}
@@ -84,36 +90,18 @@ class Center extends Component{
 		this.isCrop = 0
 		const  rayCord = [ Number(this.canvaCordX) , Number(this.canvaCordY) , this.widthCrop , this.heightCrop ]
 		this.theCropsCord.push(rayCord)
-		this.deleteCrop()
-		this.nbCrop++		
-		 
-	}
 
-	delCrop(event){
-		var elem = document.querySelectorAll('#crp'+event.target.id.toString())
-		elem.forEach(el => el.remove());
-		this.nbCrop = this.nbCrop - 1
-	}
-	
-	deleteCrop(){
-		const qhba = this.theCropsCord
-		var img = this.mainImage
+		var canvas = document.querySelector('#ccrp'+this.nbCrop.toString());
+		var context = canvas.getContext("2d");
 
 		var imgHeit = document.getElementById('central').style.height
 		imgHeit = imgHeit.slice(0,imgHeit.length-2)
 
 
-		const canvas = document.createElement('canvas');
-		canvas.width = this.widthCrop;
-		canvas.height = this.heightCrop;
 		const ctx = canvas.getContext('2d');
 
-		ctx.drawImage(img, this.canvaCordX, this.canvaCordY, this.widthCrop, this.heightCrop, 0, 0, this.widthCrop, this.heightCrop);
-
-		console.log('TOL OL3RD', this.widthCrop , this.heightCrop )
-		console.log('NQITAT',this.canvaCordX,this.canvaCordY)
-		
-
+		ctx.drawImage(this.mainImage, this.canvaCordX/300*(window.innerWidth*(7/12)), this.canvaCordY/150*imgHeit, this.widthCrop/300*(window.innerWidth*(7/12)), this.heightCrop/150*imgHeit, 0, 0, this.widthCrop/300*(window.innerWidth*(7/12)), this.heightCrop/150*imgHeit);
+		console.log('mainimage',this.mainImage)
 
 		var elem = document.createElement("div");
 		elem.setAttribute("id", "crp"+this.nbCrop.toString());
@@ -136,6 +124,17 @@ class Center extends Component{
 		elem.appendChild(croppedImg);
 
 		document.querySelector('#cropat').prepend(elem);
+		canvas.remove()
+
+		this.nbCrop++
+
+		 
+	}
+
+	delCrop(event){
+		var elem = document.querySelectorAll('#crp'+event.target.id.toString())
+		elem.forEach(el => el.remove());
+		this.nbCrop = this.nbCrop - 1
 	}
 
 	drawImageOnKanva(currInstru){
@@ -193,22 +192,6 @@ class Center extends Component{
 					<div id="msgsection" className="row" >
 						<textarea id="brr" placeholder="Comment.." width="100%" rows="5"></textarea>
 					</div>
-					{/* <div class="row flex justify-center">
-						<div class="relative mb-3 xl:w-full"  data-te-input-wrapper-init>
-							<textarea
-							class="peer block h-1/2 w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-							id="exampleFormControlTextarea1"
-							rows="6"
-							placeholder="Comment..."></textarea>
-
-
-							<label
-							for="exampleFormControlTextarea1"
-							class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
-							>Comment</label
-							>
-						</div>
-						</div> */}
 					</div>
 
 			)
